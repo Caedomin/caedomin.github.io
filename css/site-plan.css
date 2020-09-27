@@ -1,111 +1,133 @@
 @import url("https://fonts.googleapis.com/css?family=IM+Fell+French+Canon+SC|Lato");
 
-:root {
-    --primary-color: #396e94;
-    --secondary-color: #e7c24f;
-    --accent1-color: #a43312;
-    --accent2-color: white;
+:root 
+    {
+    --primary-color: #022249;
+    --secondary-color: #f07c41;
+    --background-color: #C7EEF5;
+    --accent1-color: #55BDCA;
+    --accent2-color: #95ffff;
+    --accent3-color: #1F4662;
     --heading-font: "IM Fell French Canon SC";
     --paragraph-font: Lato, Helvetica, sans-serif;
-}
+    }
 
-html {
-    background-color: var(--primary-color);
-}
+html 
+    {
+    background-color: var(--accent3-color);
+    }
 
-body {
+body 
+    {
     max-width: 900px;
     margin: 0 auto;
-    background-color: white;
+    background-color:white;
     padding: 1em;
-}
+    }
 
-img {
+img 
+    {
     max-width: 100%;
-}
+    }
 
 h1,
 h2,
 h3,
 h4,
 h5,
-h6 {
+h6 
+    {
     font-family: var(--heading-font);
-    color: ;
-}
+    color: var(--primary-color);
+    }
 
-header {
+header 
+    {
     padding: 1em;
     text-align: center;
-    color: var(--accent2-color);
-    background-color: ;
-}
+    color: var(--secondary-color);
+    background-color: var(--background-color);
+    }
 
-header>h1 {
-    color: ;
-}
+header>h1 
+    {
+    color: var(--primary-color);
+    }
 
-p {
+p 
+    {
     font-family: var(--paragraph-font);
-    color: ;
+    color: black;
     padding: 1em;
-}
+    }
 
-.colors {
+.colors 
+    {
     width: 100%;
     min-width: 350px;
     margin: auto;
     text-align: center;
-}
+    }
 
-.colors th {
+.colors th 
+    {
     background-color: #999;
-}
+    }
 
-.colors td {
+.colors td 
+    {
     width: 25%;
     height: 3em;
-}
+    }
 
-.primary {
+.primary 
+    {
     background-color: var(--primary-color);
-}
+    }
 
-.secondary {
+.secondary 
+    {
     background-color: var(--secondary-color);
-}
+    }
 
-.accent1 {
+.accent1 
+    {
     background-color: var(--accent1-color);
-}
+    }
 
-.accent2 {
+.accent2 
+    {
     background-color: var(--accent2-color);
-}
+    }
 
-nav {
-    background-color: ;
+nav 
+    {
+    background-color: var(--background-color);
     line-height: 3em;
     text-align: center;
     font-size: 1.2em;
-}
+    }
 
-nav>ul {
+nav>ul 
+    {
     list-style-type: none;
     display: flex;
-}
+    }
 
-nav a {
+nav a 
+    {
     padding: 1em;
     min-width: 70px;
-}
+    }
 
 nav a:link,
-nav a:visited {
-    color: ;
-}
+nav a:visited 
+    {
+    color: var(--secondary-color);
+    }
 
-nav a:hover {
-    color: ;
-    background-color: ;
-}
+nav a:hover 
+    {
+    color: var(--accent1-color);
+    background-color: var(--background-color);
+    }
