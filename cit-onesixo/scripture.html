@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+
+<html lang="en-us">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Applying the Scriptures to Ourselves</title>
+    <style>
+        .header 
+        {
+            text-align: center;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        
+        .intro 
+        {
+            text-align: center;
+            font-family: Arial, Helvetica, sans-serif;
+            width: 500px;
+            height: auto;
+            border: 15px;
+            margin: 20px auto;
+        }
+        
+        .button 
+        {
+            text-align: center;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .scripture 
+        {
+            text-align: center;
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: white;
+            width: 350px;
+            height: auto;
+            padding: 10px;
+            border: 2px solid black;
+            margin: 20px auto;
+        }
+    </style>
+    <script>
+        // Defining Table
+        // Input: a user inputs their name.
+        // Processing: each function will concatenate a string with the user's name inserted in a scripture.
+        // Output: a string is displayed with the user's name inserted in the desired scripture.
+        function ntScripture() 
+        {
+            // This line requests the user to enter their name.
+            let name = document.getElementById("nameInputBox").value;
+
+            // A concatenated string will include the user's name in the selected scripture.
+            let ntScripture = "\"For I, [" + name + ",] am not ashamed of the gospel of Christ: for it is the power of God unto salvation to every one that believeth.\" (Romans 1:16)" 
+            
+            // The scripture selected will display in the div with the appropriate output label.
+            document.getElementById("ntOutput").innerHTML = ntScripture;
+        }
+        function bmScripture() 
+        {
+            let name = document.getElementById("nameInputBox").value;
+
+            let ntScripture = "\"Wherefore, [" + name + ",] pray unto the Father with all the energy of [your] heart, that ye may be filled with this love, which he hath bestowed upon all who are true followers of his Son, Jesus Christ; that ye may become [a son or daughter] of God; that when he shall appear [ye] shall be like him, for [ye] shall see him as he is; that [ye] may have this hope; that [ye] may be purified even as he is pure. Amen.\" (Moroni 7:48)";
+
+            document.getElementById("bmOutput").innerHTML = ntScripture;
+        }
+        function dcScripture() 
+        {
+            let name = document.getElementById("nameInputBox").value;
+
+            let ntScripture = "\"Therefore, [" + name + ",] see that ye serve him with all your heart, might, mind and strength, that ye may stand blameless before God at the last day.\" (Doctrine and Covenants 4:2)";
+
+            document.getElementById("dcOutput").innerHTML = ntScripture;
+        }
+    </script>
+</head>
+
+<body>
+    <header class="header">
+        <h1>Applying the Scriptures to Ourselves</h1>
+    </header>
+
+    <div class="intro">
+        <p>Applying the scriptures to our own lives can deepen our understanding of the gospel and strengthen our testimony on the principles taught. Nephi wrote, "I did liken all scriptures unto us, that it might be for our profit and learning." (<a href="https://www.churchofjesuschrist.org/study/scriptures/bofm/1-ne/19.23?lang=eng#p23">1 Nephi 19:23</a>). There is much we can learn from the same scripture when applied throughout our lives as our circumstances change and our testimony develops.</p>
+        <p>In this exercise, enter your name below, then select from one of the standard works to see an example of how you could apply your name to a scripture.</p>
+    </div>
+
+    <hr>
+    
+    <div class="button">
+        <p>Enter your name here: <input type="text" id="nameInputBox"></p>
+        <p>
+            <button type="button" onclick="ntScripture()">New<br>Testament</button>
+            <button type="button" onclick="bmScripture()">Book of<br>Mormon</button>
+            <button type="button" onclick="dcScripture()">Doctrine and<br>Covenants</button>
+        </p>
+    </div>
+    
+    <div class="scripture">
+        <p>Scripture:</p>
+        <div id="ntOutput"></div><br>
+        <div id="bmOutput"></div><br>
+        <div id="dcOutput"></div>
+    </div>
+</body>
+
+</html>

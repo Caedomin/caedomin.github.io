@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+
+<html lang="en-us">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Greeting Program to Say Hello</title>
+    <style>
+        .header 
+        {
+            text-align: center;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .body 
+        {
+            text-align: center;
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: white;
+            width: 320px;
+            height: auto;
+            padding: 10px;
+            border: 10px solid black;
+            margin: 20px auto;
+        }
+        .button 
+        {
+            text-align: center;
+        }
+    </style>
+    <script>
+        // Defining Table
+        // Input: a user inputs their name.
+        // Processing: a personalized greeting is created.
+        // Output: a popup window appears with personalized greeting.
+        function greetUser() 
+        {
+            // This line requests the user to enter their name.
+            let name = prompt("Enter your name here:");
+
+            // This personalized greeting will appear for the user.
+            let greeting = "Hi " + name + ", thanks for using this tutorial.";
+
+            // This greeting will cause a popup window to appear with the custom greeting.
+            alert(greeting);
+        }
+    </script>
+</head>
+
+<body>
+    <header class="header">
+        <h1>Robot Greeting</h1>
+    </header>
+
+    <div class="body">
+        <p>Robbie the Robot is learning names today. Will you help Robbie practice his manners by telling him your name? <br> <br>
+        Just click the <strong>Name Button</strong> below to enter your name and he will practice saying hello.</p>
+    </div>
+
+    <br>
+    
+    <div class="button">
+        <button type="button" onclick="greetUser()">Name Button
+        </button>
+    </div>
+</body>
+
+</html>
