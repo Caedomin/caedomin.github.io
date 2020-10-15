@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+
+<html lang="en-us">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Volume Unit Converter</title>
+    <style>
+        .pageTitle 
+        {
+            text-align: center;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        
+        .intro 
+        {
+            text-align: center;
+            font-family: Arial, Helvetica, sans-serif;
+            width: 500px;
+            height: auto;
+            border: 15px;
+            margin: 20px auto;
+        }
+        
+        .inputValues
+        {
+            text-align: center;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        
+        .outputValues
+        {
+            text-align: center;
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: white;
+            width: 350px;
+            height: auto;
+            padding: 10px;
+            border: 2px solid black;
+            margin: 20px auto;
+        }
+    </style>
+    <script>
+    /*
+    input: beginning odometer reading, ending odometer reading, number of gallons of gas used
+    process: (ending odometer reading - beginning odometer reading) / gallons used
+    output: mileage in miles per gallon
+    */
+
+    function mileage() {
+      //input
+      var beginOdo = parseFloat(document.getElementById('odo1InputBox').value);
+      var endOdo = parseFloat(document.getElementById('odo2InputBox').value);
+      var gas = parseFloat(document.getElementById('gasInputBox').value);
+
+      //process
+      var mileage = (endOdo - beginOdo) / gas;
+
+      //output
+      document.getElementById('mpgDiv').innerHTML = mileage;
+    }
+
+  </script>
+</head>
+
+<body>
+  <h1>Figure Out Your Mileage Here!</h1>
+  <div class="grid"> <div class="wrap1"> <div class="col1">...</div><div class="col2">...</div></div></div>
+  <p>Enter your beginning odometer reading: <input type="text" id="odo1InputBox"></p>
+  <p>Enter your ending odometer reading: <input type="text" id="odo2InputBox"></p>
+  <p>Enter the number of gallons of gas you used: <input type="text" id="gasInputBox"></p>
+  <div><button type="button" onclick="mileage()">Calculate</button></div>
+  <p>~Miles Per Gallon~</p>
+  <div id="mpgDiv"></div>
+</body>
+</html>

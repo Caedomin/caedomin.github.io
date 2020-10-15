@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+
+<html lang="en-us">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Volume Unit Converter</title>
+    <style>
+        .pageTitle 
+        {
+            text-align: center;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        
+        .intro 
+        {
+            text-align: center;
+            font-family: Arial, Helvetica, sans-serif;
+            width: 500px;
+            height: auto;
+            border: 15px;
+            margin: 20px auto;
+        }
+        
+        .inputValues
+        {
+            text-align: center;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        
+        .outputValues
+        {
+            text-align: center;
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: white;
+            width: 350px;
+            height: auto;
+            padding: 10px;
+            border: 2px solid black;
+            margin: 20px auto;
+        }
+    </style>
+    <script>
+        // Defining Table
+        // Input:      user inputs number of quarts to be converted.
+        // Processing: input of quarts is multiplied by 0.946353 to calculate number of liters.
+        // Output:     calculated number of liters is displayed.
+        function calculateLiters() 
+        {
+            // input
+            let quarts = parseFloat(document.getElementById('quartInput').value);
+
+            // processing
+            let liters = quarts * 0.946353;
+            let litersRounded = liters.toFixed(3);
+
+            // output
+            document.getElementById('outputDiv').innerHTML = litersRounded + " Liters";
+        }
+    </script>
+</head>
+
+<body>
+    <header class="pageTitle">
+        <h1>Volume Unit Converter</h1>
+    </header>
+
+    <div class="intro">
+        <p>This simple calculator is good for one thing: converting liquid quarts into liters. Below, type in any number of quarts, then click the calculate button to see the converted value into liters.</p>
+    </div>
+    
+    <div class="inputValues">
+        <p>
+            Quarts: 
+            <input type="number" id="quartInput">
+            <button type="button" onclick="calculateLiters()">Calculate Liters</button>
+        </p>
+    </div>
+    
+    <div class="outputValues">
+        <div id="outputDiv">Liters</div>
+    </div>
+</body>
+
+</html>
