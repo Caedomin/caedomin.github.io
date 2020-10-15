@@ -5,7 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Volume Unit Converter</title>
+    <title>MPG Calculator</title>
     <style>
         .pageTitle 
         {
@@ -34,7 +34,7 @@
             text-align: center;
             font-family: Arial, Helvetica, sans-serif;
             background-color: white;
-            width: 350px;
+            width: 225px;
             height: auto;
             padding: 10px;
             border: 2px solid black;
@@ -42,36 +42,54 @@
         }
     </style>
     <script>
-    /*
-    input: beginning odometer reading, ending odometer reading, number of gallons of gas used
-    process: (ending odometer reading - beginning odometer reading) / gallons used
-    output: mileage in miles per gallon
-    */
+        // Defining Table
+        // Input:      user inputs 1) starting odometer reading 2) ending odometer reading 3) gas consumed.
+        // Processing: miles per gallon (mpg) is calculated from (end odo - start odo) / gas consumed upon button click.
+        // Output:     mpg is displayed upon button click.
+        function milesPerGallon() 
+        {
+            //input
+            let odoStart = parseFloat(document.getElementById('odoStartInput').value);
+            let odoEnd = parseFloat(document.getElementById('odoEndInput').value);
+            let gas = parseFloat(document.getElementById('gasInput').value);
 
-    function mileage() {
-      //input
-      var beginOdo = parseFloat(document.getElementById('odo1InputBox').value);
-      var endOdo = parseFloat(document.getElementById('odo2InputBox').value);
-      var gas = parseFloat(document.getElementById('gasInputBox').value);
+            //process
+            let mileageCalc = (odoEnd - odoStart) / gas;
+            let mileage = mileageCalc.toFixed(2);
 
-      //process
-      var mileage = (endOdo - beginOdo) / gas;
-
-      //output
-      document.getElementById('mpgDiv').innerHTML = mileage;
-    }
+            //output
+            document.getElementById('mpgDiv').innerHTML = mileage + " MPG";
+        }
 
   </script>
 </head>
 
 <body>
-  <h1>Figure Out Your Mileage Here!</h1>
-  <div class="grid"> <div class="wrap1"> <div class="col1">...</div><div class="col2">...</div></div></div>
-  <p>Enter your beginning odometer reading: <input type="text" id="odo1InputBox"></p>
-  <p>Enter your ending odometer reading: <input type="text" id="odo2InputBox"></p>
-  <p>Enter the number of gallons of gas you used: <input type="text" id="gasInputBox"></p>
-  <div><button type="button" onclick="mileage()">Calculate</button></div>
-  <p>~Miles Per Gallon~</p>
-  <div id="mpgDiv"></div>
+    <header class="pageTitle">
+        <h1>MPG Calculator</h1>
+    </header>
+
+    <div class="intro">
+        <p>This simple calculator helps you convert your miles driven and gas used into your miles per gallon ratio (mpg). Below, type your starting and ending odometer reading and total gas used. Then, click the calculate button to see your mpg ratio.</p>
+    </div>
+    
+    <div class="inputValues">
+        <p>
+            Beginning odometer reading:
+            <input type="number" id="odoStartInput"><br>
+            Ending odometer reading:
+            <input type="number" id="odoEndInput"><br>
+            Total gas (in gallons):
+            <input type="number" id="gasInput"><br>
+            <br>
+            <button type="button" onclick="milesPerGallon()">Calculate MPG</button>
+        </p>
+    </div>
+    
+    <div class="outputValues">
+        <p><strong>Miles Per Gallon</strong></p>
+        <div id="mpgDiv"></div>
+    </div>
 </body>
+
 </html>
