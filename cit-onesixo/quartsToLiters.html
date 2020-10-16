@@ -33,12 +33,11 @@
         {
             text-align: center;
             font-family: Arial, Helvetica, sans-serif;
-            background-color: white;
-            width: 350px;
+            width: 100px;
             height: auto;
             padding: 10px;
             border: 2px solid black;
-            margin: 20px auto;
+            margin: auto;
         }
     </style>
     <script>
@@ -53,7 +52,7 @@
 
             // processing
             let liters = quarts * 0.946353;
-            let litersRounded = liters.toFixed(3);
+            let litersRounded = liters.toFixed(2);
 
             // output
             document.getElementById('outputDiv').innerHTML = litersRounded + " Liters";

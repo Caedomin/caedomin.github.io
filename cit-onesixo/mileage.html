@@ -33,7 +33,6 @@
         {
             text-align: center;
             font-family: Arial, Helvetica, sans-serif;
-            background-color: white;
             width: 225px;
             height: auto;
             padding: 10px;
@@ -44,8 +43,8 @@
     <script>
         // Defining Table
         // Input:      user inputs 1) starting odometer reading 2) ending odometer reading 3) gas consumed.
-        // Processing: miles per gallon (mpg) is calculated from (end odo - start odo) / gas consumed upon button click.
-        // Output:     mpg is displayed upon button click.
+        // Processing: miles per gallon (mpg) is calculated from (end odo - start odo) / gas consumed upon button click. Total miles driven also calculated from (end odo - start odo) upon button click.
+        // Output:     mpg and total miles driven is displayed upon button click.
         function milesPerGallon() 
         {
             //input
@@ -56,9 +55,11 @@
             //process
             let mileageCalc = (odoEnd - odoStart) / gas;
             let mileage = mileageCalc.toFixed(2);
+            let totalMiles = (odoEnd - odoStart)
 
             //output
             document.getElementById('mpgDiv').innerHTML = mileage + " MPG";
+            document.getElementById('milesDriven').innerHTML = totalMiles + " Total Miles Driven";
         }
 
   </script>
@@ -70,7 +71,7 @@
     </header>
 
     <div class="intro">
-        <p>This simple calculator helps you convert your miles driven and gas used into your miles per gallon ratio (mpg). Below, type your starting and ending odometer reading and total gas used. Then, click the calculate button to see your mpg ratio.</p>
+        <p>This simple calculator helps you convert your miles driven and gas used into your miles per gallon ratio (mpg). Below, type your starting and ending odometer reading and total gas used. Then, click the calculate button to see your mpg ratio and total miles driven.</p>
     </div>
     
     <div class="inputValues">
@@ -87,8 +88,12 @@
     </div>
     
     <div class="outputValues">
-        <p><strong>Miles Per Gallon</strong></p>
+        <p><u><strong>Miles Per Gallon</strong></u></p>
         <div id="mpgDiv"></div>
+        <br>
+        <p><u><strong>Total Miles Driven</strong></u></p>
+        <div id="milesDriven"></div>
+        <br>
     </div>
 </body>
 
