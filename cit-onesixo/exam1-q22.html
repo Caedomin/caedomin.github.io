@@ -1,0 +1,35 @@
+<!DOCTYPE HTML>
+<html lang="en-us">
+
+<head>
+    <meta charset="utf-8">
+    <title>Rate of Change</title>
+    <script>
+        // Defining Table
+        // Input:      user inputs a previous and current price
+        // Processing: computes the rate of change of a price
+        // Output:     outputs the rate of change of a price
+        function computeRateOfChange() 
+        {
+            //input
+            let prevPrice = parseFloat(document.getElementById('prevPriceInput').value);
+            let currPrice = parseFloat(document.getElementById('currPriceInput').value);
+            
+            //processing
+            let rateOfChange = parseFloat((currPrice - prevPrice) / prevPrice);
+
+            //output
+            document.getElementById('rate').innerHTML = rateOfChange.toFixed(4)
+        }
+    </script>
+</head>
+
+<body>
+    <h1>Rate of Change</h1>
+    Previous Price <input type="text" id="prevPriceInput"><br>
+    Current Price <input type="text" id="currPriceInput"><br>
+    <button type="button" onclick="computeRateOfChange()">Rate of Change</button><br>
+    Rate of Change <div id="rate"></div>
+</body>
+
+</html>

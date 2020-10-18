@@ -1,0 +1,112 @@
+:root {
+    --primary-color: #396e94;
+    --secondary-color: #8D8741;
+    --accent1-color: #a43312;
+    --accent2-color: white;
+    --accent3-color: #541418;
+    --accent4-color: #47BDDF;
+    --main-text-color: black; 
+    --heading-font: "IM Fell French Canon SC";
+    --paragraph-font: Arial, Helvetica, sans-serif;
+/*Colors I'm considering using: C7EEF5, 95FFFF, 558DCA, F07C41, 022249, White text
+  FBEEC1, BC986A, DAAD86, 659DBD, 8D8741, white text*/    
+}
+
+html {
+    background-color: var(--primary-color);
+}
+
+header img {
+	width: 50px;
+	height: auto;
+}
+
+body {
+    max-width: 900px;
+    margin: 0 auto;
+    background-color: white;
+    padding: 1rem;
+    font-size: 16px;
+}
+
+.navLinks {
+    list-style-type: none;
+    display: flex;
+    text-align: center;
+    font-family: var(--paragraph-font);
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+.navLinks li {
+    flex: 1 1 auto;
+}
+
+.navLinks a {
+    padding: 1em;
+    min-width: 70px;
+}
+
+.navLinks a:link, nav a:visited {
+    color: var(--accent1-color);
+}
+
+.navLinks a:hover {
+    color: var(--primary-color);
+    background-color: var(--accent1-color);
+}
+
+header {
+    padding: 10px 5px;
+    display: flex;
+    text-align: center;
+    color: var(--accent2-color);
+    background-color: var(--accent2-color);
+}
+
+.hero {
+    max-width: 100%;
+    height: auto;
+
+}
+
+img {
+    max-width: 100%;
+}
+
+h1,h2,h3,h4,h5,h6 {
+    font-family: var(--heading-font);
+    color:var(--secondary-color) ;
+}
+
+h1 {
+    padding: 0px 20px;
+}
+
+.bodyImage1 {
+	width: 500px;
+	height: auto;
+}
+
+.bodyImage2 {
+	width: auto;
+	height: 500px;
+}
+
+
+/*////////////////////////////////////////////////////////////////
+
+
+
+.headings {
+	display: flex;
+	flex-direction: column;
+}
+
+.heading h1 {
+	font-size: 2rem;
+	color: navy;
+	margin: 0;
+}
+
+*/
