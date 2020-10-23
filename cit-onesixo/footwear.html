@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+
+<html lang="en-us">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Footwear Choices</title>
+    <style>
+        :root{
+          background-color: gray;
+          --color1: #78b3d3;
+          --color2: #aac9ae;
+          --quote-color: #6e2a00;
+        }
+
+        .content {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          grid-gap: 20px;
+          justify-items: center;
+          font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .heroTitle {
+          background-color: #043768;
+          color: white;
+          padding: 20px 30%;
+          grid-column: 1/3;
+        }
+        
+        .intro {
+          width: 350px;
+          background-color: var(--color1);
+          grid-column: 1/2;
+          box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+          padding: 20px;
+        }
+
+        .tongueTwister {
+          font-style: italic;
+          font-size: 20px;
+          color: var(--quote-color);
+          font-family: cursive;
+        }
+        
+        .results {
+          background-color:var(--color2);
+          width: 330px;
+          grid-column: 2/3;
+          box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+          text-align: center;
+          font-size: 1.8em;
+          padding: 20px;
+        }
+        
+        .output {
+          font-style: italic;
+          font-size: 20px;
+          color: var(--quote-color);
+          font-family: cursive;
+        }
+
+        /* This was a fun opportunity to practice a little CSS that I'm learning in another class. Enjoy! */
+
+    </style>
+    
+    <script>
+        // Defining Table
+        // Input:      User inputs weather type
+        // Processing: System identifies which type of footware user needs based on several options (hot, rain, snow, or any other input)
+        // Output:     System prints the selected message describing what footware to use in footwareChoice div after button click
+        function decideFootware() 
+        {
+        // Input
+        let weather = document.getElementById("weatherInput").value;
+        
+        // Processing
+        switch(weather) {
+          // Output
+          case "hot":
+            document.getElementById("footwareChoice").innerHTML = "Sorry Sunshine, slip on some strap-on sandals to observe summer safety practices for slippery surfaces.";
+            break;
+          case "rain":
+            document.getElementById("footwareChoice").innerHTML = "Great googly eyed grandmother! Grab some green galoshes and make some splooshes in that gorgeous garden of God-given cloud glitter!";
+            break;
+          case "snow":
+            document.getElementById("footwareChoice").innerHTML = "So, snow you say? Sink into some stiff spined boots and squeeze the laces to spare yourself from soggy sock-atitus.";
+            break;
+          default:
+            document.getElementById("footwareChoice").innerHTML = "Shake me down and shoot the Sheriff! All you need is a pair of shoes! Just don't seriously shoot someone... That's a short shot to striped shortsleeves shutup in shameful iron shambles.";
+          }
+        }
+    </script>
+</head>
+
+<body class="content">
+    <header class="heroTitle">
+        <h1>Footwear Choices</h1>
+    </header>
+
+    <div class="intro">
+        <p>For those lost soles out there unable to decide what kind of foot wear you need for the day, look no further; we have the tool for you!
+        You have come to the right place. This wonderful tool will wisk away your worries faster than you can say: 
+        </p>
+        <p class="tongueTwister">"The thirty-three thieves thought that they thrilled the throne throughout Thursday."</p>
+        <p>To begin, start by typing one word that best describes the weather <strong><i>outside</i></strong> your cozy cushioned cave. Then the super-smart system will direct you to the correct pair of fuzzy feet flippers you should fancy frolicking freely in today!</p>
+        <p>Enjoy!</p>
+    </div>
+    
+    <div class = "results">
+      <div class="button">
+        <p>
+            Weather outside your window: <br> <br>
+            <input type="text" id="weatherInput"> <br> <br>
+            <button type="button" onclick="decideFootware()">Decide My Feet's Fate!</button> <br>
+        </p>
+      </div>
+
+      <div class="output">
+          <div id="footwareChoice"></div>
+      </div>
+    </div>
+</body>
+
+</html>
