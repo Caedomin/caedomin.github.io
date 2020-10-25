@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shoes to Wear</title>
+    <style>
+        /***********************
+        * Body Styling
+        ***********************/
+        @import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap');
+
+        html,
+        body {
+            padding: 0;
+            margin: 0;
+        }
+
+        body {
+            background-image: url(https://cdn.pixabay.com/photo/2015/11/13/14/35/shoes-1042070_960_720.jpg);
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position: center;
+            background-size: cover;
+
+            background-color: rgba(95, 95, 95, 0.55);
+            background-blend-mode: multiply;
+        }
+
+        .display {
+            background-color: beige;
+            width: 150px;
+            height: 50px;
+            padding: 10px;
+            margin: auto;
+            /* margin-top: 25px; */
+            /* margin-left: 150px; */
+            border: 1px black solid;
+
+            display: flex;
+            justify-content: center;
+            align-content: center;
+        }
+
+        .display input {
+            width: 100px;
+        }
+
+        main {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            margin-top: 15%;
+            margin-bottom: 10%;
+        }
+
+        button {
+            align-self: center;
+            justify-self: center;
+            box-shadow: black 5px 5px 5px;
+            background-color: beige;
+            width: 150px;
+            height: 50px;
+        }
+
+        /***********************
+        * Input Styling
+        ***********************/
+
+        /***********************
+        * Output Styling
+        ***********************/
+
+        /***********************
+        * Quote and Copyright Styling
+        ***********************/
+        #copyright {
+            background-color: beige;
+            text-align: center;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        #quote {
+            font-size: 3.5rem;
+            font-family: 'Kaushan Script', cursive;
+            color: rgb(255, 255, 255);
+            margin: auto;
+            padding: 5px;
+            grid-column: 1/4;
+            max-width: 750px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+
+    </header>
+
+    <main>
+        <div class="display">
+            <label for="weather">Weather:
+
+                <input list="weather" id="getWeather">
+
+                <datalist id="weather">
+                    <option value="Humid">
+                    <option value="Wind">
+                    <option value="Hot">
+                    <option value="Rain">
+                    <option value="Snow">
+                </datalist>
+            </label>
+        </div>
+
+        <button type="button" onclick="getShoes()">
+            Get Type of Shoes
+        </button>
+
+        <div class="display">
+            <div id="output">
+                <p id="shoes">Shoes:</p>
+            </div>
+        </div>
+
+        <div id="quote">
+            <p>
+                And so the adventure begins
+            </p>
+        </div>
+    </main>
+
+    <footer>
+
+        <div id="copyright">
+            <p>All images used are believed to be in "Fair Use". Please notify author if any are not and they will be
+                removed.</p>
+        </div>
+        <script>
+            /*Defining Table
+            Input   Output
+            humid   shoes
+            wind    shoes
+            hot     sandals
+            rain    galoshes
+            snow    boots
+            */
+
+            function getShoes() {
+                var input;
+                var output;
+
+                input = document.getElementById('getWeather').value;
+                console.log(input);
+
+
+                switch (input) {
+                    case 'Humid':
+                        output = 'Shoes';
+                        console.log(output);
+                        break;
+                    case 'Wind':
+                        output = 'Shoes';
+                        console.log(output);
+                        break;
+                    case 'Hot':
+                        output = 'Sandals';
+                        console.log(output);
+                        break;
+                    case 'Rain':
+                        output = 'Galoshes';
+                        console.log(output);
+                        break;
+                    case 'Snow':
+                        output = 'Boots';
+                        console.log(output);
+                        break;
+                    default:
+                        break;
+                }
+
+                document.getElementById('shoes').innerHTML = "Shoes: " + output;
+                document.getElementById('getWeather').value = "";
+            }
+        </script>
+    </footer>
+</body>
+
+</html>

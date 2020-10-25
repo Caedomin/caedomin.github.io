@@ -1,23 +1,69 @@
-<!DOCTYPE html>
-<html lang="en">
+<!--<!DOCTYPE html>-->
+</html>
+<html <!--@lang="en"-->
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style>
-       h1{
-        
-       }
-       
-       p{
-           background-color: green;
-       } 
-    </style>
+    <!--
+    @<meta charset="UTF-8">
+    @<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    -->
+    <title>Footweather</title>
 </head>
 <body>
-    <h1>loren</h1>
-    <img src="https://placekitten.com/300/100" alt="Photo of a Cat">
-    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sunt voluptatem ad illum nemo ratione, quod est ullam. Suscipit culpa minus voluptas perferendis cupiditate esse dolor laborum? Quaerat dolores fugiat tempore suscipit possimus! Incidunt vero reiciendis cupiditate! Nam id repellendus praesentium, itaque minus debitis molestiae ipsa nulla, ipsam incidunt quis harum.</p>
-
-</body>
+<script>
+            /*
+             *  Input: User inputs weather
+             *  Processing: Chooses the correct footwear for the day's weather
+             *  Output: Displays the correct footwear to the user based on weather
+             */
+            function chooseFootwear() {
+                // User inputs weather
+                let weather = document.getElementById('weatherInput').value;
+                // Determines the correct footwear based on user input
+                let footwear;
+                if (weather == 'hot') {
+                    shoes /*@footwear*/ = 'sandals';
+                }
+                else if (weather == 'rain') {
+                    footwear = 'galoshes';
+                }
+                else if (weather == 'snow') {
+                    footwear = 'boots';
+                }
+                else {
+                    footwear = 'shoes';
+                }
+                // Displays the correct footwear to the user based on weather
+                let choice = "Today's footwear selection should be " + footwear + '.';
+                document.getElementById('choice').innerHTML = choice;
+            }
+            // let weather = document.getElementById('weatherInput').value;
+    // let shoes;
+    // switch (weather) {
+    //     case 'hot':
+    //         shoes = "sandals";
+    //         break;
+    //     case 'rain':
+    //         shoes = "galoshes";
+    //         break;
+    //     case 'snow':
+    //         shoes = "boots";
+    //         break;
+    //     default:
+    //         shoes = "shoes";
+    //         break;
+    // }
+    // document.getElementById('shoesDiv').innerHTML = shoes;
+    // }
+        </script>
+       </html>
+        <div class='content'>
+            <!--Heading-->
+            <h1>Put the Footwear Weather</h1>
+            <h2>Enter today's weather:</h2> <input type='text' id ='weatherInput'>
+            <!--Submit button-->
+            <button type='button' onclick='chooseFootwear()'>Click here</button><br><br>
+            <!--Displays the result to the user-->
+            <div id='choice'></div>
+        </div>
+    </body>
 </html>
