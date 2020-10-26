@@ -1,69 +1,57 @@
-<!--<!DOCTYPE html>-->
-</html>
-<html <!--@lang="en"-->
+<!DOCTYPE HTML>
+<html lang="en-us">
+
 <head>
-    <!--
-    @<meta charset="UTF-8">
-    @<meta name="viewport" content="width=device-width, initial-scale=1.0">
-    -->
-    <title>Footweather</title>
-</head>
-<body>
-<script>
-            /*
-             *  Input: User inputs weather
-             *  Processing: Chooses the correct footwear for the day's weather
-             *  Output: Displays the correct footwear to the user based on weather
-             */
-            function chooseFootwear() {
-                // User inputs weather
-                let weather = document.getElementById('weatherInput').value;
-                // Determines the correct footwear based on user input
-                let footwear;
-                if (weather == 'hot') {
-                    shoes /*@footwear*/ = 'sandals';
-                }
-                else if (weather == 'rain') {
-                    footwear = 'galoshes';
-                }
-                else if (weather == 'snow') {
-                    footwear = 'boots';
-                }
-                else {
-                    footwear = 'shoes';
-                }
-                // Displays the correct footwear to the user based on weather
-                let choice = "Today's footwear selection should be " + footwear + '.';
-                document.getElementById('choice').innerHTML = choice;
+    <meta charset="utf-8">
+    <title>Math Quiz</title>
+    <script>
+        /* Input: child's math problem and answer
+         * Processing: Compare child's math problem to correct answer
+         * Output: System determines if answer matches correct answer
+         */
+        function calculate() {
+            let num1 = parseFloat(document.getElementById('num1').value);
+            let num2 = parseFloat(document.getElementById('num2').value);
+            let operator = document.getElementById('operator').value;
+            /*let result;*/
+            let equation;
+            if (z == "+") {
+                equation = x + y;
+            } else if (z == "-") {
+                equation = x - y;
+            } else if (z == "*") {
+                equation = x * y;
+            } else if (z == "/") {
+                equation = x / y;
             }
-            // let weather = document.getElementById('weatherInput').value;
-    // let shoes;
-    // switch (weather) {
-    //     case 'hot':
-    //         shoes = "sandals";
-    //         break;
-    //     case 'rain':
-    //         shoes = "galoshes";
-    //         break;
-    //     case 'snow':
-    //         shoes = "boots";
-    //         break;
-    //     default:
-    //         shoes = "shoes";
-    //         break;
-    // }
-    // document.getElementById('shoesDiv').innerHTML = shoes;
-    // }
-        </script>
-       </html>
-        <div class='content'>
-            <!--Heading-->
-            <h1>Put the Footwear Weather</h1>
-            <h2>Enter today's weather:</h2> <input type='text' id ='weatherInput'>
-            <!--Submit button-->
-            <button type='button' onclick='chooseFootwear()'>Click here</button><br><br>
-            <!--Displays the result to the user-->
-            <div id='choice'></div>
-        </div>
-    </body>
+            // Output
+            let result;
+            if (equation == ans) {
+                result = "Correct result";
+            } else {
+                result = "Incorrect result!"
+            }
+            document.getElementById('resultDiv').innerHTML = result;
+        }
+    </script>
+</head>
+<div class="intro">
+    <h1>Make the calculation:<br></h1>
+    <p> Choose the following symbol : + , - , * , or / </p><br>
+</div>
+<div class="button">
+    <p>
+        <input type="number" id="num1" placeholder="Number" style="width: 200px;">
+        <input type="text" id="symbol" placeholder="Symbol" style="width: 200px;">
+        <input type="number" id="num2" placeholder="Number" style="width: 200px;">
+        =
+        <input type="number" id="answerInput" placeholder="Answer" style="width: 100px;"> <br> <br>
+        <button type="button" onclick="mathFunction()">Verify</button>
+    </p>
+</div>
+<div class="output">
+    <div id="resultDiv"></div>
+</div>
+</body>
+
 </html>
