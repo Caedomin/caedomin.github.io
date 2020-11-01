@@ -8,29 +8,28 @@
     <title>Can I Sleep In</title>
     <style>
         html {
-			background: #f1f1f1;
-		}
-		body {
-			background: #fff;
-			color: #444;
-			font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-			text-align: center;
-            margin: 2em auto;
-			padding: 1em 2em;
-			max-width: 700px;
-			box-shadow: 0 1px 3px rgba(0, 0, 0, 0.13);
-		}
+            background: #f1f1f1;
+        }
 
-        .intro 
-        {
+        body {
+            background: #fff;
+            color: #444;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            text-align: center;
+            margin: 2em auto;
+            padding: 1em 2em;
+            max-width: 700px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.23);
+        }
+
+        .intro {
             width: 500px;
             height: auto;
             border: 15px;
             margin: 20px auto;
         }
-        
-        .output
-        {
+
+        .output {
             background-color: white;
             width: 350px;
             height: auto;
@@ -44,8 +43,7 @@
         // Input:      program pulls: current date, month, day of month, and day of week.
         // Processing: program determines if you can sleep in if it's the weekend or 1/1, 7/4, 12/25, or get up during a weekday. User clicks button to process function.
         // Output:     program outputs string "Get up!" or "Sleep in."
-        function alarmFunction() 
-        {
+        function alarmFunction() {
             // Input
             var now = new Date();
             var month = now.getMonth();
@@ -53,17 +51,14 @@
             var dayOfWeek = now.getDay();
 
             // Processing (checks for holidays)
-            if ((month == 0 && dayOfMonth == 1) || (month == 6 && dayOfMonth == 4) || (month == 11 && dayOfMonth == 25))
-            {
+            if ((month == 0 && dayOfMonth == 1) || (month == 6 && dayOfMonth == 4) || (month == 11 && dayOfMonth ==
+                25)) {
                 document.getElementById('alarmOutput').innerHTML = "You can sleep in today!";
-            } 
-            // Processing (checks for weekdays)
-            else if (dayOfWeek >= 1 && dayOfWeek <= 5)
-            {
-                document.getElementById('alarmOutput').innerHTML = "Get up lazy bum! It's a weekday!";
             }
-            else 
-            {
+            // Processing (checks for weekdays)
+            else if (dayOfWeek >= 1 && dayOfWeek <= 5) {
+                document.getElementById('alarmOutput').innerHTML = "Get up lazy bum! It's a weekday!";
+            } else {
                 document.getElementById('alarmOutput').innerHTML = "You can sleep in today!";
             }
         }
@@ -76,15 +71,16 @@
     </header>
 
     <div class="intro">
-        <p>If it's a weekend or holiday, you don't have to get up AT ALL today! <br> Click the alarm button below to determine the fate of your morning:</p>
+        <p>If it's a weekend or holiday, you don't have to get up AT ALL today! <br> Click the alarm button below to
+            determine the fate of your morning:</p>
     </div>
-    
+
     <div class="button">
         <p>
             <button type="button" onclick="alarmFunction()">Alarm Button</button>
         </p>
     </div>
-    
+
     <div class="output">
         <div id="alarmOutput">What to do?</div>
     </div>
