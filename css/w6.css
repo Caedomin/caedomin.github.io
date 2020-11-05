@@ -84,7 +84,7 @@ body {
 /* Layout 3 */
 .content3 {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 0px;
 }
 
