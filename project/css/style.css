@@ -12,15 +12,20 @@
   FBEEC1, BC986A, DAAD86, 659DBD, 8D8741, white text*/    
 }
 
+/* 
 html {
+    background-color: var(--primary-color);
+} 
+*/
+
+body {
     background-color: var(--primary-color);
 }
 
-body {
-    max-width: 900px;
+header, footer, main {
+    max-width: 960px;
     margin: 0 auto;
-    background-color: white;
-    padding: 1rem;
+    align-items: center;
     font-size: 16px;
 }
 
@@ -73,23 +78,23 @@ header {
     background-color: var(--accent2-color);
 }
 
-img {
-    max-width: 100%;
-	box-shadow: 0 3px 5px rgba(0, 0, 0, 0.23);
-
+main {
+    background-color: white;
 }
 
 .hero {
-    max-width: 100%;
+    max-width: 960px;
     height: auto;
 }
 
-.mainContent {
+.grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
-    grid-gap: 0px;
-    padding: 30px;
+    grid-gap: 40px 80px;
+    width: 200px;
+    align-items: center;
+    justify-self: center;
+    padding: 50px;
 }
 
 .textBlock1 {
@@ -97,19 +102,19 @@ img {
 }
 
 .bodyImage1 {
-	width: 450px;
-    height: auto;
-    grid-column: 2/3;
-}
-
-.textBlock2 {
+	box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.23);
+    height: 350px;
     grid-column: 2/3;
 }
 
 .bodyImage2 {
-	width: auto;
-    height: 450px;
+	box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.23);
+    height: 350px;
     grid-column: 1/2;
+}
+
+.textBlock2 {
+    grid-column: 2/3;
 }
 
 .textBlock3 {
