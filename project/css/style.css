@@ -1,10 +1,11 @@
 :root {
     --primary-color: #396e94;
     --secondary-color: #4C4B63;
-    --accent1-color: #74270f;
-    --accent2-color: white;
-    --accent3-color: #4a4a4b;
-    --accent4-color: #c3c2f7;
+    --accent1-color: #c3c2f7;
+    --accent2-color: #142634;
+    --footer2-color: #949396;
+    --footer3-color: #4a4a4b;
+    --purple-light: #c3c2f7;
     --main-text-color: black; 
     --heading-font: "IM Fell French Canon SC", "Times New Roman", serif;
     --paragraph-font: Arial, Helvetica, sans-serif;
@@ -20,22 +21,26 @@ html {
 
 body {
     background-color: var(--primary-color);
+    font-family: var(--paragraph-font);
 }
 
 header, footer, main {
     max-width: 960px;
     margin: 0 auto;
     align-items: center;
-    font-size: 16px;
+    font-size: 18px;
 }
 
 h1,h2,h3,h4,h5,h6 {
     font-family: var(--heading-font);
     color:var(--secondary-color) ;
+    font-size: 28px;
 }
 
 h1 {
+    color: var(--purple-light);
     padding: 0px 20px;
+    font-size: 30px;
 }
 
 .navLinks {
@@ -67,11 +72,12 @@ h1 {
 
 .thumbnail {
 	width: 50px;
-	height: auto;
+    height: auto;
+    padding-left: 30px;
 }
 
 header {
-    padding: 10px 5px;
+    padding: 10px 0px;
     display: flex;
     text-align: center;
     color: var(--accent2-color);
@@ -102,13 +108,13 @@ main {
     grid-column: 1/2;
 }
 
-.bodyImage1 {
-	box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.23);
+.bodyImage1 img {
+	box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.452);
     height: 350px;
     grid-column: 2/3;
 }
 
-.bodyImage2 {
+.bodyImage2 img {
 	box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.23);
     height: 350px;
     grid-column: 1/2;
@@ -126,13 +132,19 @@ footer {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-gap: 5px;
-    background-color: var(--accent3-color);
-    color: var(--accent2-color)
+    background-color: var(--footer2-color);
+    color: white;
+}
+
+.top-footer-row {
+    background-color: var(--accent2-color);
+    height: 50px;
+    grid-column: 1 / 3;
 }
 
 .contact-title {
     font-size: 22px;
-    color: var(--accent4-color);
+    color: var(--secondary-color);
     grid-column: 1 / 2;
     justify-self: center;
     padding: 40px 0px 0px 0px;
@@ -140,7 +152,7 @@ footer {
 
 .open-times-title {
     font-size: 22px;
-    color: var(--accent4-color);
+    color: var(--secondary-color);
     grid-column: 2 / 3;
     justify-self: center;
     padding: 40px 0px 0px 0px;
@@ -167,16 +179,20 @@ td {
     padding: 20px;
 }
 
-
 .social {
 	box-shadow: none;
 
 }
 
+a {
+    color: #54a5df;
+}
+
 .copyright {
     grid-column: 1 / 3;
     justify-self: center;
-    padding: 0px 0px 35px 0px;
+    background-color: var(--footer3-color);
+    padding: 0px 95px;
 }
 
 /*////////////////////////////////////////////////////////////////
