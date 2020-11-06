@@ -13,11 +13,26 @@
   FBEEC1, BC986A, DAAD86, 659DBD, 8D8741, white text*/    
 }
 
-/* 
-html {
-    background-color: var(--primary-color);
-} 
-*/
+/* @media screen and (max-width: 550px) {
+    .grid {
+        display: block;
+    }
+    
+    header img {
+        width: 50px;
+    }
+    
+    .banner {
+        height: auto;
+        width: 700px;
+        grid-column: 1 / -1;
+        grid-row: 1;
+    }
+    
+    .action, .action button {
+        visibility: hidden;
+    }
+} */
 
 body {
     background-color: var(--primary-color);
@@ -172,7 +187,6 @@ td {
 }
 
 .open-times-details {
-    /* width: 300px; */
     height: 180px;
     grid-column: 2 / 3;
     justify-self: center;
