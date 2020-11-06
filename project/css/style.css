@@ -4,7 +4,7 @@
     --accent1-color: #74270f;
     --accent2-color: white;
     --accent3-color: #4a4a4b;
-    --accent4-color: #47BDDF;
+    --accent4-color: #c3c2f7;
     --main-text-color: black; 
     --heading-font: "IM Fell French Canon SC", "Times New Roman", serif;
     --paragraph-font: Arial, Helvetica, sans-serif;
@@ -90,10 +90,11 @@ main {
 .grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-gap: 40px 80px;
-    width: 200px;
+    grid-gap: 40px 60px;
+    height: auto;
+    width: 860px;
     align-items: center;
-    justify-self: center;
+    /* justify-content: space-evenly; */
     padding: 50px;
 }
 
@@ -145,19 +146,24 @@ footer {
     padding: 40px 0px 0px 0px;
 }
 
+td {
+    height: 40px;
+    vertical-align: center;
+    padding: 5px;
+}
+
 .contact-details {
-    width: 300px;
     height: 180px;
     grid-column: 1 / 2;
-    justify-self: start;
-    padding: 20px 20px 20px 80px;
+    justify-self: center;
+    padding: 20px;
 }
 
 .open-times-details {
-    width: 300px;
+    /* width: 300px; */
     height: 180px;
     grid-column: 2 / 3;
-    justify-self: end;
+    justify-self: center;
     padding: 20px;
 }
 
