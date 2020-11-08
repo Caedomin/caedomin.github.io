@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+
+<html lang='en-us'>
+
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>Table of Powers</title>
+    <style>
+        html 
+        {
+			background: #f1f1f1;
+		}
+        body 
+        {
+			background: #fff;
+			color: #444;
+			font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+			text-align: center;
+            margin: 2em auto;
+			padding: 1em 2em;
+			max-width: 700px;
+			box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.13);
+		}
+        h2
+        {
+            font-size: large;
+        }
+        .intro 
+        {
+            width: 550px;
+            height: auto;
+            border: 15px;
+            margin: 20px auto;
+        }
+        #num1, #power 
+        {
+            max-width: 65px;
+            margin-left: 20px;
+        }
+        .step
+        {
+            font-weight: 900;
+        }
+        .button 
+        {
+            justify-content: center;
+        }
+        .output
+        {
+            background-color: white;
+            width: 30em;
+            padding: 10px;
+            border: 3px solid black;
+            margin: 20px auto;
+        }
+    </style>
+    <script>
+        // DEFINING TABLE
+        // Input:      User inputs: 1) the number they want to use to practice mathmatical powers, 
+        //                          2) the highest power they wish to display.
+        // Processing: Use a loop to power the base number, then write each line until the desired power.
+        // Output:     Display a list of powers from 0 to user's desired max number.
+        function displayPowers() 
+        {
+            // Input
+            let n1 = parseFloat(document.getElementById('num1').value);
+            let pow = parseFloat(document.getElementById('power').value);
+            let table = "";
+            let result = 0;
+            
+            // Processing
+            for(x=0; x<=pow; x++) 
+            {
+                result = Math.pow(n1,x);
+                table += n1+"^"+x+" = "+result+"<br>";
+            }
+
+            //Output
+            document.getElementById('tableDiv').innerHTML = table;
+        }
+        
+        function clearList()
+        {
+            document.getElementById('tableDiv').innerHTML = "List of Powers";
+        }
+    </script>
+</head>
+
+<body>
+    <header class='pageTitle'>
+        <h1>POWER TABLE</h1>
+    </header>
+
+    <section class='intro'>
+        <br><h2>Practice your mathmatical powers!</h2><br>
+        <div>
+            <p class='step'>STEP 1:</p>
+            What number do you want to use?
+            <input type='number' id='num1' placeholder='Number'><br><br>
+            
+            <p class='step'>STEP 2:</p>
+            What is the highest power you wish to list below?
+            <input type='number' id='power' placeholder='Power'><br><br>
+            
+            <p class='step'>STEP 3:</p>
+            <p>Click the <b>List Powers</b> button to view your results!</p><br>
+        </div>
+    </section>
+    
+    <div class='button'>
+        <button type='button' onclick='displayPowers()'>List Powers</button>
+    </div>
+    
+    <div class='output'>
+        <div id='tableDiv'>List of Powers</div>
+    </div>
+    
+    <div class='button'>
+        <button type='button' onclick='clearList()'>Clear List</button>
+    </div>
+</body>
+
+</html>

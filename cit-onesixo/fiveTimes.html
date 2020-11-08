@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+
+<html lang='en-us'>
+
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>Custom Times Table</title>
+    <style>
+        html 
+        {
+			background: #f1f1f1;
+		}
+        body 
+        {
+			background: #fff;
+			color: #444;
+			font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+			text-align: center;
+            margin: 2em auto;
+			padding: 1em 2em;
+			max-width: 700px;
+			box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.13);
+		}
+        h2
+        {
+            font-size: large;
+        }
+        .intro 
+        {
+            width: 550px;
+            height: auto;
+            border: 15px;
+            margin: 20px auto;
+        }
+        .button 
+        {
+            justify-content: center;
+        }
+        .output
+        {
+            background-color: white;
+            width: 150px;
+            height: auto;
+            padding: 10px;
+            border: 3px solid black;
+            margin: 20px auto;
+        }
+    </style>
+    <script>
+        // DEFINING TABLE
+        // Input:      User inputs: 1) the number they want to use to practice multiplication, 
+        //                          2) the highest number they wish to multiply.
+        // Processing: Use a loop to multiply, then write each line until the desired end of the table.
+        // Output:     Display a multiplication table from 1 to user's desired max number.
+        function displayMultiplication() 
+        {
+            // Input
+            let n1 = parseFloat(document.getElementById('num1').value);
+            let n2 = parseFloat(document.getElementById('num2').value);
+            let table = "";
+            let result = 0;
+            
+            // Processing
+            for(x=1; x<=n2; x++) 
+            {
+                result = n1*x;
+                table += n1+" x "+x+" = "+result+"<br>";
+            }
+
+            //Output
+            document.getElementById('tableDiv').innerHTML = table;
+        }
+        
+        function clearTable()
+        {
+            document.getElementById('tableDiv').innerHTML = "Times Table";
+        }
+    </script>
+</head>
+
+<body>
+    <header class='pageTitle'>
+        <h1>CUSTOM TIMES TABLES</h1>
+    </header>
+
+    <div class='intro'>
+        <h2>Let's create our own times table!</h2>
+        <p>
+            <b>STEP 1:</b> Type the number you wish to practice your multiplication.<br>
+            <b>STEP 2:</b> Enter another number indicating how high you wish to multiply.<br>
+            <b>STEP 3:</b> Click the Generate Table button to create your custom times table.
+        </p>
+    </div>
+    
+    <div class='button'>
+        <p>
+            <input type='number' id='num1' placeholder='Times Table Number'><br>
+            <input type='number' id='num2' placeholder='Max Table Number'><br>
+        </p>
+        <button type='button' onclick='displayMultiplication()'>Generate Table</button>
+        <button type='button' onclick='clearTable()'>Clear Table</button>
+    </div>
+    
+    <div class='output'>
+        <div id='tableDiv'>Times Table</div>
+    </div>
+</body>
+
+</html>
