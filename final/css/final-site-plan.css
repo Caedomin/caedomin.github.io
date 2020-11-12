@@ -1,0 +1,182 @@
+@import url("https://fonts.googleapis.com/css?family=IM+Fell+French+Canon+SC|Lato");
+
+:root {
+    --primary-color: #E7ECEF;
+    --secondary-color: #D8A47F;
+    --background-color: #272932;
+    --accent1-color: #E7DECD;
+    --accent2-color: #0F7173;
+    --accent3-color: #F05D5E;
+    --primary: #37474f;
+    --p-light: #62727b;
+    --p-dark: #020202;
+    --secondary: #f57f17;
+    --s-light: #ffb04c;
+    --s-dark: #bc5100;
+    --accent: #26A69A;
+    --a-light: #64D8CB;
+    --a-dark: #00766C;
+    --light: #E1E2E1;
+    --l-light: #F5F5F6;
+    --l-dark: #B6B6B6;
+    --heading-font: "Veranda";
+    --paragraph-font: Lato, Helvetica, sans-serif;
+}
+
+html {
+    background-color: var(--primary);
+}
+
+body {
+    max-width: 900px;
+    margin: 0 auto;
+    background-color: var(--primary);
+    padding: 1em;
+}
+
+img {
+    max-height: 150px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--heading-font);
+    color: var(--s-light);
+}
+
+header, footer {
+    padding: 1em;
+    text-align: center;
+    color: white;
+    background-color: var(--p-dark);
+}
+
+header>h1 {
+    color: var(--s-light);
+}
+
+p {
+    font-family: var(--paragraph-font);
+    color: var(--primary-color);
+    padding: 1em;
+}
+
+a:link {
+    color: var(--a-light);
+}
+a:visited {
+    color: var(--a-dark);
+}
+a:hover {
+    color: var(--accent);
+}
+a:active {
+    color: var(--s-light);
+}
+
+table {
+    width: 100%;
+    min-width: 400px;
+    margin: auto;
+    text-align: center;
+}
+
+th {
+    background-color: #999;
+}
+
+td {
+    width: 12.5%;
+    height: 3em;
+}
+
+.primary {
+    background-color: var(--primary);
+    color: white;
+}
+.p-light {
+    background-color: var(--p-light);
+    color: white;
+}
+.p-dark {
+    background-color: var(--p-dark);
+    color: white;
+}
+.secondary {
+    background-color: var(--secondary);
+    color: black;
+}
+.s-light {
+    background-color: var(--s-light);
+    color: black;
+}
+.s-dark {
+    background-color: var(--s-dark);
+    color: white;
+}
+.accent {
+    background-color: var(--accent);
+    color: black;
+}
+.a-light {
+    background-color: var(--a-light);
+    color: black;
+}
+.a-dark {
+    background-color: var(--a-dark);
+    color: white;
+}
+.light {
+    background-color: var(--light);
+    color: black;
+}
+.l-light {
+    background-color: var(--l-light);
+    color: black;
+}
+.l-dark {
+    background-color: var(--l-dark);
+    color: black;
+}
+
+.colored {
+    background-color: var(--a-dark);
+    color: white;
+    box-shadow: 10px 10px 10px var(--l-dark);
+}
+
+nav {
+    background-color: var(--p-light);
+    line-height: 3em;
+    text-align: center;
+    font-size: 1.2em;
+}
+
+nav>ul {
+    list-style-type: none;
+    display: flex;
+}
+
+nav a {
+    padding: 1em;
+    min-width: 70px;
+}
+
+nav a:link,
+nav a:visited {
+    color: var(--a-light);
+    font-weight: 700;
+}
+
+nav a:hover {
+    color: var(--primary);
+    background-color: var(--a-light);
+}
+
+.wireframe {
+    max-height: 800px;
+}

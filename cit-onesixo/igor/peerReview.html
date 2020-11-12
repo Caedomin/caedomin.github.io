@@ -1,42 +1,1223 @@
-<!DOCTYPE HTML>
-<html lang="en-us">
-<head>
-<meta charset="utf-8">
-<title>Divisor Test</title>
-<script>
-/* Input:       user inputs three integers in boxes labelled "start", "end", and "divisor".
- * Processing:  determines if both user entered integers are greater than 5, OR if their sum is greater than 20.
- * Output:      outputs "true" or "false" depending on processing results.
- */
- function divisorTest() 
-        {
-            // Input
-            let start = parseFloat(document.getElementById('start').value);
-            let end = parseFloat(document.getElementById('end').value);
-            let divisor = parseFloat(document.getElementById('divisor').value);
-            let result = "";
-            
-            // Processing
-            for (i=start; i<=end; i+=divisor)
-            {
-                while ((i%divisor===0)==false)
-                {
-                    i++;
-                }
-                result += i + " ";
-            }
+<!DOCTYPE html><!-- This site was created in Webflow. http://www.webflow.com -->
+<!-- Last Published: Tue Feb 19 2019 08:37:45 GMT+0000 (UTC) -->
+<html data-wf-domain="intensive.webflow.io" data-wf-page="5860e07a43d9507f364021d2"
+    data-wf-site="57a6fccf3e4192b946e3b4e9">
 
-            //Output
-            document.getElementById('output').innerHTML = result;
+<head>
+    <meta charset="utf-8" />
+    <title>Научитесь создавать адаптивные сайты за 3 недели на webflow</title>
+    <meta content="Никаких конструкторов. Только чистый код. И никаких программистов. Курс создан для веб-дизайнеров."
+        name="description" />
+    <meta content="Научитесь создавать адаптивные сайты за 3 недели на webflow" property="og:title" />
+    <meta content="Никаких конструкторов. Только чистый код. И никаких программистов. Курс создан для веб-дизайнеров."
+        property="og:description" />
+    <meta content="https://daks2k3a4ib2z.cloudfront.net/57a6fccf3e4192b946e3b4e9/57e0071fb08345807bdc318a_Opengraph.png"
+        property="og:image" />
+    <meta content="summary" name="twitter:card" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <meta content="g91ipZuDvGt4xEas0bfi4FVRZy34xZqllgKDB2ImCQ8" name="google-site-verification" />
+    <meta content="Webflow" name="generator" />
+    <link href="https://uploads-ssl.webflow.com/57a6fccf3e4192b946e3b4e9/css/intensive.webflow.9296759b0.css"
+        rel="stylesheet" type="text/css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.4.7/webfont.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        WebFont.load({
+            google: {
+                families: ["Open Sans:300,300italic,400,400italic,600,600italic,700,700italic,800,800italic",
+                    "Montserrat:100,100italic,200,200italic,300,300italic,400,400italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic"
+                ]
+            }
+        });
+    </script>
+    <!--[if lt IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js" type="text/javascript"></script><![endif]-->
+    <script type="text/javascript">
+        ! function (o, c) {
+            var n = c.documentElement,
+                t = " w-mod-";
+            n.className += t + "js", ("ontouchstart" in o || o.DocumentTouch && c instanceof DocumentTouch) && (n
+                .className += t + "touch")
+        }(window, document);
+    </script>
+    <link href="https://daks2k3a4ib2z.cloudfront.net/img/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <link href="https://daks2k3a4ib2z.cloudfront.net/img/webclip.png" rel="apple-touch-icon" />
+    <script type="text/javascript">
+        (window.Image ? (new Image()) : document.createElement('img')).src =
+        'https://vk.com/rtrg?p=VK-RTRG-57309-5PhZ4';
+    </script>
+
+    <!-- Yandex.Metrika counter -->
+    <script type="text/javascript">
+        (function (m, e, t, r, i, k, a) {
+            m[i] = m[i] || function () {
+                (m[i].a = m[i].a || []).push(arguments)
+            };
+            m[i].l = 1 * new Date();
+            k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode
+                .insertBefore(k, a)
+        })
+        (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+        ym(39201330, "init", {
+            id: 39201330,
+            clickmap: true,
+            trackLinks: true,
+            accurateTrackBounce: true,
+            webvisor: true
+        });
+    </script>
+    <noscript>
+        <div><img src="https://mc.yandex.ru/watch/39201330" style="position:absolute; left:-9999px;" alt="" /></div>
+    </noscript>
+    <!-- /Yandex.Metrika counter -->
+
+    <script type="text/javascript">
+        (window.Image ? (new Image()) : document.createElement('img')).src = location.protocol +
+            '//vk.com/rtrg?r=OIatO1K6G0k7kwkI/CwcGKkbEYu1GW4nL1WAOGO4W*JsZkVp4F91ougaju/RsAwEGw9q1eLeMwYcx1LLI3VjsbHs48SjBT/h5oorTM1oC4YH5N1cBfU*/6iXCKFoO0lYSOKYaNY6FlVQmTzUkm8llgN0qu0AY/AJD7BDM3fZx88-&pixel_id=1000057309';
+    </script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/remodal/1.1.1/remodal.min.css" rel="stylesheet" type="text/css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/remodal/1.1.1/remodal-default-theme.min.css" rel="stylesheet"
+        type="text/css">
+    <script type="text/javascript" src="//vk.com/js/api/openapi.js?132"></script>
+
+    <style>
+        .wcm_button_tooltip.shown {
+            font-size: 12px;
         }
-</script>
+    </style>
+    <style>
+        .remodal-overlay {
+            background: rgba(0, 0, 0, 0.8);
+        }
+
+        .remodal {
+            background: rgba(0, 0, 0, 0);
+            width: auto;
+            padding: 0;
+            max-width: none;
+        }
+
+        @media (max-width: 992px) {
+            .remodal {
+                width: 100% !important;
+            }
+        }
+    </style>
 </head>
 
-<body>
-    Start: <input type="text" id="start" size="5"><br>
-    End: <input type="text" id="end" size="5"><br>
-    Divisor: <input type="text" id="divisor" size="5"><br>
-    <button type="button" onclick='divisorTest()'>Click</button>
-    <div id="output"></div>
+<body><a id="badge" target="_blank" href="http://webflow.pro" class="link-block-2 w-inline-block"><img
+            src="https://uploads-ssl.webflow.com/57a6fccf3e4192b946e3b4e9/5b40ac21169a3306df9c4f0c_badge.png"
+            width="167" alt="" /></a>
+    <div class="top-section">
+        <div class="isometric-wrapper"><img
+                src="https://uploads-ssl.webflow.com/57a6fccf3e4192b946e3b4e9/583d6321de300e9022596de7_first.png"
+                data-ix="top-pages" alt="" class="top-iso" /><img
+                src="https://uploads-ssl.webflow.com/57a6fccf3e4192b946e3b4e9/583d712fd95b6e812279dfe1_Untitled-1.png"
+                data-ix="top-pages-2"
+                srcset="https://uploads-ssl.webflow.com/57a6fccf3e4192b946e3b4e9/583d712fd95b6e812279dfe1_Untitled-1-p-500x312.png 500w, https://uploads-ssl.webflow.com/57a6fccf3e4192b946e3b4e9/583d712fd95b6e812279dfe1_Untitled-1-p-800x499.png 800w, https://uploads-ssl.webflow.com/57a6fccf3e4192b946e3b4e9/583d712fd95b6e812279dfe1_Untitled-1.png 1662w"
+                sizes="(max-width: 479px) 100vw, (max-width: 767px) 86vw, 60vw" alt="" class="avto" /><img
+                src="https://uploads-ssl.webflow.com/57a6fccf3e4192b946e3b4e9/583d712fc76cd8ef7589b410_Untitled-3.png"
+                data-ix="top-pages-3"
+                srcset="https://uploads-ssl.webflow.com/57a6fccf3e4192b946e3b4e9/583d712fc76cd8ef7589b410_Untitled-3-p-500x327.png 500w, https://uploads-ssl.webflow.com/57a6fccf3e4192b946e3b4e9/583d712fc76cd8ef7589b410_Untitled-3.png 1261w"
+                sizes="(max-width: 479px) 100vw, (max-width: 767px) 61vw, 43vw" alt="" class="bali" /></div>
+        <div class="dark"></div>
+        <div data-autoplay="true" data-loop="true" data-wf-ignore="true"
+            data-poster-url="https://daks2k3a4ib2z.cloudfront.net/57a6fccf3e4192b946e3b4e9/57a72a19e199bb9c46962863_курс_1-poster-00001.jpg"
+            data-video-urls="https://daks2k3a4ib2z.cloudfront.net/57a6fccf3e4192b946e3b4e9/57a72a19e199bb9c46962863_курс_1-transcode.webm,https://daks2k3a4ib2z.cloudfront.net/57a6fccf3e4192b946e3b4e9/57a72a19e199bb9c46962863_курс_1-transcode.mp4"
+            class="background-video w-background-video w-background-video-atom"><video autoplay="" loop=""
+                style="background-image:url(&quot;https://daks2k3a4ib2z.cloudfront.net/57a6fccf3e4192b946e3b4e9/57a72a19e199bb9c46962863_курс_1-poster-00001.jpg&quot;)"
+                muted="" playsinline="" data-wf-ignore="true">
+                <source
+                    src="https://daks2k3a4ib2z.cloudfront.net/57a6fccf3e4192b946e3b4e9/57a72a19e199bb9c46962863_курс_1-transcode.webm"
+                    data-wf-ignore="true" />
+                <source
+                    src="https://daks2k3a4ib2z.cloudfront.net/57a6fccf3e4192b946e3b4e9/57a72a19e199bb9c46962863_курс_1-transcode.mp4"
+                    data-wf-ignore="true" /></video></div>
+        <div class="menu-wrapper"><a href="#possibilities" class="top-link">ВОЗМОЖНОСТИ WEBFLOW</a><a href="#program"
+                class="top-link">ПРОГРАММА</a><a href="#examples" class="top-link">ПРИМЕРЫ САЙТОВ</a><a href="#price"
+                class="top-link">СТОИМОСТЬ</a><a href="#questions" class="top-link">ВОПРОСЫ И ОТВЕТЫ</a></div>
+        <div class="h1-box">
+            <div class="h1-wrapper">
+                <h1 class="duke big-top">НАУЧИТЕСЬ СОЗДАВАТЬ САЙТЫ <br />подобные этому, БЕЗ ЗНАНИЯ КОДА</h1>
+            </div>
+            <p data-ix="load-appear-3" class="_20">Обучающий курс по визуальному редактору кода webflow, после
+                прохождения которого, вы сможете удалённо зарабатывать до 100 000 рублей в месяц, создавая адаптивные
+                сайты с впечатляющей анимацией</p><a data-ix="load-appear-button" href="#more" id="topbutton"
+                class="button main w-button">подробнее о курсе</a>
+        </div><a href="#second" class="arrow-box w-inline-block"><img
+                src="https://uploads-ssl.webflow.com/57a6fccf3e4192b946e3b4e9/57a732013e4192b946e3d245_Asset%201.svg"
+                width="40" data-ix="arrow" alt="" /></a>
+    </div>
+    <div id="second" class="section sec">
+        <div class="program-row">
+            <div class="prog-col">
+                <div id="more" class="h2-wrapper sec">
+                    <h2 class="h2">Чему вы гарантировано научитесь после курса</h2>
+                </div>
+                <div class="col-box w-clearfix">
+                    <div class="h3-wrapper">
+                        <h3 class="h3">Станьте веб студией в одном лице</h3>
+                    </div>
+                    <p class="_14 _2">Webflow позволяет быстро и качественно создавать и запускать сайты под ключ</p>
+                </div>
+                <div class="col-box w-clearfix">
+                    <div class="h3-wrapper">
+                        <h3 class="h3">Запускать проекты без верстальщика</h3>
+                    </div>
+                    <p class="_14 _2">С нуля создавать современные сайты, без привлечения верстальщиков и программистов
+                    </p>
+                </div><a data-remodal-target="pay" href="#" class="button pay w-button">записаться на курс</a>
+                <div class="text-block-11">Все уроки доступны сразу. После оплаты ваш куратор отправит ссылку на курс и
+                    ответит на вопросы</div>
+            </div>
+            <div class="prog-col">
+                <div class="col-box _2 w-clearfix">
+                    <div class="h3-wrapper">
+                        <h3 class="h3">Создавать сложную анимацию</h3>
+                    </div>
+                    <p class="_14 _2">В webflow есть мощные инструменты для создания CSS-анимаций в том числе трёхмерных
+                    </p>
+                </div>
+                <div class="col-box w-clearfix">
+                    <div class="h3-wrapper">
+                        <h3 class="h3">Создавать интерактивные прототипы</h3>
+                    </div>
+                    <p class="_14 _2">Проекты намного легче согласовать, если заказчик может «пощупать» сайт или увидеть
+                        анимацию в своём браузере.</p>
+                </div>
+            </div>
+            <div class="prog-col">
+                <div class="col-box _2">
+                    <div class="h3-wrapper">
+                        <h3 class="h3">Делать адаптивные и отзывчивые сайты</h3>
+                    </div>
+                    <p class="_14 _2">Сайты на webflow быстро загружаются и отлично выглядят на любых устройствах,
+                        благодаря чистому коду</p>
+                </div>
+                <div class="col-box w-clearfix">
+                    <div class="h3-wrapper">
+                        <h3 class="h3">Разбираться в коде верстки</h3>
+                    </div>
+                    <p class="_14 _2">Вы сможете общаться с разработчиками на одном языке и находить лучшие решения.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="section-6 _2">
+        <div class="div-block-45">
+            <div class="div-block-46">
+                <div class="text-block-19">Бесплатный урок</div>
+                <h2 class="heading-2">Создайте свой сайт‑портфолио <br />за 20 минут</h2>
+                <p>Подпишитесь на рассылку в вк и вам сразу придёт ссылка на видеоурок</p><a target="_blank"
+                    href="https://vk.com/app5898182_-129831944#u=129556&amp;s=63305"
+                    class="herobutton w-button"><strong>Получить урок</strong></a>
+            </div><img
+                src="https://uploads-ssl.webflow.com/57a6fccf3e4192b946e3b4e9/5b6eb426e5d6e255eaea27fe_portfolio.png"
+                width="1000"
+                srcset="https://uploads-ssl.webflow.com/57a6fccf3e4192b946e3b4e9/5b6eb426e5d6e255eaea27fe_portfolio-p-500.png 500w, https://uploads-ssl.webflow.com/57a6fccf3e4192b946e3b4e9/5b6eb426e5d6e255eaea27fe_portfolio.png 2000w"
+                sizes="(max-width: 479px) 100vw, 90vw" alt="" class="image-4" />
+        </div>
+    </div>
+    <div class="circle-section">
+        <div class="_1200">
+            <div class="problems-title">
+                <h2 class="h2">Типичные проблемы при работе с верстальщиками</h2>
+            </div>
+            <div data-ix="circle-hover" class="circle _5"></div>
+            <div class="circle _4"></div>
+            <div data-ix="circle-hover" class="circle _7"></div>
+            <div data-ix="circle-hover" class="circle _6"></div>
+            <div data-ix="circle-hover" class="circle">
+                <div class="inwrapper">
+                    <div class="title">Трудно <br />объяснять<br />правки</div>
+                    <div class="circle-text w-clearfix">
+                        <p class="_14">Приходится постоянно дёргать верстальщика и пытаться донести необходимые
+                            изменения. Лучше потратить это время на доработку дизайна в процессе вёрстки.</p>
+                    </div>
+                </div>
+            </div>
+            <div data-ix="circle-hover" class="circle _3">
+                <div class="inwrapper">
+                    <div class="title">Верстка<br />отличается<br />от макета</div>
+                    <div class="circle-text w-clearfix">
+                        <p class="_14">К сожалению верстальщик не так любит дизайн как вы. В итоге сайт не выглядит так
+                            же привлекательно, как на макете и часто бывает стыдно показывать итоговый результат.</p>
+                    </div>
+                </div>
+            </div>
+            <div data-ix="circle-hover" class="circle _2">
+                <div class="inwrapper _2">
+                    <div class="title">Затягиваются<br />сроки</div>
+                    <div class="circle-text w-clearfix">
+                        <p class="_14">Частенько верстальщик называет сроки с запасом, но всё равно не успевает.
+                            Например лендинг спокойно можно свертать за день.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="skew-block"></div>
+    </div>
+    <div class="circle-section mobile">
+        <div class="_1200">
+            <div class="problems-title">
+                <h2 class="h2">Типичные проблемы при работе с верстальщиками</h2>
+            </div>
+            <div class="circle">
+                <div class="title">Трудно объяснять правки</div>
+                <div class="circle-text w-clearfix">
+                    <p class="_14 _2">Приходится постоянно дёргать верстальщика и пытаться донести необходимые
+                        изменения. Лучше потратить это время на доработку дизайна в процессе вёрстки.</p>
+                </div>
+            </div>
+            <div class="circle _3">
+                <div class="title">Верстка отличается от макета</div>
+                <div class="circle-text w-clearfix">
+                    <p class="_14 _2">К сожалению верстальщик не так любит дизайн как вы. В итоге сайт не выглядит так
+                        же привлекательно, как на макете и часто бывает стыдно показывать итоговый результат.</p>
+                </div>
+            </div>
+            <div class="circle _2">
+                <div class="title">Затягиваются сроки</div>
+                <div class="circle-text w-clearfix">
+                    <p class="_14 _2">Частенько верстальщик называет сроки с запасом, но всё равно не успевает. Например
+                        лендинг спокойно можно свертать за день.</p>
+                </div>
+            </div>
+        </div>
+        <div class="skew-block"></div>
+    </div>
+    <div id="second" class="section">
+        <div class="h2-wrapper _700">
+            <h2 class="h2">В интернете активно обсуждают вопрос, должен ли дизайнер уметь верстать?</h2>
+        </div>
+        <div class="_20-text-wrapper">
+            <p class="_20">Многие думают что это очень сложно и придётся долго учиться.
+                Отчасти они правы =) Но Webflow позволяет, не погружаясь в дебри изучения кода, комфортно и быстро
+                освоить процесс вёртстки, что открывает массу возможностей для веб-дизайнера.</p>
+        </div>
+    </div>
+   
+   
+   
+    <!-- THIS PART RIGHT HERE ---- PAY ATTENTION TO -->
+    <!-- THIS PART RIGHT HERE ---- PAY ATTENTION TO -->
+    <!-- THIS PART RIGHT HERE ---- PAY ATTENTION TO -->
+    <!-- THIS PART RIGHT HERE ---- PAY ATTENTION TO -->
+    <!-- THIS PART RIGHT HERE ---- PAY ATTENTION TO -->
+   
+   
+   
+    <div id="possibilities" class="section front">
+        <div class="front-wrapper">
+            <h2 class="caps">ЧЕМ WEBFLOW ОТЛИЧАЕТСЯ ОТ КОНТСРУКТОРОВ САЙТОВ</h2>
+            <h2 class="w">W</h2>
+        </div>
+        <div class="row-front">
+            <div data-ix="col-front" class="col"><img
+                    src="https://uploads-ssl.webflow.com/57a6fccf3e4192b946e3b4e9/57ad4a241fd32dc352abf66a_imac.png"
+                    width="300" alt="" class="imac" />
+                <div class="title-in-row">
+                    <div class="title">Чистый код</div>
+                </div>
+                <div data-ix="description-text-front" class="description-text-front w-clearfix">
+                    <p class="_14">Вёрстка на webflow не отличается от обычной вёрстки, так что сайты работают быстро и
+                        если нужно прикрутить сайт к системе управления или добавить сложный функционал, можно смело
+                        отдавать специалистам</p>
+                </div>
+            </div>
+            <div data-ix="col-front" class="col _2"><img
+                    src="https://uploads-ssl.webflow.com/57a6fccf3e4192b946e3b4e9/57ad51591fd32dc352abfbe1_responsive.png"
+                    width="300" alt="" class="imac ipad" />
+                <div class="title-in-row">
+                    <div class="title">Резиновая
+                        вёрстка</div>
+                </div>
+                <div data-ix="description-text-front" class="description-text-front w-clearfix">
+                    <p class="_14">Блочная вёрстка позволяет подстраиваться под любые экраны, это называется отзывчивый
+                        дизайн. Так же правильная разметка кода хорошо влияет на поисковую оптимизацию.</p>
+                </div>
+            </div>
+            <div data-ix="col-front" class="col _3"><img
+                    src="https://uploads-ssl.webflow.com/57a6fccf3e4192b946e3b4e9/57ad530a54eef5b558ca0df8_3d.png"
+                    width="300"
+                    srcset="https://uploads-ssl.webflow.com/57a6fccf3e4192b946e3b4e9/57ad530a54eef5b558ca0df8_3d-p-500x314.png 500w, https://uploads-ssl.webflow.com/57a6fccf3e4192b946e3b4e9/57ad530a54eef5b558ca0df8_3d.png 1000w"
+                    sizes="(max-width: 991px) 100vw, 450px" alt="" class="imac _3d" />
+                <div class="title-in-row">
+                    <div class="title">3d-анимации</div>
+                </div>
+                <div data-ix="description-text-front" class="description-text-front w-clearfix">
+                    <p class="_14">В webflow очень серьёзно подошли к вопросу анимации и интерактивности. С помощью
+                        встроенных инструментов можно создавать впечатляющие анимации. Полная свобода творчества.</p>
+                </div>
+            </div>
+            <div data-ix="col-front" class="col _4"><img
+                    src="https://uploads-ssl.webflow.com/57a6fccf3e4192b946e3b4e9/57ad53df1fd32dc352abff07_paperplane.png"
+                    width="300" alt="" class="imac" />
+                <div class="title-in-row">
+                    <div class="title">Экспорт кода</div>
+                </div>
+                <div data-ix="description-text-front" class="description-text-front w-clearfix">
+                    <p class="_14">Есть возможность выгрузить код для дальнейшей доработки или размещения на своём
+                        сервере. Все формы и интерактивные элементы продолжают работать.</p>
+                </div>
+            </div>
+        </div>
+        <div class="row-front mobile">
+            <div class="col"><img
+                    src="https://uploads-ssl.webflow.com/57a6fccf3e4192b946e3b4e9/57ad4a241fd32dc352abf66a_imac.png"
+                    width="300" alt="" class="imac" />
+                <div class="title-in-row">
+                    <div class="title">Чистый код</div>
+                </div>
+                <div class="description-text-front w-clearfix">
+                    <p class="_14 _2">Вёрстка на webflow не отличается от обычной вёрстки, так что сайты работают быстро
+                        и если нужно прикрутить сайт к админке или добавить сложный функционал, можно смело отдавать
+                        специалистам</p>
+                </div>
+            </div>
+            <div class="col _2"><img
+                    src="https://uploads-ssl.webflow.com/57a6fccf3e4192b946e3b4e9/57ad51591fd32dc352abfbe1_responsive.png"
+                    width="300" alt="" class="imac ipad" />
+                <div class="title-in-row">
+                    <div class="title">Резиновая вёрстка</div>
+                </div>
+                <div class="description-text-front w-clearfix">
+                    <p class="_14 _2">Блочная вёрстка позволяет подстраиваться под любые экраны, это называется
+                        отзывчивый дизайн. Так же правильная разметка кода хорошо влияет на поисковую оптимизацию.</p>
+                </div>
+            </div>
+            <div class="col _3"><img
+                    src="https://uploads-ssl.webflow.com/57a6fccf3e4192b946e3b4e9/57ad530a54eef5b558ca0df8_3d.png"
+                    width="300"
+                    srcset="https://uploads-ssl.webflow.com/57a6fccf3e4192b946e3b4e9/57ad530a54eef5b558ca0df8_3d-p-500x314.png 500w, https://uploads-ssl.webflow.com/57a6fccf3e4192b946e3b4e9/57ad530a54eef5b558ca0df8_3d.png 1000w"
+                    sizes="(max-width: 991px) 450px, 100vw" alt="" class="imac _3d" />
+                <div class="title-in-row">
+                    <div class="title">3d-анимации</div>
+                </div>
+                <div class="description-text-front w-clearfix">
+                    <p class="_14 _2">В webflow очень серьёзно подошли к вопросу анимации и интерактивности. С помощью
+                        встроенных инструментов можно создавать впечатляющие анимации. Полная свобода творчества.</p>
+                </div>
+            </div>
+            <div class="col _4"><img
+                    src="https://uploads-ssl.webflow.com/57a6fccf3e4192b946e3b4e9/57ad53df1fd32dc352abff07_paperplane.png"
+                    width="300" alt="" class="imac pp" />
+                <div class="title-in-row">
+                    <div class="title">Экспорт кода</div>
+                </div>
+                <div class="description-text-front w-clearfix">
+                    <p class="_14 _2">Есть возможность выгрузить код для дальнейшей доработки или размещения на своём
+                        сервере. Все формы и интерактивные элементы продолжают работать.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+   
+    <!-- THIS PART RIGHT HERE ---- PAY ATTENTION TO -->
+    <!-- THIS PART RIGHT HERE ---- PAY ATTENTION TO -->
+    <!-- THIS PART RIGHT HERE ---- PAY ATTENTION TO -->
+    <!-- THIS PART RIGHT HERE ---- PAY ATTENTION TO -->
+    <!-- THIS PART RIGHT HERE ---- PAY ATTENTION TO -->
+   
+   
+   
+    <div id="second" class="section">
+        <div class="icons-wrapper">
+            <div class="h2-wrapper _800">
+                <h2 class="h2">Уже через 3 недели вы сможете самостоятельно запускать идеально сверстанные сайты быстрее
+                    и больше зарабатывать на своих проектах</h2>
+            </div>
+            <div class="row centered w-row">
+                <div class="column w-col w-col-4">
+                    <div class="col-box w-clearfix">
+                        <div class="icon-box"><img
+                                src="https://uploads-ssl.webflow.com/57a6fccf3e4192b946e3b4e9/57b001ac1fd32dc352b01dd5_glasses.png"
+                                width="65" alt="" /></div>
+                        <p class="_14 _2">Огромный плюс при устройстве в веб-студию</p>
+                    </div>
+                    <div class="divider"></div>
+                </div>
+                <div class="column w-col w-col-4">
+                    <div class="col-box w-clearfix">
+                        <div class="icon-box"><img
+                                src="https://uploads-ssl.webflow.com/57a6fccf3e4192b946e3b4e9/57b001acec62b90517b72055_celebrate.png"
+                                width="62" alt="" /></div>
+                        <p class="_14 _2">Возможность больше зарабатывать на комплексных проектах</p>
+                    </div>
+                    <div class="divider"></div>
+                </div>
+                <div class="column w-col w-col-4">
+                    <div class="col-box w-clearfix">
+                        <div class="icon-box"><img
+                                src="https://uploads-ssl.webflow.com/57a6fccf3e4192b946e3b4e9/57b001ac71bead8852a99e6b_finger.png"
+                                width="47" alt="" /></div>
+                        <p class="_14 _2">Сможете быстро запускать и тестировать собсвенные проекты</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="price" class="section skew">
+        <div class="blocks-wrapper">
+            <div class="div-block-51">
+                <h4 class="heading-5">Курс устарел и больше не продаётся</h4><a href="http://webflow.pro"
+                    class="button w-button">новый курс</a>
+            </div>
+            <div data-ix="black-box" class="black-box">
+                <div class="duke _120">15</div>
+                <div class="vertical _2">
+                    <div>видео-уроков</div>
+                </div>
+                <div class="text-box w-clearfix">
+                    <p class="_14 _2">Ёмкие уроки в среднем по десять минут. Каждый урок — отдельная тема, если что-то
+                        забудете сможете вернуться и пройти заново.</p>
+                </div>
+            </div>
+            <div data-ix="black-box" class="black-box">
+                <div class="duke _120">6</div>
+                <div class="vertical _2">
+                    <div>Вебинаров</div>
+                </div>
+                <div class="text-box w-clearfix">
+                    <p class="_14 _2">Записи вебинаров, на которых будут ответы на вопросы и разборы домашних заданий с
+                        прошлого потока.</p>
+                </div>
+            </div>
+            <div data-ix="black-box" class="black-box-2 wide">
+                <p class="_14">Стоимость курса</p>
+                <div class="duke _120 mobile">9900 рублей</div>
+                <div class="bye w-embed w-iframe"><iframe frameborder="0" allowtransparency="true" scrolling="no"
+                        src="https://money.yandex.ru/quickpay/button-widget?account=410011944968809&quickpay=small&any-card-payment-type=on&button-text=02&button-size=l&button-color=white&targets=%D0%9A%D1%83%D1%80%D1%81+%D0%BF%D0%BE+%D1%81%D0%BE%D0%B7%D0%B4%D0%B0%D0%BD%D0%B8%D1%8E+%D1%81%D0%B0%D0%B9%D1%82%D0%BE%D0%B2&default-sum=3900&fio=on&mail=on&successURL="
+                        width="192" height="48"></iframe></div>
+                <div class="after-box w-clearfix">
+                    <p class="_14">с 3 октября: 4 900</p>
+                </div>
+            </div>
+        </div>
+        <div class="skew-block black"></div>
+    </div>
+    <div id="program" class="section programm">
+        <div class="program-row">
+            <div class="prog-col top _2">
+                <div class="prg-wrapper">
+                    <h2 class="duke black">Программа</h2>
+                    <div class="_2-column-wrapper">
+                        <h2 class="caps">1 НЕДЕЛЯ</h2>
+                        <p class="_20">На этой неделе вы познакомитесь с сервисом и создадите свой первый сайт. </p>
+                    </div>
+                </div>
+                <div class="second-row-wrapper">
+                    <div class="video-wrapper first">
+                        <div data-autoplay="true" data-loop="true" data-wf-ignore="true"
+                            data-poster-url="https://daks2k3a4ib2z.cloudfront.net/57a6fccf3e4192b946e3b4e9/584002d941ed56e1515626f7_course2-poster-00001.jpg"
+                            data-video-urls="https://daks2k3a4ib2z.cloudfront.net/57a6fccf3e4192b946e3b4e9/584002d941ed56e1515626f7_course2-transcode.webm,https://daks2k3a4ib2z.cloudfront.net/57a6fccf3e4192b946e3b4e9/584002d941ed56e1515626f7_course2-transcode.mp4"
+                            class="coursewebsite w-background-video w-background-video-atom"><video autoplay="" loop=""
+                                style="background-image:url(&quot;https://daks2k3a4ib2z.cloudfront.net/57a6fccf3e4192b946e3b4e9/584002d941ed56e1515626f7_course2-poster-00001.jpg&quot;)"
+                                muted="" playsinline="" data-wf-ignore="true">
+                                <source
+                                    src="https://daks2k3a4ib2z.cloudfront.net/57a6fccf3e4192b946e3b4e9/584002d941ed56e1515626f7_course2-transcode.webm"
+                                    data-wf-ignore="true" />
+                                <source
+                                    src="https://daks2k3a4ib2z.cloudfront.net/57a6fccf3e4192b946e3b4e9/584002d941ed56e1515626f7_course2-transcode.mp4"
+                                    data-wf-ignore="true" /></video></div>
+                        <div class="grey-text">Тестовый сайт, который вы создадите на первой неделе</div>
+                    </div>
+                    <div class="prog-title-wrapper mobile">
+                        <h2 class="h2">Программа</h2>
+                    </div>
+                    <div class="day-box _1 w-clearfix">
+                        <div data-ix="number" class="duke _240">1</div>
+                        <p class="_14"><strong>Знакомство с webflow<br /></strong><br />Обзор интерфейса. Создаём новый
+                            аккаунт. Разбираемся со стурктурой сайта и базовыми свойствами классов. Работаем с
+                            навигатором.<br /><br />ДЗ: Верстаем первый экран сайта</p>
+                    </div>
+                </div>
+            </div>
+            <div class="prog-col top _2 dispnone"></div>
+            <div class="prog-col top _2 dispnone"></div>
+        </div>
+        <div class="program-row">
+            <div class="prog-col _2">
+                <div class="day-box w-clearfix">
+                    <div data-ix="number-2" class="duke _240">2</div>
+                    <p class="_14"><strong>Структура сайта<br /></strong><br />Основные структурные элементы webflow, из
+                        которых создаётся сайт.
+                        Колонки, ссылки, слайдеры
+                        шрифты, картинки
+                        Типичные ошибки, которые помешают при адаптации.<br /><br />ДЗ: Верстаем оставшиеся блоки сайта
+                    </p>
+                    <div class="prog-title-wrapper"></div>
+                </div>
+            </div>
+            <div class="prog-col _2">
+                <div class="day-box w-clearfix">
+                    <div data-ix="number-2" class="duke _240">3</div>
+                    <p class="_14"><strong>Адаптивная вёрстка</strong><br /><br />Адаптивная и отзывчивая вёрстка.
+                        Резиновые блоки. Комбо-классы.<br /><br />ДЗ: Адаптируем существующий сайт</p>
+                </div>
+                <div class="day-box tm w-clearfix">
+                    <p class="_14 grey">На выполнение уроков уйдёт не больше двух часов в день</p><img
+                        src="https://uploads-ssl.webflow.com/57a6fccf3e4192b946e3b4e9/5842c9b987e910bc3afe0f23_time.svg"
+                        height="40" alt="" class="time" />
+                </div>
+            </div>
+            <div class="prog-col _2">
+                <div class="day-box w-clearfix">
+                    <div data-ix="number" class="duke _240">4</div>
+                    <p class="_14"><strong>Поведение блоков</strong> <br /><br />
+                        Абсолютное позиционирование блоков. Различия в поведении block и inline-block. Разбираемся с
+                        поведением floating.
+                        Разные состояния элементов интерфейса (наведение, нажатие, фокус).<br /><br />ДЗ: Делаем сайт
+                        интерактивным</p>
+                </div>
+            </div>
+        </div>
+        <div class="program-row">
+            <div class="prog-col _3">
+                <div class="day-box w-clearfix">
+                    <div data-ix="number-2" class="duke _240">5</div>
+                    <p class="_14"><strong>Анимация<br /></strong><br />
+                        Анимация: <br />при скролле <br />при наведении мыши<br />при нажатии<br /><br />ДЗ: Оживляем
+                        сайт.</p>
+                </div>
+                <div class="day-box margin w-clearfix">
+                    <div data-ix="number-3" class="duke _240">6</div>
+                    <p class="_14"><strong>3d-анимация</strong>
+                        <br /><br />Делаем переворачивающуюся при наведении 3d-карточку.
+                        <br /><br />ДЗ: Придумайте свою 3d-анимацию.</p>
+                </div>
+            </div>
+            <div class="prog-col _3">
+                <div data-ix="3d-card" class="img-wrapper">
+                    <div class="_3d-card"><img
+                            src="https://uploads-ssl.webflow.com/57a6fccf3e4192b946e3b4e9/5842cb8587e910bc3afe10c4_Portfolio.jpg"
+                            alt="" class="mayorov" />
+                        <div class="black-card"><img
+                                src="https://uploads-ssl.webflow.com/57a6fccf3e4192b946e3b4e9/5842cc864bab51ec5b18eb02_fire.png"
+                                width="22" alt="" class="fire" />
+                            <div class="white-name">САЙТ-ПОРТФОЛИО</div><a target="_blank"
+                                href="http://ivanmayorov.webflow.io/" class="link-red">Перейти на сайт</a>
+                        </div>
+                    </div>
+                    <div class="grey-text">Такую карточку вы научитесь делать на шестом уроке</div>
+                </div>
+            </div>
+            <div class="prog-col dispnone"></div>
+        </div>
+    </div>
+    <div class="turbina-section">
+        <div class="overflow-wrapper">
+            <div class="_1200 _2">
+                <div class="_2-column-wrapper white">
+                    <h2 class="caps">2 НЕДЕЛЯ</h2>
+                    <p class="_20">На этом этапе вы верстаете свой проект и получаете индивидуальные видео-разборы. Вы
+                        выбираете макет и получаете исходные файлы, которые превратите в работающий сайт</p>
+                </div><img
+                    src="https://uploads-ssl.webflow.com/57a6fccf3e4192b946e3b4e9/584841c7caa931f001d3dd63_voronov_ex-18.jpg"
+                    width="480"
+                    srcset="https://uploads-ssl.webflow.com/57a6fccf3e4192b946e3b4e9/584841c7caa931f001d3dd63_voronov_ex-18-p-500x313.jpeg 500w, https://uploads-ssl.webflow.com/57a6fccf3e4192b946e3b4e9/584841c7caa931f001d3dd63_voronov_ex-18.jpg 960w"
+                    sizes="(max-width: 479px) 92vw, 480px" alt="" class="crosfit" /><img
+                    src="https://uploads-ssl.webflow.com/57a6fccf3e4192b946e3b4e9/584841c5dd9f99606288046a_russel_preview.jpg"
+                    width="480"
+                    srcset="https://uploads-ssl.webflow.com/57a6fccf3e4192b946e3b4e9/584841c5dd9f99606288046a_russel_preview-p-500x313.jpeg 500w, https://uploads-ssl.webflow.com/57a6fccf3e4192b946e3b4e9/584841c5dd9f99606288046a_russel_preview-p-800x500.jpeg 800w, https://uploads-ssl.webflow.com/57a6fccf3e4192b946e3b4e9/584841c5dd9f99606288046a_russel_preview.jpg 960w"
+                    sizes="(max-width: 479px) 92vw, 480px" alt="" class="russel" /><img
+                    src="https://uploads-ssl.webflow.com/57a6fccf3e4192b946e3b4e9/584841c5caa931f001d3dd61_furniture1.jpg"
+                    width="480"
+                    srcset="https://uploads-ssl.webflow.com/57a6fccf3e4192b946e3b4e9/584841c5caa931f001d3dd61_furniture1-p-500x313.jpeg 500w, https://uploads-ssl.webflow.com/57a6fccf3e4192b946e3b4e9/584841c5caa931f001d3dd61_furniture1-p-800x500.jpeg 800w, https://uploads-ssl.webflow.com/57a6fccf3e4192b946e3b4e9/584841c5caa931f001d3dd61_furniture1.jpg 960w"
+                    sizes="(max-width: 479px) 100vw, 480px" alt="" class="mebel2" /><img
+                    src="https://uploads-ssl.webflow.com/57a6fccf3e4192b946e3b4e9/584841c409120752653cc916_fitness_web.jpg"
+                    width="480"
+                    srcset="https://uploads-ssl.webflow.com/57a6fccf3e4192b946e3b4e9/584841c409120752653cc916_fitness_web-p-800x500.jpeg 800w, https://uploads-ssl.webflow.com/57a6fccf3e4192b946e3b4e9/584841c409120752653cc916_fitness_web.jpg 960w"
+                    sizes="(max-width: 479px) 100vw, 480px" alt="" class="fitnes" /><img
+                    src="https://uploads-ssl.webflow.com/57a6fccf3e4192b946e3b4e9/584841c506e3c35262702254_Mebel2.jpg"
+                    width="300"
+                    srcset="https://uploads-ssl.webflow.com/57a6fccf3e4192b946e3b4e9/584841c506e3c35262702254_Mebel2-p-500x661.jpeg 500w, https://uploads-ssl.webflow.com/57a6fccf3e4192b946e3b4e9/584841c506e3c35262702254_Mebel2.jpg 600w"
+                    sizes="(max-width: 479px) 92vw, 300px" alt="" class="mebel" />
+            </div>
+        </div>
+        <div class="skew-block _2"></div>
+    </div>
+    <div class="program-row">
+        <div class="prog-col">
+            <div class="_2-column-wrapper">
+                <h2 class="caps">3 НЕДЕЛЯ</h2>
+                <p class="_20">На этой неделе вы научитесь создавать анимацию и интерактивные элементы, которые сделают
+                    ваши статичные макеты живыми. Также вы научитесь экспортировать сайт из webflow и загружать его на
+                    собственный хостинг.</p>
+            </div>
+            <div class="second-row-wrapper">
+                <div class="day-box _1 first w-clearfix">
+                    <div data-ix="number" class="duke _240">7</div>
+                    <p class="_14"><strong>Изменяем стандартные компонены<br /></strong><br />
+                        Сложный слайдер с использованием интеракции.
+                        <br /><br />ДЗ: Придумайте свою анимацию слайдера.</p>
+                </div>
+                <div class="day-box _1 second w-clearfix">
+                    <div data-ix="number-2" class="duke _240">8</div>
+                    <p class="_14"><strong>Будущее вёрстки</strong>
+                        <br /><br />
+                        Различные способы позиционирования блоков. Новый CSS-механизм флексбокс для создания сложных
+                        раскладок блоков.
+                        <br /><br />ДЗ: Пройти обучающую игру.</p>
+                </div>
+                <div class="day-box _1 w-clearfix">
+                    <div data-ix="number-3" class="duke _240">9</div>
+                    <p class="_14"><strong>Выгружаем готовый сайт<br /></strong><br />
+                        Настройка форм, целей в яндекс.метрике и GA, SEO. Экспорт кода, плагины, custom code.
+                        <br /><br />ДЗ: Загрузить сайт на хостинг.</p>
+                </div>
+            </div>
+        </div>
+        <div class="prog-col dispnone"></div>
+        <div class="prog-col dispnone"></div>
+    </div>
+    <div class="program-row _2">
+        <div class="prog-col _2 _5">
+            <div class="second-row-wrapper _2 w-clearfix">
+                <div class="text-block w-clearfix">
+                    <h2 class="h2">Попробуйте Webflow</h2>
+                    <p class="_14 _2">Небольшой урок по созданию и анимировании кнопки</p>
+                </div>
+                <div class="video-wrapper">
+                    <div style="padding-top:56.17021276595745%" id="w-node-72b9b3556034-364021d2"
+                        class="first-lesson w-video w-embed"><iframe class="embedly-embed"
+                            src="//cdn.embedly.com/widgets/media.html?src=https%3A%2F%2Fwww.youtube.com%2Fembed%2FDWoMRM3dG9g%3Ffeature%3Doembed&url=http%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DDWoMRM3dG9g&image=https%3A%2F%2Fi.ytimg.com%2Fvi%2FDWoMRM3dG9g%2Fhqdefault.jpg&key=c4e54deccf4d4ec997a64902e9a30300&type=text%2Fhtml&schema=youtube"
+                            scrolling="no" frameborder="0" allowfullscreen></iframe></div>
+                </div>
+            </div>
+        </div>
+        <div class="prog-col dispnone"></div>
+        <div class="prog-col _2 dispnone"></div>
+    </div>
+    <div class="slider-section">
+        <div class="works">
+            <h2 class="duke">работы учеников</h2>
+        </div>
+        <div class="skew-block black height"></div>
+        <div data-animation="slide" data-duration="500" class="slider w-slider">
+            <div class="mask w-slider-mask">
+                <div data-ix="slide" class="slide w-slide">
+                    <div class="link-wrapper"><a data-ix="link" target="_blank"
+                            href="http://photobook-fc19df.webflow.io/" class="img-wrapper-box w-inline-block"><img
+                                src="https://uploads-ssl.webflow.com/57a6fccf3e4192b946e3b4e9/58486baf06e3c3526270e48d_link.svg"
+                                width="50" data-ix="link-img" alt="" class="link-img" />
+                            <div data-ix="link-img" class="link-link">Посмотреть сайт</div>
+                        </a><img
+                            src="https://uploads-ssl.webflow.com/57a6fccf3e4192b946e3b4e9/58485a0bd43b9934653bbd52_kons.jpg"
+                            width="500" alt="" class="learner-img" /></div>
+                    <div class="about-box"><img
+                            src="https://uploads-ssl.webflow.com/57a6fccf3e4192b946e3b4e9/58486090dd9f99606288c3f2_ava.png"
+                            width="78" alt="" class="about-img" />
+                        <div class="about-text">
+                            <div><strong>Константин Жук</strong></div><a href="http://vk.com/zhuck182" target="_blank"
+                                class="about-link">vk.com/zhuck182</a>
+                            <p>Костя очень быстро освоил webflow и уже на первой неделе сверстал свой первый сайт с
+                                изящной адаптивностью</p>
+                        </div>
+                    </div>
+                </div>
+                <div data-ix="slide" class="slide w-slide">
+                    <div class="link-wrapper"><a data-ix="link" target="_blank"
+                            href="http://yuliyas-final-journey.webflow.io/" class="img-wrapper-box w-inline-block"><img
+                                src="https://uploads-ssl.webflow.com/57a6fccf3e4192b946e3b4e9/58486baf06e3c3526270e48d_link.svg"
+                                width="50" data-ix="link-img" alt="" class="link-img" />
+                            <div data-ix="link-img" class="link-link">Посмотреть сайт</div>
+                        </a><img
+                            src="https://uploads-ssl.webflow.com/57a6fccf3e4192b946e3b4e9/584a7485e4a414db55e6c6cc_final-jorney.jpg"
+                            width="500"
+                            srcset="https://uploads-ssl.webflow.com/57a6fccf3e4192b946e3b4e9/584a7485e4a414db55e6c6cc_final-jorney-p-500x536.jpeg 500w, https://uploads-ssl.webflow.com/57a6fccf3e4192b946e3b4e9/584a7485e4a414db55e6c6cc_final-jorney-p-800x858.jpeg 800w, https://uploads-ssl.webflow.com/57a6fccf3e4192b946e3b4e9/584a7485e4a414db55e6c6cc_final-jorney.jpg 1000w"
+                            sizes="(max-width: 767px) 80vw, (max-width: 991px) 60vw, 33vw" alt="" class="learner-img" />
+                    </div>
+                    <div class="about-box"><img
+                            src="https://uploads-ssl.webflow.com/57a6fccf3e4192b946e3b4e9/584ab797a275a2a744f1b3a4_Yulya.png"
+                            width="78" alt="" class="about-img" />
+                        <div class="about-text">
+                            <div><strong>Юлия Кузовенко</strong></div><a target="_blank"
+                                href="http://vk.com/yuliya_kuzovenko" class="about-link">vk.com/yuliya_kuzovenko</a>
+                            <p>После прохождения курса Юля с лёгкостью сверстала довольно сложный макет</p>
+                        </div>
+                    </div>
+                </div>
+                <div data-ix="slide" class="slide w-slide">
+                    <div class="link-wrapper"><a data-ix="link" target="_blank"
+                            href="http://furniture-c3fe72.webflow.io/" class="img-wrapper-box w-inline-block"><img
+                                src="https://uploads-ssl.webflow.com/57a6fccf3e4192b946e3b4e9/58486baf06e3c3526270e48d_link.svg"
+                                width="50" data-ix="link-img" alt="" class="link-img" />
+                            <div data-ix="link-img" class="link-link">Посмотреть сайт</div>
+                        </a><img
+                            src="https://uploads-ssl.webflow.com/57a6fccf3e4192b946e3b4e9/5849bfa41c2a02332d9df7ce_furniture.jpg"
+                            width="500"
+                            srcset="https://uploads-ssl.webflow.com/57a6fccf3e4192b946e3b4e9/5849bfa41c2a02332d9df7ce_furniture-p-500x536.jpeg 500w, https://uploads-ssl.webflow.com/57a6fccf3e4192b946e3b4e9/5849bfa41c2a02332d9df7ce_furniture-p-800x858.jpeg 800w, https://uploads-ssl.webflow.com/57a6fccf3e4192b946e3b4e9/5849bfa41c2a02332d9df7ce_furniture.jpg 1000w"
+                            sizes="(max-width: 767px) 80vw, (max-width: 991px) 60vw, 33vw" alt="" class="learner-img" />
+                    </div>
+                    <div class="about-box"><img
+                            src="https://uploads-ssl.webflow.com/57a6fccf3e4192b946e3b4e9/584ab71fa2cecbb5440aefc4_mary.png"
+                            width="78" alt="" class="about-img" />
+                        <div class="about-text">
+                            <div><strong>Мария Кроустер</strong></div><a href="http://vk.com/id176179702"
+                                target="_blank" class="about-link">vk.com/id176179702</a>
+                            <p>Мария досконально разобралась в webflow и уже сверстала не один проект</p>
+                        </div>
+                    </div>
+                </div>
+                <div data-ix="slide" class="slide w-slide">
+                    <div class="link-wrapper"><a data-ix="link" target="_blank" href="http://konceptlab.ru/"
+                            class="img-wrapper-box w-inline-block"><img
+                                src="https://uploads-ssl.webflow.com/57a6fccf3e4192b946e3b4e9/58486baf06e3c3526270e48d_link.svg"
+                                width="50" data-ix="link-img" alt="" class="link-img" />
+                            <div data-ix="link-img" class="link-link">Посмотреть сайт</div>
+                        </a><img
+                            src="https://uploads-ssl.webflow.com/57a6fccf3e4192b946e3b4e9/584a7552e4a414db55e6c7a1_concept.jpg"
+                            width="500"
+                            srcset="https://uploads-ssl.webflow.com/57a6fccf3e4192b946e3b4e9/584a7552e4a414db55e6c7a1_concept-p-500x536.jpeg 500w, https://uploads-ssl.webflow.com/57a6fccf3e4192b946e3b4e9/584a7552e4a414db55e6c7a1_concept-p-800x858.jpeg 800w, https://uploads-ssl.webflow.com/57a6fccf3e4192b946e3b4e9/584a7552e4a414db55e6c7a1_concept.jpg 1000w"
+                            sizes="(max-width: 767px) 80vw, (max-width: 991px) 60vw, 33vw" alt="" class="learner-img" />
+                    </div>
+                    <div class="about-box"><img
+                            src="https://uploads-ssl.webflow.com/57a6fccf3e4192b946e3b4e9/584ab8568c039e9e71e9af19_Yar.png"
+                            width="78" alt="" class="about-img" />
+                        <div class="about-text">
+                            <div><strong>Ярослав Кирсанов</strong></div><a href="http://vk.com/yar_design"
+                                target="_blank" class="about-link">vk.com/yar_design</a>
+                            <p>Ярослав очень хороший дизайнер, а теперь и верстальщик. Сверстал сайт своего агентства.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="arrow w-slider-arrow-left">
+                <div class="icon w-icon-slider-left"></div>
+            </div>
+            <div class="arrow grad w-slider-arrow-right">
+                <div class="icon w-icon-slider-right"></div>
+            </div>
+            <div class="navigation w-slider-nav w-round"></div>
+        </div>
+    </div>
+    <div id="form" class="section form">
+        <div class="form-wrapper yandex w-clearfix">
+            <h2 class="h2">Принять участие</h2>
+            <div class="ya ya1 w-embed w-iframe"><iframe frameborder="0" allowtransparency="true" scrolling="no"
+                    src="https://money.yandex.ru/quickpay/shop-widget?account=410011944968809&quickpay=shop&payment-type-choice=on&writer=seller&targets=%D0%A3%D1%87%D0%B0%D1%81%D1%82%D0%B8%D0%B5+%D0%B2+%D0%BA%D1%83%D1%80%D1%81%D0%B5+webflow&default-sum=9900&button-text=01&fio=on&mail=on&successURL="
+                    width="450" height="198"></iframe></div>
+        </div>
+    </div>
+    <div id="examples" class="section examples">
+        <h2 class="h2">Примеры сайтов, созданных c помощью webflow</h2>
+        <div class="dimond-wrapper"><a href="http://ivanmayorov.webflow.io/" target="_blank" data-ix="diamonds"
+                class="big-rmb w-inline-block"><img
+                    src="https://uploads-ssl.webflow.com/57a6fccf3e4192b946e3b4e9/57b2967f76afc78c56c04fb7_Dia%203.png"
+                    width="287" alt="" /></a><a href="http://roipower.ru/" target="_blank" data-ix="diamonds"
+                class="big-rmb _3 w-inline-block"><img
+                    src="https://uploads-ssl.webflow.com/57a6fccf3e4192b946e3b4e9/57b2967f76afc78c56c04fb6_Dia%202.png"
+                    width="287" alt="" /></a><a href="http://design-turbina.ru/" target="_blank" data-ix="diamonds"
+                class="big-rmb _5 w-inline-block"><img
+                    src="https://uploads-ssl.webflow.com/57a6fccf3e4192b946e3b4e9/57ecc571af9d15040c51ff59_turbina.png"
+                    width="287" alt="" /></a><a href="http://bizbezim.webflow.io/" target="_blank" data-ix="diamonds"
+                class="big-rmb _6 w-inline-block"><img
+                    src="https://uploads-ssl.webflow.com/57a6fccf3e4192b946e3b4e9/57b2967f55660e8e54540632_Dia%204.png"
+                    width="287" alt="" /></a><a href="http://www.webasto67.ru/" target="_blank" data-ix="diamonds"
+                class="big-rmb _4 w-inline-block"><img
+                    src="https://uploads-ssl.webflow.com/57a6fccf3e4192b946e3b4e9/57b2967f76afc78c56c04fb5_Dia%201.png"
+                    width="287" alt="" /></a><a href="http://pivooptom.ru/" target="_blank" data-ix="diamonds"
+                class="big-rmb _2 w-inline-block"><img
+                    src="https://uploads-ssl.webflow.com/57a6fccf3e4192b946e3b4e9/57b29680012fd586179fb767_Dia%206.png"
+                    width="287" alt="" /></a></div>
+    </div>
+    <div class="autor-section">
+        <div class="autor-wrp">
+            <div class="white-skew"></div>
+            <div class="subscribe-autor">
+                <div class="vk-mayorov w-embed w-script">
+                    <!-- VK Widget -->
+                    <div id="vk_subscribe"></div>
+                    <script type="text/javascript">
+                        VK.Widgets.Subscribe("vk_subscribe", {}, 14348680);
+                    </script>
+                </div>
+            </div>
+            <div class="ivan-skew"><img
+                    src="https://uploads-ssl.webflow.com/57a6fccf3e4192b946e3b4e9/5890a054e9e81e0a4713a648_Ivan.png"
+                    srcset="https://uploads-ssl.webflow.com/57a6fccf3e4192b946e3b4e9/5890a054e9e81e0a4713a648_Ivan-p-500x599.png 500w, https://uploads-ssl.webflow.com/57a6fccf3e4192b946e3b4e9/5890a054e9e81e0a4713a648_Ivan-p-800x958.png 800w, https://uploads-ssl.webflow.com/57a6fccf3e4192b946e3b4e9/5890a054e9e81e0a4713a648_Ivan.png 856w"
+                    sizes="100vw" alt="" /></div>
+            <div class="about-block">
+                <h2 class="duke">Автор курса</h2>
+                <div class="name">
+                    <h2 class="caps _2">Иван Майоров</h2>
+                </div>
+                <div class="text-wrp">
+                    <p>Занимаюсь графическим и веб-дизайном около восьми лет. Долго страдал, делая сайты в фотошопе,
+                        пока не открыл для себя Sketch. С тех пор изучаю все новые сервисы и инструменты, чтобы не
+                        терять драгоценное время. Пожалуй самым большим открытием стал для меня Webflow — сервис, дающий
+                        полную свободу творчества в вебе.</p>
+                </div>
+                <div class="port-wrp"><a data-ix="colour-line" target="_blank"
+                        href="https://www.behance.net/ivan-mayorov" class="port-link w-inline-block"><img
+                            src="https://uploads-ssl.webflow.com/57a6fccf3e4192b946e3b4e9/58909b8638ef3ebe08f5af99_be.png"
+                            width="25" alt="" class="logo-port" />
+                        <div class="port-name">Behance</div>
+                        <div class="color-line"></div>
+                    </a><a href="http://revision.ru/a/Ivanmayorov/" data-ix="colour-line" target="_blank"
+                        class="port-link w-inline-block"><img
+                            src="https://uploads-ssl.webflow.com/57a6fccf3e4192b946e3b4e9/58909b86205357da4b2fd5f8_re.png"
+                            width="25" alt="" class="logo-port" />
+                        <div class="port-name">Revision</div>
+                        <div class="color-line _2"></div>
+                    </a><a href="https://webflow.com/ivanmayorov" data-ix="colour-line" target="_blank"
+                        class="port-link w-inline-block"><img
+                            src="https://uploads-ssl.webflow.com/57a6fccf3e4192b946e3b4e9/58909b8638ef3ebe08f5af98_wf.png"
+                            width="25" alt="" class="logo-port" />
+                        <div class="port-name">Webflow</div>
+                        <div class="color-line _3"></div>
+                    </a></div>
+            </div>
+        </div>
+        <div class="skew-block _2 black"></div>
+    </div>
+    <div id="questions" class="section questions">
+        <div class="questions-wrapper">
+            <div class="h2-wrapper _700">
+                <h2 class="h2">Вопросы и ответы</h2>
+            </div>
+            <div class="dropdown">
+                <div data-ix="toggle" class="toggle">
+                    <div class="_20 drpdwn">Я уже умею верстать, зачем мне webflow?</div>
+                </div>
+                <div data-ix="closed-dropdown" class="drp-list">
+                    <div class="drp-wrp">
+                        <p>В Webflow удобно верстать лендинги и страницы с необычным дизайном. Иногда бывает удобно
+                            сверстать часть макета на webflow, а потом доработать в привычном редакторе.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="dropdown">
+                <div data-ix="toggle" class="toggle">
+                    <div class="_20 drpdwn">Как заказчик сможет вносить изменения в сайт?</div>
+                </div>
+                <div data-ix="closed-dropdown" class="drp-list">
+                    <div class="drp-wrp">
+                        <p>Есть несколько способов. У Webflow есть собственная CMS, но за неё придётся ежемесячно
+                            платить. Либо можно прикрутить сайт к любой сторонней CMS. На курсе я покажу как поставить
+                            на сайт простою cms textolite.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="dropdown">
+                <div data-ix="toggle" class="toggle">
+                    <div class="_20 drpdwn">Что можно сделать на webflow</div>
+                </div>
+                <div data-ix="closed-dropdown" class="drp-list">
+                    <div class="drp-wrp">
+                        <p>Любой сайт можно сверстать в webflow, но для сложного функционала, вроде личного кабинета,
+                            корзины и т. д. нужно будет обратиться за доработкой к программисту.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="dropdown">
+                <div data-ix="toggle" class="toggle">
+                    <div class="_20 drpdwn">Можно ли расширять функционал сторонними плагинами?</div>
+                </div>
+                <div data-ix="closed-dropdown" class="drp-list">
+                    <div class="drp-wrp">
+                        <p>В самом сервисе пока нет, но разработчики обещают добавить такую возможность. Пока можно
+                            использовать любые плагин с помощью custom code на выгруженных сайтах. На курсе я покажу как
+                            добавить плагин постраничной прокрутки Fullpage.js</p>
+                    </div>
+                </div>
+            </div>
+            <div class="dropdown">
+                <div data-ix="toggle" class="toggle">
+                    <div class="_20 drpdwn">Можно ли скачать webflow?</div>
+                </div>
+                <div data-ix="closed-dropdown" class="drp-list">
+                    <div class="drp-wrp">
+                        <p>К сожалению скачать не получится, сервис работает в браузере. В этом решении много плюсов:
+                            работа на любых платформах, постоянные обновления и т. д. Минус в том что для работы нужен
+                            интернет.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="dropdown">
+                <div data-ix="toggle" class="toggle">
+                    <div class="_20 drpdwn">Сколько стоит webflow?</div>
+                </div>
+                <div data-ix="closed-dropdown" class="drp-list">
+                    <div class="drp-wrp">
+                        <p>Есть бесплатный план с полным функционалом, но без возможности выгружать сайты. Так же есть
+                            несколько платные подписки, самая оптимальная — 20$ в месяц.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="dropdown">
+                <div data-ix="toggle" class="toggle">
+                    <div class="_20 drpdwn">Сложно научиться?</div>
+                </div>
+                <div data-ix="closed-dropdown" class="drp-list">
+                    <div class="drp-wrp">
+                        <p>Сам процесс вёрстки довольно прост, но вначале бывает сложно, как и в любом новом
+                            направлении. Курс поможет с комфортом всему научиться, а домашние задания помогут выяснить
+                            все нюансы.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="dropdown">
+                <div data-ix="toggle" class="toggle">
+                    <div class="_20 drpdwn">Где можно почитать подробнее про webflow?</div>
+                </div>
+                <div data-ix="closed-dropdown" class="drp-list">
+                    <div class="drp-wrp">
+                        <p>На официальном сайте <a target="_blank" href="http://webflow.com"
+                                class="link-text">webflow.com</a>. Есть несколько промо-сайтов возможностей webflow: <a
+                                target="_blank" href="https://interactions.webflow.com/"
+                                class="link-text">интерактивность</a>, <a target="_blank"
+                                href="http://3d-transforms.webflow.com/" class="link-text">3d-анимации</a>, <a
+                                target="_blank" href="https://webflow.com/cms" class="link-text">cms</a></p>
+                    </div>
+                </div>
+            </div>
+            <div class="dropdown">
+                <div data-ix="toggle" class="toggle">
+                    <div class="_20 drpdwn">Зачем тогда вообще нужны верстальщики?</div>
+                </div>
+                <div data-ix="closed-dropdown" class="drp-list">
+                    <div class="drp-wrp">
+                        <p>Профессия разработчика не заканчивается на вёрстке. Есть множество вопросов связанных с
+                            производительностью сайта, сложными анимациями и созданием сложных проектов. Webflow
+                            позволяет решать только базовые задачи.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="dropdown">
+                <div data-ix="toggle" class="toggle">
+                    <div class="_20 drpdwn">Я смогу делать дизайн прямо в webflow?</div>
+                </div>
+                <div data-ix="closed-dropdown" class="drp-list">
+                    <div class="drp-wrp">
+                        <p>Сможете, но я предпочитаю сделать предварительный дизайн в скетче или фотошопе, а мелочи уже
+                            дорабатывать в webflow.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="dropdown">
+                <div data-ix="toggle" class="toggle">
+                    <div class="_20 drpdwn">Сколько времени уходит на вёрстку лендинга</div>
+                </div>
+                <div data-ix="closed-dropdown" class="drp-list">
+                    <div class="drp-wrp">
+                        <p>Простую посадочную страницу из 7-8 экранов можно сверстать за день.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="dropdown">
+                <div data-ix="toggle" class="toggle">
+                    <div class="_20 drpdwn">Какая длительность курса и сколько времени нужно уделять?</div>
+                </div>
+                <div data-ix="closed-dropdown" class="drp-list">
+                    <div class="drp-wrp">
+                        <p>Длительность курса — 3 недели. Времени нужно минимально 3-4 часа в неделю.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="dropdown">
+                <div data-ix="toggle" class="toggle">
+                    <div class="_20 drpdwn">Если я создала макет в фотошоп. Смогу я его же (с выбранными шрифтами, фото,
+                        расположением блоков и отступами и т.п.) экспортировать в webflow?</div>
+                </div>
+                <div data-ix="closed-dropdown" class="drp-list">
+                    <div class="drp-wrp">
+                        <p>Экспортировать одной кнопкой не получится, но можно перенести практический любой дизайн в
+                            webflow с точностью до пикселя. Эта техника ещё называется <a target="_blank"
+                                href="http://zencoder.ru/web-development/pixel-perfect/" class="link-text">pixel
+                                perfect</a>.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="dropdown">
+                <div data-ix="toggle" class="toggle">
+                    <div class="_20 drpdwn">Webflow – это по сути конструктор сайтов с определенным функционалом, где
+                        много ограничений для создания индивидуального дизайна?</div>
+                </div>
+                <div data-ix="closed-dropdown" class="drp-list">
+                    <div class="drp-wrp">
+                        <p>Webflow скорее редактор кода, чем конструктор. Ограничений практически нет, вы сможете
+                            воссоздать любой дизайн. Есть ограничения в технической части, но они решаются плагинами
+                            либо с помощью разработчика.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="dropdown">
+                <div data-ix="toggle" class="toggle">
+                    <div class="_20 drpdwn">Если выгрузить созданный сайт на свой сервер, он всё равно будет привязан к
+                        webflow и мне нужна будет подписка?</div>
+                </div>
+                <div data-ix="closed-dropdown" class="drp-list">
+                    <div class="drp-wrp">
+                        <p>После выгрузки из webflow, у вас остаётся папка с сайтом, где собраны все файлы. Вы можете
+                            как угодно редактировать и дорабатывать его, к webflow он уже не привязан.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="form-sec" class="button-wrapper hide">
+        <div id="Topform" class="form-wrapper forma w-form">
+            <form name="email-form" data-name="Email Form" method="get">
+                <div>
+                    <h3>Бесплатный мини-курс и полезная рассылка</h3>
+                    <p class="form-par">Оставьте email, чтобы получить базовый курс из трёх уроков и подписаться на
+                        рассылку с уроками и полезными материалами по webflow</p>
+                </div><input type="text" id="name" name="name" data-name="Name" maxlength="256"
+                    placeholder="Введите имя" class="field w-input" /><input type="email" id="Email-2" name="Email"
+                    data-name="Email" placeholder="Введите email" maxlength="256" required="" class="field w-input" />
+                <div class="butwrap"><input type="submit" value="Получить курс" data-wait="Please wait..."
+                        class="button w-button" /></div>
+            </form>
+            <div class="success w-form-done">
+                <div class="thankyoutext"><strong>Спасибо!</strong> <br />Письмо со ссылкой на курс уже должно быть у
+                    вас на почте. Если письма нет, попробуйте проверить спам.<br /><br />Подписывайтесь на нашу <a
+                        href="https://vk.com/intensive.webflow" target="_blank" class="link-text">группу вк</a>, чтобы
+                    не пропускать новости.</div>
+            </div>
+            <div class="w-form-fail">
+                <div>Oops! Something went wrong while submitting the form</div>
+            </div>
+        </div>
+    </div>
+    <div id="second" class="footer">
+        <div class="soc-box">
+            <div class="social-wrapper">
+                <div class="soc w-embed w-script">
+                    <!-- VK Widget -->
+                    <div id="vk_groups"></div>
+                    <script type="text/javascript">
+                        VK.Widgets.Group("vk_groups", {
+                            mode: 3,
+                            width: "300"
+                        }, 129831944);
+                    </script>
+                </div>
+            </div>
+        </div>
+        <div class="div-block">
+            <div class="big-title">Вопросы?</div>
+            <div class="_30">С радостью отвечу на все вопросы в <a target="_blank" id="vklink"
+                    href="https://vk.com/intensive.webflow" class="link-vk">вконтакте</a></div>
+        </div>
+        <div class="bottom-links"><a href="#" data-ix="appear-text" class="link">Политика конфиденциальности</a></div>
+    </div>
+    <div class="text-wrapper">
+        <div class="text-plate">
+            <p><span class="title-in">Политика конфиденциальности</span><br /><br />Ваша конфиденциальность очень важна
+                для нас. Мы хотим, чтобы Ваша работа в Интернет по возможности была максимально приятной и полезной, и
+                Вы совершенно спокойно использовали широчайший спектр информации, инструментов и возможностей, которые
+                предлагает Интернет.<br /><br />Личная информация пользователей, собранная при регистрации (или в любое
+                другое время) преимущественно используется для подготовки Продуктов или Услуг в соответствии с Вашими
+                потребностями. Ваша информация не будет передана или продана третьим сторонам. Однако мы можем частично
+                раскрывать личную информацию в особых случаях, описанных ниже.<br /><br /><strong>1) С Вашего
+                    согласия:</strong> Во всех остальных случаях перед передачей информации о Вас третьим сторонам наша
+                Компания обязуется получить Ваше явное согласие. Например, наша Компания может реализовывать совместное
+                предложение или конкурс с третьей стороной, тогда мы попросим у Вас разрешение на совместное
+                использование Вашей личной информации с третьей стороной.<br /><br /><strong>2) На совместно
+                    позиционируемых или партнерских страницах:</strong> Наша Компания может делиться информацией с
+                компаниями-партнерами, вместе с которыми реализует специальные предложения и мероприятия по продвижению
+                товара на совместно позиционируемых страницах нашего сайта. При запросе анкетных данных на таких
+                страницах Вы получите предупреждение о передаче информации. Партнер использует любую предоставленную
+                Вами информацию согласно собственному уведомлению о конфиденциальности, с которым Вы можете ознакомиться
+                перед предоставлением информации о себе.<br /><br /><strong>3) При передаче контроля над
+                    предприятием:</strong> Наша Компания оставляет за собой право передавать Ваши анкетные данные в
+                связи с полной или частичной продажей или трансфертом нашего предприятия или его активов. При продаже
+                или трансферте бизнеса наша Компания предоставит Вам возможность отказаться от передачи информации о
+                себе. В некоторых случаях это может означать, что новая организация не сможет далее предоставлять Вам
+                услуги или продукты, ранее предоставляемые нашей Компанией.<br /><br /><strong>4) Правоохранительным
+                    органам:</strong> Наша Компания может без Вашего на то согласия раскрывать персональную информацию
+                третьим сторонам по любой из следующих причин: во избежание нарушений закона, нормативных правовых актов
+                или постановлений суда; участие в правительственных расследованиях; помощь в предотвращении
+                мошенничества; а также укрепление или защита прав Компании или ее дочерних предприятий.<br /><br />Вся
+                личная информация, которая передана Вами для регистрации на нашем сайте, может быть в любой момент
+                изменена либо полностью удалена из нашей базы по Вашему запросу. Для этого Вам необходимо связаться с
+                нами любым удобным для Вас способом, использую контактную информацию, размещенную в специальном разделе
+                нашего сайта.<br /><br />Если Вы захотите отказаться от получения писем нашей регулярной рассылки, вы
+                можете это сделать в любой момент с помощью специальной ссылки, которая размещается в конце каждого
+                письма.<br /><br /><strong>Какие данные собираются на сайте<br /></strong><br />При добровольной
+                регистрации на получение рассылки вы отправляете свое Имя, E-mail и номер телефона через форму
+                регистрации.<br /><br /><strong>С какой целью собираются эти данные<br /><br /></strong>Имя используется
+                для обращения лично к вам, а ваш e-mail для отправки вам писем рассылок, новостей тренинга, полезных
+                материалов, коммерческих предложений.<br /><br />Ваши имя, e-mail и телефон не передаются третьим лицам,
+                ни при каких условиях кроме случаев, связанных с исполнением требований законодательства. Ваше имя,
+                e-mail и телефон хранятся на защищенных серверах сервиса carrotquest.io и используются в соответствии с
+                его политикой конфиденциальности.<br /><br />Вы можете отказаться от получения писем рассылки и удалить
+                из базы данных свои контактные данные в любой момент, кликнув на ссылку для отписки, присутствующую в
+                каждом письме.<br /><br /><strong>Как эти данные используются</strong><br /><br />На сайте
+                intensive.webflow.io используются куки (Cookies) и данные о посетителях сервиса
+                Яндекс.Метрики.<br /><br />При помощи этих данных собирается информация о действиях посетителей на сайте
+                с целью улучшения его содержания, улучшения функциональных возможностей сайта и, как следствие, создания
+                качественного контента и сервисов для посетителей.<br /><br />Вы можете в любой момент изменить
+                настройки своего браузера так, чтобы браузер блокировал все файлы cookie или оповещал об отправке этих
+                файлов. Учтите при этом, что некоторые функции и сервисы не смогут работать должным
+                образом.<br /><br /><strong>Как эти данные защищаются</strong><br /><br />Для защиты Вашей личной
+                информации мы используем разнообразные административные, управленческие и технические меры безопасности.
+                Наша Компания придерживается различных международных стандартов контроля, направленных на операции с
+                личной информацией, которые включают определенные меры контроля по защите информации, собранной в
+                Интернет.<br /><br />Наших сотрудников обучают понимать и выполнять эти меры контроля, они ознакомлены с
+                нашим Уведомлением о конфиденциальности, нормами и инструкциями.<br /><br />Тем не менее, несмотря на
+                то, что мы стремимся обезопасить Вашу личную информацию, Вы тоже должны принимать меры, чтобы защитить
+                ее.<br /><br />Мы настоятельно рекомендуем Вам принимать все возможные меры предосторожности во время
+                пребывания в Интернете. Организованные нами услуги и веб-сайты предусматривают меры по защите от утечки,
+                несанкционированного использования и изменения информации, которую мы контролируем. Несмотря на то, что
+                мы делаем все возможное, чтобы обеспечить целостность и безопасность своей сети и систем, мы не можем
+                гарантировать, что наши меры безопасности предотвратят незаконный доступ к этой информации хакеров
+                сторонних организаций.<br /><br />В случае изменения данной политики конфиденциальности вы сможете
+                прочитать об этих изменениях на этой странице или, в особых случаях, получить уведомление на свой
+                e-mail.<br /><br />Для связи с администратором сайта по любым вопросам вы можете написать письмо на
+                e-mail: mailmayorov@gmail.com</p><a href="#" data-ix="close-text-area"
+                class="cross-box w-inline-block"><img
+                    src="https://uploads-ssl.webflow.com/57a6fccf3e4192b946e3b4e9/57bc036245984fbe5df28be2_Cross.svg"
+                    width="30" alt="" class="cross" /></a>
+        </div>
+        <div data-ix="close-text-area" class="closespace"></div>
+    </div>
+    <script src="https://d1tdp7z6w94jbb.cloudfront.net/js/jquery-3.3.1.min.js" type="text/javascript"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="https://uploads-ssl.webflow.com/57a6fccf3e4192b946e3b4e9/js/webflow.89f2d77ce.js"
+        type="text/javascript"></script>
+    <!--[if lte IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/placeholders/3.0.2/placeholders.min.js"></script><![endif]-->
+    <style>
+        .herobutton {
+            background-size: 200%;
+            background-position: 0%;
+        }
+
+        .herobutton:hover {
+            background-position: 100%;
+        }
+    </style>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/remodal/1.1.1/remodal.min.js"></script>
+
+    <script>
+        var Webflow = Webflow || [];
+        Webflow.push(function () {
+            $('#topbutton').on('click', function (e) {
+                ym(39201330, 'reachGoal', 'toptop');
+                return true;
+            });
+            $('#topbutton').on('click', function (e) {
+                ym(39201330, 'reachGoal', 'second');
+                return true;
+            });
+
+            $('#badge').on('click', function (e) {
+                yaCounter39201330.reachGoal('senler');
+                return true;
+            });
+            $('.pay').on('click', function (e) {
+                yaCounter39201330.reachGoal('pay');
+                return true;
+            });
+            $('form').submit(function (e) {
+                yaCounter39201330.reachGoal('form');
+                return true;
+            });
+        });
+    </script>
 </body>
+
 </html>
