@@ -1,38 +1,42 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
 <html lang="en-us">
-
 <head>
-    <meta charset="utf-8">
-    <title>Five Times</title>
-    <script>
-        "use strict";
-
-        /*Defining Table
-         *Input- No user input, other than pressing button
-         *Process- multiply i by 5, until i = 12
-         *Output- display each equation
-         */
-
-        function fiveTimes() {
-
-            var sum;
-            var string;
-
-            for (var i = 1; i <= 12; i++) {
-                sum = i * 5;
-                string += "5 * " + i + " = " + sum + "<br>";
+<meta charset="utf-8">
+<title>Divisor Test</title>
+<script>
+/* Input:       user inputs three integers in boxes labelled "start", "end", and "divisor".
+ * Processing:  determines if both user entered integers are greater than 5, OR if their sum is greater than 20.
+ * Output:      outputs "true" or "false" depending on processing results.
+ */
+ function divisorTest() 
+        {
+            // Input
+            let start = parseFloat(document.getElementById('start').value);
+            let end = parseFloat(document.getElementById('end').value);
+            let divisor = parseFloat(document.getElementById('divisor').value);
+            let result = "";
+            
+            // Processing
+            for (i=start; i<=end; i+=divisor)
+            {
+                while ((i%divisor===0)==false)
+                {
+                    i++;
+                }
+                result += i + " ";
             }
 
-            document.getElementById("output").innerHTML = string;
-
+            //Output
+            document.getElementById('output').innerHTML = result;
         }
-    </script>
+</script>
 </head>
 
 <body>
-    <h2>Five Times Table</h2>
-    <button type="button" onclick="fiveTimes()">Load Table</button>
+    Start: <input type="text" id="start" size="5"><br>
+    End: <input type="text" id="end" size="5"><br>
+    Divisor: <input type="text" id="divisor" size="5"><br>
+    <button type="button" onclick='divisorTest()'>Click</button>
     <div id="output"></div>
 </body>
-
 </html>
