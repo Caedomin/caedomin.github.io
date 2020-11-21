@@ -19,7 +19,7 @@
     --light: #E1E2E1;
     --l-light: #F5F5F6;
     --l-dark: #B6B6B6;
-    --heading-font: "Veranda";
+    --heading-font: Verdana, Geneva, sans-serif;
     --paragraph-font: Lato, Helvetica, sans-serif;
 }
 
@@ -38,12 +38,15 @@ img {
     max-height: 150px;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+/* 
+h1 { font-family: Verdana, Geneva, sans-serif; font-size: 24px; font-style: normal; font-variant: normal; font-weight: 700; line-height: 26.4px; } 
+h3 { font-family: Verdana, Geneva, sans-serif; font-size: 14px; font-style: normal; font-variant: normal; font-weight: 700; line-height: 15.4px; } 
+p { font-family: Verdana, Geneva, sans-serif; font-size: 14px; font-style: normal; font-variant: normal; font-weight: 400; line-height: 20px; } 
+blockquote { font-family: Verdana, Geneva, sans-serif; font-size: 21px; font-style: normal; font-variant: normal; font-weight: 400; line-height: 30px; } 
+pre { font-family: Verdana, Geneva, sans-serif; font-size: 13px; font-style: normal; font-variant: normal; font-weight: 400; line-height: 18.5714px; }
+*/
+
+h1, h2, h3, h4, h5, h6 {
     font-family: var(--heading-font);
     color: var(--s-light);
 }
@@ -57,12 +60,18 @@ header, footer {
 
 header>h1 {
     color: var(--s-light);
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 36px;
 }
 
 p {
     font-family: var(--paragraph-font);
     color: var(--primary-color);
     padding: 1em;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 22.5px;
 }
 
 a:link {
@@ -151,6 +160,7 @@ td {
 
 nav {
     background-color: var(--p-light);
+    font-family: var(--heading-font);
     line-height: 3em;
     text-align: center;
     font-size: 1.2em;

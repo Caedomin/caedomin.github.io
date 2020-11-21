@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>powers.html</title>
+    <script>
+        // Defining Table:   There is no Input
+        // Process:          Calculate multiples of 5 
+        // Output:           Display the five times table from 1 to 12 
+        function fiveTimes() {
+            let result = 0;
+            let output = "";
+            
+            for (x=1; x<=12; x++) {
+                // Statements to be repeated go here.
+                result = Math.pow(5,x);
+                output += "5 x " + x + " = " + result + "<br>";
+            }
+            document.getElementById("outputDiv").innerHTML = output;
+        }
+    </script>
+</head>
+<body>
+    <button type="button" onclick="fiveTimes()">Powers of 2</button>
+    <div id="outputDiv"></div>
+</body>
+</html>
