@@ -15,11 +15,6 @@
     <header>
         <div class="heroDiv">
             <img class="thumbnail" src="images/templeHousingWhite.png" alt="Logo">
-            <section class="bookNow">
-                <h2>BOOK NOW</h2>
-                <p><strong><a href="reservations.html">Click here</a> to</strong></p>
-                <p><strong>view availabilities!</strong></p>
-            </section>        
         </div>
 
         <div>
@@ -35,52 +30,84 @@
             </ul>
         </nav>
     </header>
-    
+
     <main>
-        <div class="hero">
-            <img src="images/prov-tmpl-wd.jpg" alt="Rooftop View" />
+        <div class="heroSlider">
+            <img class="mySlides" src="images/temple_mesa_arizona.jpg" alt="image of mesa temple">
+            <img class="mySlides" src="images/temple_draper_utah.jpg" alt="image of draper temple">
+            <img class="mySlides" src="images/temple-nauvoo_illinois.jpg" alt="image of nauvoo temple">
+            <img class="mySlides" src="images/temple_manhattan.jpg" alt="image of manhattan temple">
+
+            <button class="display-button button-left" onclick="plusDivs(-1)">&#10094;</button>
+            <button class="display-button button-right" onclick="plusDivs(1)">&#10095;</button>
         </div>
-        <div class="grid">
-            <section class="textBlock1">
-                <h2>Your Home Away from Home</h2>
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Non nostrum nesciunt sunt enim sed. Soluta,
-                    hic! Sed esse ipsa autem quia rem incidunt itaque, sequi doloribus! Aliquid iste fugiat animi alias,
-                    pariatur a, ducimus saepe nesciunt culpa necessitatibus eveniet. Voluptates nisi atque est sint,
-                    nemo debitis commodi a earum sequi!</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla ab magnam eaque asperiores officia 
-                    neque nam necessitatibus quo autem officiis, pariatur tenetur doloribus expedita quaerat saepe? 
-                    Voluptatem velit praesentium repellendus consequuntur!</p>
+
+        <script>
+            var slideIndex = 1;
+            showDivs(slideIndex);
+
+            function plusDivs(n) {
+                showDivs(slideIndex += n);
+            }
+
+            function showDivs(n) {
+                var i;
+                var x = document.getElementsByClassName("mySlides");
+                if (n > x.length) {
+                    slideIndex = 1
+                }
+                if (n < 1) {
+                    slideIndex = x.length
+                }
+                for (i = 0; i < x.length; i++) {
+                    x[i].style.display = "none";
+                }
+                x[slideIndex - 1].style.display = "block";
+            }
+        </script>
+
+        <h2 class="centerHeading">About Our Locations</h2>
+
+        <div class="templeText">
+            <section class="textCenter">
+                <h3>Mesa Arizona Temple</h3>
+                <section class="facts">
+                    <h4>TEMPLE FACTS</h4>
+                    <p>7th dedicated temple in operation</p>
+                    <p>Located just east of the original Mesa Townsite—settled by pioneers of The Church of Jesus Christ of Latter-day Saints—the Mesa Arizona Temple anchors a historic district, which has predominantly retained its residential character. A public visitors' center shares the meticulously manicured grounds of the temple, which feature a cactus garden and large reflection pools. The Easter season brings thousands of guests to the temple grounds every year to watch Jesus the Christ, the largest annual outdoor Easter pageant in the world. At Christmas time, the grounds are converted to an exquisite Nativity display accented by hundreds of thousands of Christmas lights.</p>
+                    <p>To find out more, visit <a href="https://churchofjesuschristtemples.org/mesa-arizona-temple/">churchofjesuschristtemples.org/mesa-arizona-temple</a></p>
+                </section>
+                
             </section>
-           
-            <section class="bodyImage1">
-                <img src="images/home-outdoors.jpg" alt="Home away from home image">
-            </section>
-           
-            <section class="bodyImage2">
-                <img src="images/temple-spire-sq.jpg" alt="Wedding image">
+    
+            <section class="textCenter">
+                <h3>Draper Utah Temple</h3>
+                <section class="facts">
+                    <h4>TEMPLE FACTS</h4>
+                    <p>129th dedicated temple in operation</p>
+                    <p>Standing high on a ridgeline near the mouth of Draper's Corner Canyon—featuring 1,021 acres of dedicated open space—the Draper Utah Temple offers a inspiring view of the entire Salt Lake Valley. The beautiful granite edifice shares a site with a meetinghouse and a joint parking lot, constructed at the same time as the temple. Visitors are welcome to roam the beautifully landscaped grounds and take in the spirit of this holy House of the Lord.</p>
+                    <p>To find out more, visit <a href="https://churchofjesuschristtemples.org/draper-utah-temple/">churchofjesuschristtemples.org/draper-utah-temple</a></p>
+                </section>
             </section>
             
-            <section class="textBlock2">
-                <h2>Wedding Receptions</h2>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis facilis iusto corrupti vel
-                    doloremque doloribus quo vitae molestiae animi voluptatum? Corrupti, saepe deleniti tempore nulla
-                    ratione temporibus esse error! Rerum dolorem ad veritatis neque sit fugit voluptates quo impedit
-                    provident harum!</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum quod accusamus adipisci aliquam,
-                    earum, provident voluptas eligendi a veritatis perferendis tempore eveniet ex.</p>
+            <section class="textCenter">
+                <h3>Nauvoo Illinois Temple</h3>
+                <section class="facts">
+                    <h4>TEMPLE FACTS</h4>
+                    <p>113th dedicated temple in operation</p>
+                    <p>The Nauvoo Illinois Temple stands on a high bluff overlooking a bend in the Mississippi River. The majestic building is a faithful reproduction of the original Nauvoo Temple built by settlers of the Church in the 1840s and destroyed by arson fire in 1848 and tornado-force winds in 1850. Featured on the grounds west of the temple is a handsome statue depicting Church founder Joseph Smith and brother Hyrum Smith on horseback; both were martyred in Carthage Jail during construction of the original temple. Nauvoo is rich in Church history and the destination of thousands of tourists each year. The temple operates an accelerated summer schedule to accommodate demand. Summer is also the season of the popular Nauvoo Pageant: A Tribute to Joseph Smith.</p>
+                    <p>To find out more, visit <a href="https://churchofjesuschristtemples.org/nauvoo-illinois-temple/">churchofjesuschristtemples.org/nauvoo-illinois-temple</a></p>
+                </section>
             </section>
-           
-            <section class="textBlock3">
-                <h2>Family Search Center</h2>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed esse ipsa autem quia rem incidunt itaque, sequi doloribus! Aliquid iste fugiat animi alias,
-                    pariatur a, ducimus saepe nesciunt culpa necessitatibus eveniet. Voluptates nisi atque est sint,
-                    nemo debitis commodi a earum sequi! Reiciendis facilis iusto corrupti vel
-                    doloremque doloribus quo vitae molestiae animi voluptatum?</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Et, nulla mollitia vitae eligendi excepturi
-                    deserunt id! Sed, minima sapiente necessitatibus odio in inventore fugiat quae corrupti distinctio
-                    deleniti, voluptas optio, maxime omnis sequi expedita repellendus cumque saepe ab repudiandae non
-                    perferendis asperiores excepturi. Aspernatur recusandae ad aperiam praesentium veritatis perferendis
-                    autem numquam consequatur eaque iure nisi vel at, mollitia dolores quod!</p>
+    
+            <section class="textCenter">
+                <h3>Manhattan New York Temple</h3>
+                <section class="facts">
+                    <h4>TEMPLE FACTS</h4>
+                    <p>119th dedicated temple in operation</p>
+                    <p>Located at the intersection of West 65th Street, Broadway, and Columbus Avenue, the Manhattan New York Temple stands among some of New York City's most prominent landmarks including Lincoln Center, home of the renowned Juilliard School, and Central Park. The temple proper occupies the top three floors of the edifice while the baptistry operates on the first floor; a meetinghouse spans the third floor, and the second floor houses a public affairs office and distribution center. From the lobby, there is a separate door to enter the temple inscribed Holiness to the Lord.</p>
+                    <p>To find out more, visit <a href="https://churchofjesuschristtemples.org/nauvoo-illinois-temple/">churchofjesuschristtemples.org/nauvoo-illinois-temple</a></p>
+                </section>
             </section>
         </div>
     </main>
@@ -89,7 +116,7 @@
         <div class="top-footer-row">
             <img class="thumbnail" src="images/templeHousingWhite.png" alt="Logo">
         </div>
-        
+
         <div class="contact-title">
             <b>Contact Details</b>
         </div>
@@ -102,7 +129,7 @@
             <table>
                 <tr>
                     <td><img src="images/map-point-sm.png" alt="map location image"></td>
-                    <td><b>Temple Inn &  Suites Headquarters</b><br> 
+                    <td><b>Temple Inn & Suites Headquarters</b><br>
                         <b>355 Wisconsin Avenue</b><br>
                         <b>Bethesda, MD 20814</b></td>
                 </tr>
@@ -123,13 +150,14 @@
                     Sun CLOSED</b>
             </p>
             <div class="social">
-                <a href="https://fb.com"><img src="images/sm_icon_fb.png" alt="Facebook Logo"></a> 
-                <a href="https://twitter.com"><img src="images/sm_icon_tw.png" alt="Twitter Logo"></a> 
+                <a href="https://fb.com"><img src="images/sm_icon_fb.png" alt="Facebook Logo"></a>
+                <a href="https://twitter.com"><img src="images/sm_icon_tw.png" alt="Twitter Logo"></a>
                 <a href="https://www.instagram.com"><img src="images/sm_icon_pt.png" alt="Pinterest Logo"></a>
             </div>
         </div>
         <div class="copyright">
-            <p>Copyright &copy; 2020 Temple Inn & Suites | All Rights Reserved | <a href="#">Privacy Statement</a> | Aaron Graham</p>
+            <p>Copyright &copy; 2020 Temple Inn & Suites | All Rights Reserved | <a href="#">Privacy Statement</a> |
+                Aaron Graham</p>
         </div>
     </footer>
 
