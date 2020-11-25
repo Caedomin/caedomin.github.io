@@ -1,28 +1,44 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE HTML>
+<html lang="en-us">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>powers.html</title>
-    <script>
-        // Defining Table:   There is no Input
-        // Process:          Calculate multiples of 5 
-        // Output:           Display the five times table from 1 to 12 
-        function fiveTimes() {
-            let result = 0;
-            let output = "";
-            
-            for (x=1; x<=12; x++) {
-                // Statements to be repeated go here.
-                result = Math.pow(5,x);
-                output += "5 x " + x + " = " + result + "<br>";
-            }
-            document.getElementById("outputDiv").innerHTML = output;
-        }
-    </script>
+
+	<meta charset="utf-8">
+	<title>Investment Calculator</title>
+	<script>
+		"use strict";
+
+		/* Defining table:
+		 * Input: Prompt user to enter principal, rate, number of years, and compound periods per year.
+		 * Processing: Calculate future value based on a formula using all numbers.
+		 * Output: Display future value.
+		 */
+		 
+		function doFV() {
+			let principal = parseFloat(document.getElementById("principal").value);
+			let rate = parseFloat(document.getElementById("rate").value);
+			let years = parseFloat(document.getElementById("years").value);
+			let compound = parseFloat(document.getElementById("compound").value);
+			let future = Math.round(completeFutureValue(principal, rate, years, compound) * 100) / 100;
+			document.getElementById("outputDiv").innerHTML = "$" + future;
+		}
+		function completeFutureValue(principal, annualRate, years, periodsPerYear) {
+			return principal * (1 + annualRate) ** (years * periodsPerYear);
+		}
+	</script>
 </head>
 <body>
-    <button type="button" onclick="fiveTimes()">Powers of 2</button>
-    <div id="outputDiv"></div>
+	<h1>Investment Calculator</h1>
+	<br>
+	<br>
+	<br>
+	Amount invested (principal)<input type="text" id="principal">
+	<br>
+	Annual rate (example: .08)<input type="text" id="rate">
+	<br>
+	Number of years<input type="text" id="years">
+	<br>
+	Periods per year<input type="text" id="compound">
+	<div id="outputDiv"></div>
+	<button type="button" onclick="doFV()">Compute future value</button>
 </body>
 </html>

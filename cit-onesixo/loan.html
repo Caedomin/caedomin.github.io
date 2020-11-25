@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="utf-8">
+    <title>Loan</title>
+    <style>
+        html 
+        {
+			background: #f1f1f1;
+		}
+        body, button, #output 
+        {
+			color: #444;
+			font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;            
+            text-align: center;
+            font-size: 18px;
+        }
+
+        body 
+        {
+			background: #fff;
+            font-size: 20px;
+            margin: 2em auto;
+			padding: 1em 2em;
+			max-width: 700px;
+			box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.13);
+		}
+
+        .container {
+            position: relative;
+            display: grid;
+        }
+
+        .table {
+            text-align: right;
+            display: grid;
+            grid-template: 1fr / 1fr;
+            justify-self: right;
+            margin: 10px 150px 20px 0px;
+        }
+
+        button {
+            padding: 7px 10px;
+            margin: 20px;
+            cursor: pointer;
+        }
+
+        #outputPayment, #outputBalance
+        {
+            background-color: white;
+            width: 200px;
+            font-size: 1.05em;
+            font-weight: 700;
+            height: auto;
+            padding: 10px;
+            border: 1.5px solid black;
+            margin: 20px auto;
+        }
+
+        .outputs {
+            display: grid;
+            grid-column: 1fr / 1fr;
+            /* padding: 75px; */
+            margin: 0px 220px;
+        }
+
+    </style>
+    <script>
+        
+        function doPayment() {
+            // Input
+            var principal = parseFloat(document.getElementById('principal').value);
+            var rate = parseFloat(document.getElementById('rate').value);
+            var years = parseFloat(document.getElementById('years').value);
+            var periods = parseFloat(document.getElementById('periods').value);
+            
+            // Processing
+            var payment = computePayment(principal, rate, years, periods);
+
+            // Output
+            document.getElementById("outputPayment").innerHTML = "Loan Payment: $" + payment.toFixed(2);
+        }
+
+        function computePayment(principal, annualRate, years, periodsPerYear) {
+            var r = annualRate / periodsPerYear;
+            var n = years * periodsPerYear
+            var p = (principal * r) / (1 - Math.pow((1+r), -n))
+            return p
+        }
+
+        function doBalance () {
+            // Input
+            var principal = parseFloat(document.getElementById('principal').value);
+            var rate = parseFloat(document.getElementById('rate').value);
+            var years = parseFloat(document.getElementById('years').value);
+            var periods = parseFloat(document.getElementById('periods').value);
+            var paymentsToDate = parseFloat(document.getElementById('paymentsToDate').value);
+            
+            // Processing
+            var balance = computeBalance(principal, rate, years, periods, paymentsToDate);
+
+            // Output
+            document.getElementById("outputBalance").innerHTML = "Loan Balance: $" + balance.toFixed(2);
+        }
+        
+        function computeBalance (principal, annualRate, years, periodsPerYear, numberOfPaymentPaidToDate) {
+            var r = annualRate / periodsPerYear;
+            var p = computePayment(principal, annualRate, years, periodsPerYear);
+            var b = principal * Math.pow((1+r), numberOfPaymentPaidToDate) - ((p*(Math.pow((1+r), numberOfPaymentPaidToDate) - 1))/r);
+            return b;
+        }
+
+    </script>
+</head>
+
+<body>
+    <section class="container">
+        <h1>Calculate Loan</h1>
+        <table class="table">
+            <tr>
+                <td>Amount Borrowed (principal)</td>
+                <td><input type="number" id="principal"></td>
+            </tr>
+            <tr>
+                <td>Annual Interest Rate</td>
+                <td><input type="number" id="rate"></td>
+            </tr>
+            <tr>
+                <td>Number of Years</td>
+                <td><input type="number" id="years"></td>
+            </tr>
+            <tr>
+                <td>Periods per Year</td>
+                <td><input type="number" id="periods"></td>
+            </tr>
+            <tr></tr>
+        </table>
+    </section>
+    <!-- <div class="container"> -->
+        <div class="outputs">
+            <button type="button" onclick="doPayment()">Compute Payment</button>
+            <div id="outputPayment">Loan Payment</div>
+        </div>
+    <!-- </div> -->
+    <div class="container">
+        <table class="table">
+            <tr>
+                <td>Number of Payments <br> (Paid to Date)</td>
+                <td><input type="number" id="paymentsToDate"></td>
+            </tr>
+        </table>
+    </div>
+    <div class="container">
+        <div class="outputs">
+            <button type="button" onclick="doBalance()">Compute Balance</button>
+            <div id="outputBalance">New Loan Balance</div>
+        </div>
+    </div>
+</body>
+
+</html>
