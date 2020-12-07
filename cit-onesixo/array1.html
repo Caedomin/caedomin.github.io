@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="utf-8">
+    <title>Practicing Arrays</title>
+    <style>
+        html {
+            background: #f1f1f1;
+        }
+
+        body,
+        button,
+        #output {
+            color: #444;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            text-align: center;
+            font-size: 18px;
+        }
+
+        body {
+            background: #fff;
+            margin: 2em auto;
+            padding: 1em 2em;
+            max-width: 700px;
+            box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.13);
+        }
+
+        button {
+            padding: 7px 10px;
+            cursor: pointer;
+        }
+
+        #output {
+            background-color: white;
+            width: 230px;
+            font-size: 1.05em;
+            font-weight: 700;
+            height: auto;
+            padding: 10px;
+            border: 1.5px solid black;
+            margin: 20px auto;
+        }
+    </style>
+    <script>
+        // DEFINING TABLE
+        // Input:      No user input
+        // Processing: Test the addEnds and getMiddle functions by calling them.
+        // Output:     The values returned from the addEnds and getMiddle functions.
+
+        function test() {
+            let list1 = [17, 8, 9, 5, 20];
+            let list2 = [12, 4, 8, 15, 17, 5, 20, 11];
+
+            // Test the addEnds function by calling it two times.
+            let sum1 = addEnds(list1);
+            let sum2 = addEnds(list2);
+
+            // Test the getMiddle function by calling it two times.
+            let mid1 = getMiddle(list1);
+            let mid2 = getMiddle(list2);
+
+            // Build a string to display to the user.
+            let output =
+                "SUM of list ends" + '<br>' +
+                sum1 + '<br>' +
+                sum2 + '<br>' + 
+                '<br>' +
+                "MID value of lists" + '<br>' +
+                mid1 + '<br>' +
+                mid2;
+
+            // Display the output string for the user to see.
+            document.getElementById('output').innerHTML = output;
+        }
+
+        function addEnds(list) {
+            return list[0] + list[list.length -1];
+        }
+
+        function getMiddle(list) {
+            // if list is an odd number, display's middle list item
+            if ((list.length % 2) == 1) {
+                return list[Math.floor(list.length / 2)];
+            }
+            // else, display's average of middle two list item values.
+            else {
+                let midLo = (list.length/2) -1;
+                let midHi = list.length/2;
+                return (list[midLo] + list[midHi]) /2;
+            }
+        }
+
+    </script>
+</head>
+
+<body>
+    <section>
+        <h1>Testing Arrays</h1>
+        <p>Click the <strong>Display</strong> button to test several Javascript functions working together to display:</p>
+        <p>1. the sum of the ends of a list</p>
+        <p>2. the value of the middle number(s) in a list</p>
+    </section>
+    <button type="button" onclick="test()">Display</button><br>
+    <div id="output">Array Test Results</div>
+</body>
+
+</html>

@@ -1,44 +1,72 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html lang="en-us">
+
 <head>
-
-	<meta charset="utf-8">
-	<title>Investment Calculator</title>
-	<script>
-		"use strict";
-
-		/* Defining table:
-		 * Input: Prompt user to enter principal, rate, number of years, and compound periods per year.
-		 * Processing: Calculate future value based on a formula using all numbers.
-		 * Output: Display future value.
-		 */
-		 
-		function doFV() {
-			let principal = parseFloat(document.getElementById("principal").value);
-			let rate = parseFloat(document.getElementById("rate").value);
-			let years = parseFloat(document.getElementById("years").value);
-			let compound = parseFloat(document.getElementById("compound").value);
-			let future = Math.round(completeFutureValue(principal, rate, years, compound) * 100) / 100;
-			document.getElementById("outputDiv").innerHTML = "$" + future;
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="author" content="Eliana Ugas">
+	<title>Arrays</title>
+	<style>
+		body {
+			width: 90%;
+			margin-left: 5%;
+			text-align: center;
+			background-color: #768b80;
+			font-size: 20px;
+			font-family: 'Cambria', 'Cochin', Georgia, Times, 'Times New Roman', serif;
+			color: rgb(16, 49, 31);
 		}
-		function completeFutureValue(principal, annualRate, years, periodsPerYear) {
-			return principal * (1 + annualRate) ** (years * periodsPerYear);
+	</style>
+	<script>
+		/* Defining Table
+		 * Input: no user input
+		 * Processing: Test the addEnds and getMiddle functions by calling them.
+		 * Output: The values returned from the addEnds and getMiddle functions.
+		 */
+		function test() {
+			let list1 = [17, 8, 9, 5, 20];
+			let list2 = [12, 4, 8, 15, 17, 5, 20, 11];
+			// Test the addEnds function by calling it two times.
+			let sum1 = addEnds(list1);
+			let sum2 = addEnds(list2);
+			// Test the getMiddle function by calling it two times.
+			let mid1 = getMiddle(list1);
+			let mid2 = getMiddle(list2);
+			// Build a string to display to the user.
+			let output =
+				sum1 + '<br>' +
+				sum2 + '<br>' +
+				mid1 + '<br>' +
+				mid2;
+			// Display the output string for the user to see.
+			document.getElementById('output').innerHTML = output;
+		}
+
+		function addEnds(list) {
+			let first = 0;
+			let last = list.length - 1;
+			let add = list[first] + list[last];
+			return add;
+		}
+
+		function getMiddle(list) {
+			if (list.length % 2 == 0) {
+				let one = list.length / 2;
+				let two = list.length / 2 - 1;
+				let mid = (list[one] + list[two]) / 2;
+				return mid;
+			} else {
+				let middle = list.length / 2 - 0.5;
+				return list[middle];
+			}
 		}
 	</script>
 </head>
+
 <body>
-	<h1>Investment Calculator</h1>
-	<br>
-	<br>
-	<br>
-	Amount invested (principal)<input type="text" id="principal">
-	<br>
-	Annual rate (example: .08)<input type="text" id="rate">
-	<br>
-	Number of years<input type="text" id="years">
-	<br>
-	Periods per year<input type="text" id="compound">
-	<div id="outputDiv"></div>
-	<button type="button" onclick="doFV()">Compute future value</button>
+	<h1>Addition of Ends and Middles of Arrays</h1>
+	<button type="button" onclick="test()">Click Here</button>
+	<div id="output"></div>
 </body>
+
 </html>

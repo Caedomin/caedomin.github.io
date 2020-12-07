@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>W12 Media Card Activity</title>
+    <style>
+        body {
+            background-color: #CCC;
+        }
+
+        img {
+            max-width: 100%; 
+        }
+
+        p { margin: 20px 15px 5px; }
+
+        .card { 
+            width: 320px; 
+            background-color: white;
+            box-shadow: 1px 1px 4px 1px #888;
+            border-radius: 3px;
+            overflow: hidden;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        footer {
+            margin: 5px 15px 15px;
+            position: relative;
+            /* display: grid; */
+            /* grid-template-columns: 1fr 1fr; */
+        }
+
+        button {
+            padding: 5px;
+            /* order: 0; */
+        }
+
+        .viewButton {
+            margin: 15px 0px;
+            padding: 5px;
+            border-radius: 5px 0px 0px 5px;
+            /* order: inherit; */
+        }
+
+        .editButton {
+            margin: 15px 0px;
+            padding: 5px;
+            border-radius: 0px 5px 5px 0px;
+            /* order: inherit; */
+        }
+
+        span {
+            justify-items: end;
+            font-size: smaller;
+            /* order: 1; */
+            padding-left: 150px;
+        }
+
+    </style>
+</head>
+<body>
+    <article class="card">
+        <img src="https://picsum.photos/320/240" alt="Sample Thumbnail">
+        <p>This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+        <footer>
+            <button class="viewButton">View</button>
+            <button class="editButton">Edit</button>
+            <span>9 mins</span> <!--This will hold the time spent? -->
+        </footer>
+    </article>
+
+</body>
+</html>
