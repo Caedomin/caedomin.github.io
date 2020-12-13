@@ -1,71 +1,71 @@
-<!DOCTYPE html>
-<html lang="en-us">
+<!DOCTYPE HTML>
+<html lang="en">
 
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="author" content="Eliana Ugas">
-	<title>Arrays</title>
+	<meta charset="utf-8">
+	<meta name="author" content="Takota Bean">
+	<title>Count Evens</title>
 	<style>
 		body {
-			width: 90%;
-			margin-left: 5%;
+			width: 80%;
+			margin-left: 10%;
 			text-align: center;
-			background-color: #768b80;
-			font-size: 20px;
-			font-family: 'Cambria', 'Cochin', Georgia, Times, 'Times New Roman', serif;
-			color: rgb(16, 49, 31);
 		}
 	</style>
 	<script>
-		/* Defining Table
-		 * Input: no user input
-		 * Processing: Test the addEnds and getMiddle functions by calling them.
-		 * Output: The values returned from the addEnds and getMiddle functions.
-		 */
+		/* Assignment
+
+					**Defining Table**
+					input:      NONE
+					processing: count = 0;
+								loop through the array
+									if array[i] is even
+										ncrease count
+					output:     count
+				*/
 		function test() {
 			let list1 = [17, 8, 9, 5, 20];
 			let list2 = [12, 4, 8, 15, 17, 5, 20, 11];
-			// Test the addEnds function by calling it two times.
-			let sum1 = addEnds(list1);
-			let sum2 = addEnds(list2);
-			// Test the getMiddle function by calling it two times.
-			let mid1 = getMiddle(list1);
-			let mid2 = getMiddle(list2);
+			// Test the countEvens function by calling it two times.
+			let count1 = countEvens(list1);
+			let count2 = countEvens(list2);
+			// Test the multiply function by calling it two times.
+			let multi1 = multiply(list1, 3);
+			let multi2 = multiply(list2, 2);
 			// Build a string to display to the user.
 			let output =
-				sum1 + '<br>' +
-				sum2 + '<br>' +
-				mid1 + '<br>' +
-				mid2;
+				count1 + '<br>' +
+				count2 + '<br>' +
+				multi1 + '<br>' +
+				multi2;
 			// Display the output string for the user to see.
 			document.getElementById('output').innerHTML = output;
 		}
 
-		function addEnds(list) {
-			let first = 0;
-			let last = list.length - 1;
-			let add = list[first] + list[last];
-			return add;
+		function countEvens(List) {
+			var count = 0;
+			for (var i = 0; i < list.length; ++i) {
+				if (list[i] % 2 == 0) {
+					return count++;
+				}
+			}
+			return count;
 		}
 
-		function getMiddle(list) {
-			if (list.length % 2 == 0) {
-				let one = list.length / 2;
-				let two = list.length / 2 - 1;
-				let mid = (list[one] + list[two]) / 2;
-				return mid;
-			} else {
-				let middle = list.length / 2 - 0.5;
-				return list[middle];
+		function multiply(list, multiplier) {
+
+			for (let i = 0; i < list.length; i++) {
+				(list[i] * multiplier) = list[i];
 			}
+			return list;
+
 		}
 	</script>
 </head>
 
 <body>
-	<h1>Addition of Ends and Middles of Arrays</h1>
-	<button type="button" onclick="test()">Click Here</button>
+	<h1>Count Evens in an Array</h1>
+	<button type="button" onclick="test()">Run Function</button>
 	<div id="output"></div>
 </body>
 

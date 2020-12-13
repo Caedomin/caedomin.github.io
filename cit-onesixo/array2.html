@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="utf-8">
+    <title>Multiplying Arrays</title>
+    <style>
+        html {
+            background: #f1f1f1;
+        }
+
+        body,
+        button,
+        #output {
+            color: #444;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            text-align: center;
+            font-size: 18px;
+        }
+
+        body {
+            background: #fff;
+            margin: 2em auto;
+            padding: 1em 2em;
+            max-width: 700px;
+            box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.13);
+        }
+
+        button {
+            padding: 7px 10px;
+            cursor: pointer;
+        }
+
+        #output {
+            background-color: white;
+            width: 350px;
+            font-size: 1.05em;
+            font-weight: 700;
+            height: auto;
+            padding: 10px;
+            border: 1.5px solid black;
+            margin: 20px auto;
+        }
+    </style>
+    <script>
+        // DEFINING TABLE
+        // Input:      No user input
+        // Processing: Test the countEvens and multiply functions by calling them.
+        // Output:     The values returned from the countEvens and multiply functions.
+
+        function test() {
+            let list1 = [17, 8, 9, 5, 20];
+            let list2 = [12, 4, 8, 15, 17, 5, 20, 11];
+
+            // Test the countEvens function by calling it two times.
+            let count1 = countEvens(list1);
+            let count2 = countEvens(list2);
+
+            // Test the multiply function by calling it two times.
+            let mult1 = multiply(list1,3);
+            let mult2 = multiply(list2,2);
+
+            // Build a string to display to the user.
+            let output =
+                "Count of all even numbers" + '<br>' +
+                count1 + '<br>' +
+                count2 + '<br>' + 
+                '<br>' +
+                "Product of an array and a number" + '<br>' +
+                mult1 + '<br>' +
+                mult2;
+
+            // Display the output string for the user to see.
+            document.getElementById('output').innerHTML = output;
+        }
+
+        function countEvens(list) {
+            var evens = 0;
+            for (var i of list) {
+                if (i % 2 == 0) {
+                    evens++;
+                }
+            }
+            return evens;
+        }
+
+        function multiply(list, multiplier) {
+            var multipliedResults = [];
+            for (var i of list) {
+                multipliedResults.push(i*multiplier)
+            }
+            return multipliedResults;
+        }
+
+    </script>
+</head>
+
+<body>
+    <section>
+        <h1>Multiplying Arrays</h1>
+        <p>Click the <strong>Display</strong> button to test several Javascript functions working together to display:</p>
+        <p>1. the count of all even numbers in a given list</p>
+        <p>2. the products of an array multiplied by a given value.</p>
+    </section>
+    <button type="button" onclick="test()">Display</button><br>
+    <div id="output">Array Results</div>
+</body>
+
+</html>
