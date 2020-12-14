@@ -1,0 +1,1011 @@
+/* Order of size properties: top right bottom left */
+
+/* Use h1 for the title only. */
+h1 {
+    font-size: xx-large;
+    text-align: center;
+    margin-bottom: 1em;
+    page-break-after: avoid
+}
+
+h1.subtitle {
+    font-size: x-large;
+    text-align: center;
+    margin-bottom: 1em;
+    page-break-after: avoid
+}
+
+/* Use h2 for chapter headings. */
+h2 {
+    font-size: x-large;
+    text-align: center;
+    margin-bottom: 1em;
+    page-break-after: avoid
+}
+
+/* Use h3 for section headings. */
+h3 {
+    clear: both;
+    font-size: large;
+    margin-top: 2em;
+    page-break-after: avoid
+}
+
+/* Use h4 for sub-section headings. */
+h4 {
+    clear: both;
+    font-size: medium;
+    margin-top: 1em;
+    page-break-after: avoid
+}
+
+h5 {
+    font-size: small;
+    margin-top: 1em;
+    page-break-after: avoid
+}
+
+body>div {
+    text-align: left;
+    font-family: Verdana, Arial, sans-serif
+}
+
+/* As of 11/13/2013 Kindle readers don't support counter-reset and
+ * counter-increment.
+body#hardware   { counter-reset: pagenum   0; }
+body#algorithms { counter-reset: pagenum   4; }
+body#htmlBasics { counter-reset: pagenum  10; }
+body#jsBasics   { counter-reset: pagenum  20; }
+body#variables  { counter-reset: pagenum  32; }
+body#selection  { counter-reset: pagenum  48; }
+body#logic      { counter-reset: pagenum  66; }
+body#repetition { counter-reset: pagenum  80; }
+body#functions  { counter-reset: pagenum 100; }
+body#arrays     { counter-reset: pagenum 120; }
+body#objects    { counter-reset: pagenum 140; }
+body#strings    { counter-reset: pagenum 144; }
+body#precedence { counter-reset: pagenum 156; }
+body#robust     { counter-reset: pagenum 158; }
+body#index      { counter-reset: pagenum 160; }
+
+div.pagenum:before { content:counter(pagenum); } */
+div.pagenum {
+    /*	counter-increment: pagenum; */
+    float: right;
+    margin-top: 1em;
+    padding: 0.25em 0.5em;
+    background-color: #fdf6e3;
+    /*#94dc18;*/
+    color: #268bd2;
+    font-size: small;
+    transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    -webkit-transform: rotate(90deg)
+}
+
+/* vim commands to put spans around code keywords, tokens, etc.
+:g/<pre class="hilite/,/<\/pre>/
+:g/<pre class="hilite/,/&lt;\/head&gt;/
+
+s:&lt;!DOCTYPE HTML&gt;:<span class="doc">&</span>:
+s:\(&lt;[^&<]\+\)\<\(\(charset\|content\|id\|lang\|name\|onclick\|size\|type\|value\)=\("[^"]*"\|'[^']*'\)\):\1<span class="attr">\2</span>:
+s:\(&lt;/\?\)\(html\|head\|meta\|title\|style\|script\|body\|h[1-6]\|p\|input\|textarea\|button\|div\|br\)\>:\1<span class="key">\2</span>:g
+
+s://.*$:<span class="comm">&</span>:
+s:[(){}\[\]]:<span class="tok">&</span>:g
+s:\<\(break\|case\|do\|else\|false\|for\|function\|if\|return\|switch\|true\|var\|while\)\>:<span class="key">\1</span>:g
+
+s:\("[^"]*"\)\([^>]\|$\):<span class="lit">\1</span>\2:g
+s:'[^']*$:<span class="comm">&</span>:
+s:[(){}\[\]]:<span class="tok">&</span>:g
+s:\<\(And\|As\|Boolean\|ByRef\|ByVal\|Case\|Currency\|Decimal\|Dim\|Do\|Double\|Else\|ElseIf\|End\|Exit\|False\|For\|Function\|If\|Imports\|Integer\|Is\|Long\|Loop\|Next\|Not\|Or\|Public\|Return\|Select\|Step\|String\|Sub\|Then\|To\|True\|Until\|Variant\|While\|Xor\)\>:<span class="key">\1</span>:g
+
+s:\("[^"]*"\|'[^']\+'\)\([^>]\|$\):<span class="lit">\1</span>\2:g
+s://.*$:<span class="comm">&</span>:
+s:/\*:<span class="comm">&:g
+s:\*\/:&</span>:g
+s:\([(){}\[\]]\s*\)\+:<span class="tok">&</span>:g
+s:\<\(abstract\|assert\|boolean\|break\|byte\|case\|catch\|char\|const\|continue\|default\|do\|double\|else\|enum\|extends\|false\|final\|finally\|float\|for\|goto\|if\|implements\|import\|instanceof\|int\|interface\|long\|native\|new\|null\|package\|private\|protected\|public\|return\|short\|static\|strictfp\|super\|switch\|synchronized\|this\|throw\|throws\|transient\|true\|try\|void\|volatile\|while\)\>:<span class="key">\1</span>:g
+*/
+
+/* Solarized color scheme */
+pre.hilite .base03 {
+    color: #002b36;
+}
+
+pre.hilite .base02 {
+    color: #073642;
+}
+
+pre.hilite .base01 {
+    color: #586e75;
+}
+
+pre.hilite .base00 {
+    color: #657b83;
+}
+
+pre.hilite .base0 {
+    color: #839496;
+}
+
+pre.hilite .base1 {
+    color: #93a1a1;
+}
+
+pre.hilite .base2 {
+    color: #eee8d5;
+}
+
+pre.hilite .base3 {
+    color: #fdf6e3;
+}
+
+pre.hilite .yellow {
+    color: #b58900;
+}
+
+pre.hilite .orange {
+    color: #cb4b16;
+}
+
+pre.hilite .red {
+    color: #dc322f;
+}
+
+pre.hilite .magenta {
+    color: #d33682;
+}
+
+pre.hilite .violet {
+    color: #6c71c4;
+}
+
+pre.hilite .blue {
+    color: #268bd2;
+}
+
+pre.hilite .cyan {
+    color: #2aa198;
+}
+
+pre.hilite .green {
+    color: #859900;
+}
+
+pre.hilite {
+    color: #657b83;
+}
+
+pre.hilite .doc {
+    color: #2aa198;
+}
+
+pre.hilite .attr {
+    color: #b58900;
+}
+
+pre.hilite .comm {
+    color: #859900;
+}
+
+pre.hilite .func {
+    color: #cb4b16;
+}
+
+pre.hilite .key {
+    color: #268bd2;
+}
+
+pre.hilite .lit {
+    color: #d33682;
+}
+
+pre.hilite .tok {
+    color: #586e75;
+}
+
+pre.hilite .ora {
+    background-color: #ffc000;
+}
+
+pre.hilite .yel {
+    background-color: yellow;
+}
+
+div.code {
+    display: table-row
+}
+
+div.code>pre {
+    display: table-cell
+}
+
+div.code>pre.linenum {
+    padding-right: 1em;
+    text-align: right;
+    color: #93a1a1;
+}
+
+div.pagemap div {
+    font-size: large;
+    page-break-inside: avoid;
+    margin-bottom: 1em
+}
+
+div.figure {
+    page-break-inside: avoid
+}
+
+div.figure img {
+    page-break-after: avoid;
+    width: 100%
+}
+
+div.figure div {
+    page-break-before: avoid;
+    font-size: 90%;
+    margin: 0.75em 0 0 0
+}
+
+div.figCode {
+    page-break-inside: avoid;
+}
+
+div.figCode.left {
+    float: left;
+    margin: 0 1em 1em 2em
+}
+
+div.figCode.right {
+    float: right;
+    margin: 0 0 1em 0
+}
+
+div.figCode img {
+    page-break-after: avoid;
+    width: 100%
+}
+
+div.figCode table.inline {
+    page-break-after: avoid;
+    display: inline-table;
+    vertical-align: bottom;
+    margin: 0 0 1em 1em
+}
+
+div.figCode div {
+    page-break-before: avoid;
+    font-size: 90%;
+    margin: 0.75em 0 0 0
+}
+
+div.figRight {
+    page-break-inside: avoid;
+    float: right;
+    margin: 0 0 1em 1em
+}
+
+div.figRight img {
+    page-break-after: avoid;
+    width: 100%
+}
+
+div.figRight div {
+    page-break-before: avoid;
+    font-size: 90%;
+    margin: 0.75em 0 0 0
+}
+
+div#figRosetta {
+    width: 20em
+}
+
+div#figSemis {
+    width: 18em
+}
+
+div#figMother img {
+    width: 40em
+}
+
+div#figCPU {
+    width: 18em
+}
+
+div#figRAM {
+    width: 28em
+}
+
+div#figHardDrive {
+    width: 25em
+}
+
+div#figClock {
+    width: 16em
+}
+
+div#figCylinder {
+    width: 7em
+}
+
+div#figDist {
+    width: 19em
+}
+
+div#figQuad {
+    width: 19em
+}
+
+div#figAdvSearch {
+    width: 29em
+}
+
+div#figTriangle {
+    width: 11em
+}
+
+div#figPyramid {
+    width: 15em
+}
+
+div#figArray table th {
+    min-width: 1em
+}
+
+div#figRamp {
+    width: 19em
+}
+
+div#figRevRamp {
+    width: 19em
+}
+
+div#figTwoClasses {
+    width: 21em
+}
+
+dd img {
+    vertical-align: top;
+    width: 16em
+}
+
+div#figEggCarton {
+    width: 19em
+}
+
+div#figAirline {
+    width: 34em
+}
+
+div#figStudent {
+    width: 14em
+}
+
+div#figAuthor {
+    width: 15em
+}
+
+img.cover {
+    border: 1px solid #7f7f7f
+}
+
+img.pencil {
+    width: 2em;
+    page-break-after: avoid;
+}
+
+p.fine {
+    font-size: small
+}
+
+pre {
+    margin-top: 0
+}
+
+pre.template {
+    font-family: "Lucida Console", "Courier New", monospace
+}
+
+dl>dt {
+    font-style: normal;
+    font-weight: normal
+}
+
+ul.contents {
+    list-style-type: none
+}
+
+ul.contents>li {
+    min-height: 1em;
+    margin-bottom: 1em
+}
+
+ul.contents>li>ul {
+    list-style-type: none
+}
+
+ul.index {
+    list-style-type: none
+}
+
+ul.index>li {
+    min-height: 1em;
+    text-indent: -1.5em
+}
+
+ul.index>li>ul {
+    list-style-type: none
+}
+
+ol>li ol {
+    list-style-type: lower-latin
+}
+
+ol.term>li {
+    margin-top: 2em
+}
+
+ol.revQues>li {
+    margin-top: 1em
+}
+
+ol.progs>li {
+    margin-top: 1em
+}
+
+.latin {
+    list-style-type: lower-latin
+}
+
+.roman {
+    list-style-type: lower-roman
+}
+
+ol.revQues li.mark:before {
+    content: "\2714 "
+}
+
+dt {
+    font-style: italic
+}
+
+dt.code {
+    font-style: normal;
+    font-family: "Lucida Console", "Courier New", monospace;
+    white-space: nowrap
+}
+
+.column {
+    display: inline-block;
+    margin-bottom: 1em;
+    vertical-align: top
+}
+
+
+table {
+    border-collapse: collapse;
+    border: none
+}
+
+table.right {
+    margin-left: auto
+}
+
+/* As of 5/4/2017 Amazon Kindle for the PC and Kindle Touch won't
+ * honor the css property text-align for <td> tags, so we have to use
+ * <th> instead. */
+thead th {
+    border: none;
+    padding: 1pt 3pt;
+    vertical-align: bottom;
+    text-align: center;
+    font-weight: bold
+}
+
+tbody th {
+    border: none;
+    padding: 1pt 3pt;
+    vertical-align: top;
+    text-align: left;
+    font-weight: normal
+}
+
+table th[scope="col"] {
+    font-weight: bold;
+    text-align: center
+}
+
+table th[scope="row"] {
+    font-weight: bold;
+    vertical-align: middle
+}
+
+td {
+    border: none;
+    padding: 1pt 3pt;
+    vertical-align: top;
+    text-align: left;
+    font-weight: normal
+}
+
+.clear {
+    clear: both
+}
+
+.xlarge {
+    font-size: x-large
+}
+
+.large {
+    font-size: large
+}
+
+th.left {
+    text-align: left
+}
+
+th.center {
+    text-align: center
+}
+
+th.right {
+    text-align: right
+}
+
+th.number {
+    text-align: right
+}
+
+th.top {
+    vertical-align: top
+}
+
+th.middle {
+    vertical-align: middle
+}
+
+th.bottom {
+    vertical-align: bottom
+}
+
+tr.left th {
+    text-align: left
+}
+
+tr.center th {
+    text-align: center
+}
+
+tr.right th {
+    text-align: right
+}
+
+tr.number th {
+    text-align: right
+}
+
+table.clazz {
+    margin-bottom: 0.25em;
+    border: none
+}
+
+table.clazz th {
+    border: 1px solid;
+    padding: 1px 2px 2px 2px;
+    text-align: center;
+    font-weight: normal
+}
+
+table.clazz td {
+    border: 1px solid;
+    padding: 1px 2px 2px 2px
+}
+
+table.clazz td.empty {
+    border: none;
+    padding: 1px 2px 2px 2px;
+    width: 3em
+}
+
+table.code td {
+    font-family: "Lucida Console", "Courier New", monospace;
+    white-space: pre
+}
+
+tr.code td {
+    font-family: "Lucida Console", "Courier New", monospace;
+    white-space: pre
+}
+
+td.code {
+    font-family: "Lucida Console", "Courier New", monospace;
+    white-space: pre
+}
+
+table.count tbody th {
+    border: 1px solid;
+    text-align: right
+}
+
+table.count tbody th.descr {
+    border: none;
+    text-align: left
+}
+
+table.convert tbody th {
+    font-family: cursive, Geneva, Arial, sans-serif;
+    font-style: italic;
+    text-align: right
+}
+
+table.convert tbody th.digit {
+    border: 1px solid;
+    text-align: center
+}
+
+table.convert tbody th.space {
+    width: 2em
+}
+
+table.convert tbody th.sum {
+    border-top: 1px solid
+}
+
+table.convert tbody th.dividend {
+    border-top: 1px solid;
+    border-left: 1px solid
+}
+
+table.defining {
+    width: 100%
+}
+
+table.defining td {
+    border: 1px solid;
+    height: 2em;
+}
+
+table.check th {
+    min-width: 2em;
+    height: 1.2em;
+    font-weight: normal;
+    text-align: center;
+    white-space: nowrap
+}
+
+table.check thead th {
+    border: none
+}
+
+table.check tbody th {
+    border: 1px solid;
+    position: relative;
+}
+
+table.check tbody th>img {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+table.check th.array {
+    border: none;
+    text-align: left
+}
+
+table.check th.block {
+    border: none;
+    background-color: #d0d0d0
+}
+
+table.check th.empty {
+    border: none
+}
+
+table.check tr.index th {
+    border: none
+}
+
+table.check th.index {
+    border: none
+}
+
+table.check th.label {
+    border: none
+}
+
+table.check th.left {
+    text-align: left
+}
+
+table.check th.right {
+    text-align: right
+}
+
+table.list {
+    margin-left: auto;
+    margin-right: auto
+}
+
+div.mistake>div {
+    display: inline-block;
+    vertical-align: top;
+    margin-left: 1.5em;
+}
+
+div.mistake>div>h5 {
+    margin: 0 0 0.5em 0;
+    font-size: medium;
+}
+
+table.mistake th {
+    padding: 0 1em 0 1.5em
+}
+
+table.mistake td {
+    padding: 0 1em 0 2em;
+    font-family: "Lucida Console", "Courier New", monospace;
+    white-space: nowrap
+}
+
+table.reference {
+    margin-left: auto;
+    margin-right: auto
+}
+
+table.reference thead th {
+    border: none
+}
+
+table.reference tbody th {
+    border: 1px solid
+}
+
+table.reference tbody th[scope="row"] {
+    border: none;
+    vertical-align: middle;
+}
+
+table.reference tbody th.empty {
+    border: none
+}
+
+table.relational {
+    border: 1px solid
+}
+
+table.relational th {
+    border: 1px solid
+}
+
+table.relational td {
+    border: 1px solid
+}
+
+table.truth th {
+    border-bottom: 1px solid;
+    padding: 0 1em 0 1em;
+    white-space: nowrap;
+    text-align: center
+}
+
+table.truth tr.order th {
+    border: none;
+    font-size: small;
+    font-weight: normal;
+    font-style: italic
+}
+
+table.truth th.right {
+    border-right: 1px solid
+}
+
+table.truth th.intermed {
+    font-weight: lighter
+}
+
+table.truth th.top {
+    border-radius: 1em 1em 0 0
+}
+
+table.truth th.final {
+    background-color: lime
+}
+
+table.truth th.bottom {
+    border-radius: 0 0 1em 1em
+}
+
+input {
+    font-size: medium
+}
+
+textarea {
+    font-size: medium
+}
+
+/* Used for code animations. */
+.enter {
+    background-color: lime
+}
+
+.click {
+    background-color: lime
+}
+
+.execute {
+    background-color: yellow
+}
+
+.assign {
+    background-color: #ffc000
+}
+
+.display {
+    background-color: lime
+}
+
+span.explain {
+    visibility: hidden;
+    font-family: cursive, serif;
+    line-height: 90%
+}
+
+div.explain {
+    font-family: cursive, serif;
+    line-height: 90%;
+    text-align: center
+}
+
+.draw {
+    background-color: lime
+}
+
+.write {
+    background-color: lime
+}
+
+.examine {
+    background-color: lime
+}
+
+dfn {
+    font-style: normal;
+    font-weight: bold
+}
+
+em {
+    font-style: italic;
+    font-weight: normal
+}
+
+strong {
+    font-style: normal;
+    font-weight: bold
+}
+
+var {
+    font-style: italic;
+    font-weight: normal
+}
+
+code {
+    font-family: "Lucida Console", "Courier New", monospace;
+    white-space: nowrap
+}
+
+pre {
+    font-family: "Lucida Console", "Courier New", monospace;
+    tab-size: 2
+}
+
+
+div.p {
+    margin: 1em 0
+}
+
+div.expr {
+    display: inline-block;
+    margin: 0 0.5em;
+    white-space: nowrap;
+    vertical-align: middle;
+    text-align: center;
+    font-family: "Palatino Linotype", Palatino, Garamond, serif;
+    font-size: large;
+    font-weight: bold
+}
+
+div.blockExpr {
+    margin: 1em 0;
+    white-space: nowrap;
+    vertical-align: middle;
+    text-align: center;
+    font-family: "Palatino Linotype", Palatino, Garamond, serif;
+    font-size: large;
+    font-weight: bold
+}
+
+div.expr div,
+div.blockExpr div {
+    display: inline-block;
+    vertical-align: middle;
+    text-align: center
+}
+
+div.expr hr,
+div.blockExpr hr {
+    margin: 0 auto;
+    border-top: 1px solid;
+    border-right: 0;
+    border-bottom: 0;
+    border-left: 0;
+    padding: 0;
+    height: 0;
+    background-color: #505050
+}
+
+div.blockExpr div.radic {
+    display: block
+}
+
+div.blockExpr div.sum {
+    font-size: 70%
+}
+
+div.blockExpr div.sum>div {
+    display: block
+}
+
+span.expr {
+    white-space: nowrap;
+    font-family: "Palatino Linotype", Palatino, Garamond, serif;
+    font-size: large
+}
+
+span.keys {
+    font-family: Arial, sans-serif;
+    white-space: nowrap
+}
+
+span.menu {
+    font-family: Arial, sans-serif;
+    white-space: nowrap
+}
+
+span.opt {
+    color: #909090
+}
+
+span.xe {
+    display: none
+}
+
+sup {
+    font-size: 70%
+}
+
+sub {
+    font-size: 70%
+}
+
+/* As of 10/25/2018, kindlegen does not support relative and
+ * absolute positions correctly.
+del { text-decoration: none; position: relative; }
+del:after { content: ' '; font-size: inherit; display: block;
+	position: absolute; top: 35%; right: -0.2em; bottom: 35%; left: -0.2em;
+	border-top: 1px solid; border-bottom: 1px solid; }
+*/
+del:before {
+    text-decoration: line-through;
+    content: '\2009'
+}
+
+del:after {
+    text-decoration: line-through;
+    content: '\2009'
+}

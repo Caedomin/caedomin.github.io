@@ -1,0 +1,633 @@
+<!DOCTYPE HTML>
+<html lang="en-us">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="author" content="Rex A. Barzee">
+    <title>Chapter 3. HTML Basics</title>
+    <link rel="stylesheet" type="text/css" href="css/ebook.css">
+    <script src="scripts/interact.js"></script>
+</head>
+
+<body id="ch3htmlBasics">
+    <div>
+        <div class="pagenum" id="page017">17</div>
+        <h2>Chapter 3. HTML Basics</h2>
+
+        <p>Hypertext markup language (HTML) is a computer language that is used
+            to write documents for the world wide web of information on the
+            internet. There are several different versions of the HTML standard,
+            with the most recent being XHTML&nbsp;1.1 and HTML&nbsp;5. This chapter
+            will help you learn enough HTML&nbsp;5 so that you can begin writing
+            JavaScript code in your HTML documents.</p>
+
+        <h3 id="ch3outcomes">Chapter Outcomes</h3>
+        <p>By the end of this chapter, you will be able to:</p>
+        <ul>
+            <li>Read and write simple HTML&nbsp;5 documents.</li>
+            <li>Use the online W3C Markup Validation Service to validate that an
+                HTML&nbsp;5 document is well formed.</li>
+            <li>Fix an HTML&nbsp;5 document that does not validate.</li>
+            <li>Use comments to add internal explanations to an HTML document.</li>
+        </ul>
+
+        <h3 id="ch3start">Starting with HTML</h3>
+        <p>To start writing HTML documents you must have a decent text editor,
+            such as</p>
+        <ul>
+            <li><a target="_blank" href="https://code.visualstudio.com">VS Code</a>,</li>
+            <li><a target="_blank" href="http://brackets.io">Brackets</a>, or</li>
+            <li><a target="_blank" href="http://www.sublimetext.com">Sublime</a></li>
+        </ul>
+        <p>and a web browser, such as</p>
+        <ul>
+            <li><a target="_blank" href="https://www.google.com/chrome">Google Chrome</a> or</li>
+            <li><a target="_blank" href="https://www.mozilla.org/firefox">Mozilla Firefox</a></li>
+        </ul>
+        <p>installed on your computer. When you use your text editor to write an
+            HTML document and then save the document, you must save the document
+            with a suffix of <code>.html</code></p>
+
+        <h3 id="ch3decl">Document Type Declaration</h3>
+        <p>All HTML&nbsp;5 documents must begin with a document type declaration
+            like this: <code>&lt;!DOCTYPE&nbsp;HTML&gt;</code>. It doesn&rsquo;t
+            matter whether you write this declaration in upper or lower case or a
+            mix of the two. This declaration tells the computer that what follows is
+            an HTML&nbsp;5 document. If you forget to put it at the top of an HTML
+            document, your browser may recognize the document as an older version of
+            HTML, and your browser may draw the document incorrectly.</p>
+
+        <h3 id="ch3comment">Comments</h3>
+        <p>A <dfn>comment</dfn> in an HTML document is a note or documentation
+            that a web designer writes for himself or other designers who will look
+            at the HTML code. The computer ignores comments. A comment in HTML
+            begins with the symbols less than, exclamation mark, and two dashes,
+            like this:&nbsp; <code>&lt;!--</code> and ends with the symbols two
+            dashes and greater than, like this:&nbsp; <code>--&gt;</code>.</p>
+
+        <div class="pagenum" id="page018">18</div>
+        <h3 id="ch3tags">HTML Elements</h3>
+        <p>An HTML <dfn>document</dfn> is composed of elements. An element
+            is simply a part of an HTML document.
+            <a href="#figElement">Figure&nbsp;3-1</a> shows an HTML element and all
+            of its parts. Notice that an HTML <dfn>element</dfn> is composed of an
+            opening tag, optional text, and a closing tag. A single <dfn>tag</dfn>
+            begins with the less than symbol (&lt;) and ends with the greater than
+            symbol (&gt;). For example
+            <code>&lt;div class="note" id="high"&gt;</code> or
+            <code>&lt;/div&gt;</code>. An <dfn>opening tag</dfn> contains a tag name
+            and optionally some attributes. Each <dfn>attribute</dfn> is composed of
+            a name and a value separated by an equal symbol (=), such as
+            <code>id="high"</code>. The value part of an attribute should be
+            surrounded by quote marks, either double or single quotes. However, they
+            must be simple, straight quotes (" or ') and not angled or curved quotes
+            (&ldquo;, &rdquo;, &lsquo;, &rsquo;, `, and &acute;). Many word
+            processors, such as Microsoft Word and Apple Pages will replace straight
+            quotes with angled or curved quotes, which is one reason to never write
+            code in a word processor. Also, the left and right quotes of an
+            attribute value must match. For example, if the left quote is a double
+            quote, the right quote must be a double quote. Finally, a <dfn>closing
+                tag</dfn> has the same name as the opening tag, but the name is preceded
+            by a slash character (/).</p>
+
+        <div class="figRight" id="figElement" style="width:38em">
+            <img src="images/element.gif" alt="The parts of an HTML element" title="The parts of an HTML element">
+            <div><b>Figure 3-1:</b> An HTML element and its parts. An element is
+                composed of an opening tag, optional text, and a closing tag. An
+                opening tag is composed of a tag name and optional attributes. An
+                attribute is composed of a name and a value.</div>
+        </div>
+        <div class="clear"></div>
+
+        <p>Sometimes a developer combines the opening and closing tags into one
+            tag, such as:</p>
+
+        <pre>&lt;input type="text" id="futureValue" size="5" /&gt;</pre>
+
+        <p>Notice the slash character (/), which is normally in the closing tag,
+            is at the end of the <code>input</code> tag above. The slash character
+            appears at the end of this <code>input</code> tag because this tag is
+            both an opening and closing tag combined together.</p>
+
+        <p>Hypertext Markup Language (HTML) is really just a list of tags that
+            most web browsers understand. The following table lists most of the HTML
+            tags that we will use in this class. A good reference that describes
+            these tags in more detail is at
+            <a target="_blank" href="http://w3schools.com">w3schools.com</a>.</p>
+
+        <div class="pagenum" id="page019">19</div>
+        <table class="reference">
+            <thead>
+                <tr>
+                    <th colspan="2">HTML Tags</th>
+                </tr>
+                <tr>
+                    <th scope="col">Opening and Closing Tags</th>
+                    <th scope="col">Purpose</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th><code>&lt;!DOCTYPE HTML&gt;</code></th>
+                    <th>The document type declaration that must appear at the top of
+                        all HTML&nbsp;5 documents. Technically, this declaration is not
+                        a tag, so it has no closing tag.</th>
+                </tr>
+                <tr>
+                    <th><code>&lt;!-- a comment here --&gt;</code></th>
+                    <th>A comment or notes seen only by the developers and not the
+                        users of a page. A comment is not a true tag, so it has no
+                        closing tag.</th>
+                </tr>
+                <tr>
+                    <th><code>&lt;html lang="en-us"&gt;<br>&lt;/html&gt;</code></th>
+                    <th>Begins and ends an HTML document. These are the first and
+                        last tags of an HTML document.</th>
+                </tr>
+                <tr>
+                    <th><code>&lt;head&gt;<br>&lt;/head&gt;</code></th>
+                    <th>Marks the start and end of the HTML document
+                        head. Every HTML document must have one head. The
+                        head contains information such as the title and author of the
+                        document and most JavaScript code.</th>
+                </tr>
+                <tr>
+                    <th><code>&lt;meta&gt;</code></th>
+                    <th>Provides information about a document, such as the author,
+                        descriptions, keywords, and the character encoding.
+                        (No closing tag.)</th>
+                </tr>
+                <tr>
+                    <th><code>&lt;title&gt;<br>&lt;/title&gt;</code></th>
+                    <th>Marks the title of a document. This tag
+                        should appear in the document head.</th>
+                </tr>
+                <tr>
+                    <th><code>&lt;script&gt;<br>&lt;/script&gt;</code></th>
+                    <th>Marks the start and end of JavaScript code. You can
+                        place a &lt;script&gt; tag in the head or body of an HTML
+                        document, but they are normally placed in the head.</th>
+                </tr>
+                <tr>
+                    <th><code>&lt;body&gt;<br>&lt;/body&gt;</code></th>
+                    <th>Marks the start and end of the document body. Every
+                        HTML document must have one body. The body contains the
+                        main information of a document that the user will see.</th>
+                </tr>
+                <tr>
+                    <th><code>&lt;h1&gt;<br>&lt;/h1&gt;</code></th>
+                    <th>Marks the start and end of a level 1 heading. There
+                        are six different heading tags numbered from &lt;h1&gt; to
+                        &lt;h6&gt; with &lt;h1&gt; being the largest and &lt;h6&gt;
+                        being the smallest style of heading.</th>
+                </tr>
+                <tr>
+                    <th><code>&lt;div&gt;<br>&lt;/div&gt;</code></th>
+                    <th>Marks the start and end of a division within an HTML
+                        document. The concept of division in HTML is very general and is
+                        simply a large, medium, or small section of a
+                        document.</th>
+                </tr>
+                <tr>
+                    <th><code>&lt;canvas&gt;<br>&lt;/canvas&gt;</code></th>
+                    <th>Makes an area where a JavaScript program can draw shapes.</th>
+                </tr>
+                <tr>
+                    <th><code>&lt;p&gt;<br>&lt;/p&gt;</code></th>
+                    <th>Marks the start and end of a paragraph.</th>
+                </tr>
+                <tr>
+                    <th><code>&lt;b&gt;<br>&lt;/b&gt;</code></th>
+                    <th>Marks the start and end of bold text.</th>
+                </tr>
+                <tr>
+                    <th><code>&lt;i&gt;<br>&lt;/i&gt;</code></th>
+                    <th>Marks the start and end of italicized text.</th>
+                </tr>
+                <tr>
+                    <th><code>&lt;br&gt;</code></th>
+                    <th>
+                        <div class="pagenum" id="page020">20</div>
+                        Forces the browser to insert a line break. (No closing
+                        tag.)
+                    </th>
+                </tr>
+                <tr>
+                    <th><code>&lt;input type="text"&gt;</code></th>
+                    <th>Makes a text field (single row) where a user can enter
+                        data. (No closing tag.)</th>
+                </tr>
+                <tr>
+                    <th><code>&lt;textarea&gt;<br>&lt;/textarea&gt;</code></th>
+                    <th>Makes a text area (multiple rows) where a user can enter
+                        data.</th>
+                </tr>
+                <tr>
+                    <th><code>&lt;button type="button"&gt;<br>&lt;/button&gt;</code></th>
+                    <th>Makes a button that a user can click.</th>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3 id="ch3case">Case Insensitive</h3>
+        <p>HTML&nbsp;5 is not case sensitive. This means that
+            <code>&lt;HTML&gt;</code> and <code>&lt;html&gt;</code> and
+            <code>&lt;HtMl&gt;</code> have the same meaning in HTML&nbsp;5.
+            However, the standard convention is to use all lower case for tags and
+            attributes except for the DOCTYPE declaration, which is all uppercase.
+            Most developers use lower case letters for at least two reasons:</p>
+        <ol>
+            <li>Lower case letters are easier to read because they vary in size
+                more than upper case letters.</li>
+            <li>If an HTML&nbsp;5 document is ever converted to XHTML, which
+                requires lower case tags and attributes, the conversion will be
+                easier.</li>
+        </ol>
+
+        <h3 id="ch3wellFormed">Well Formed HTML</h3>
+        <p>An HTML document should be well formed which means:</p>
+        <ol>
+            <li>The document contains only the standard tags and attributes.</li>
+
+            <li>Most opening tags have a matching closing tag. The opening tags
+                that don&rsquo;t require a closing tag are called
+                <dfn id="ch3void">void tags</dfn> and include
+                <code>&lt;meta&gt; &lt;br&gt;</code> and
+                <code>&lt;input&gt;</code>.</li>
+
+            <li>Nested tags are ended before their enclosing tags are
+                ended. For example:<br><br>
+                <pre>&lt;body&gt;
+&lt;p&gt;Oregano is an important &lt;i&gt;culinary&lt;/i&gt; herb. It is
+used in Greek and Italian dishes especially tomato
+based sauces, fried vegetables, and grilled meats.&lt;/p&gt;
+&lt;/body&gt;</pre>
+            </li>
+        </ol>
+
+        <p>You can check an HTML document to ensure that it is well formed by
+            uploading it to the online validator at
+            <a target="_blank" href="http://validator.w3.org">validator.w3.org</a></p>
+
+        <div class="pagenum" id="page021">21</div>
+        <h3 id="ch3required">Required Elements</h3>
+        <p>Every HTML&nbsp;5 document must start with a
+            <code>&lt;!DOCTYPE&gt;</code> declaration and an opening
+            <code>&lt;html&gt;</code> tag. Every HTML&nbsp;5 document must have a
+            <code>head</code> section and a <code>body</code> section, and the
+            <code>head</code> section should have a <code>&lt;title&gt;</code> tag
+            and a <code>&lt;meta&gt;</code> tag that states the document&rsquo;s
+            character encoding. In other words, the skeleton of every HTML&nbsp;5
+            document should look similar to this:</p>
+
+        <pre>&lt;!DOCTYPE HTML&gt;
+&lt;html lang="en-us"&gt;
+&lt;head&gt;
+&lt;meta charset="utf-8"&gt;
+&lt;title&gt;Title&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+
+        <h3 id="ch3example">Example HTML Document</h3>
+        <p>Below is a well formed HTML&nbsp;5 document that includes one comment
+            and all the tags and text necessary for a web browser to draw the
+            document. The document is shown drawn by the Google Chrome web browser
+            in <a href="#figRentals">figure&nbsp;3-2</a>.</p>
+
+        <h4>Example 1</h4>
+        <pre class="hilite" id="ch3exampleProg"><span class="doc">&lt;!DOCTYPE HTML&gt;</span>
+&lt;<span class="key">html</span> <span class="attr">lang="en-us"</span>&gt;
+&lt;<span class="key">head</span>&gt;
+<span class="comm">&lt;!-- The following meta tag tells the browser
+that this document uses the 8-bit Unicode
+Transformation Format encoding. --&gt;</span>
+&lt;<span class="key">meta</span> <span class="attr">charset="utf-8"</span>&gt;
+&lt;<span class="key">meta</span> <span class="attr">name="author"</span> <span class="attr">content="Rex Barzee"</span>&gt;
+&lt;<span class="key">title</span>&gt;Horse Rentals&lt;/<span class="key">title</span>&gt;
+&lt;/<span class="key">head</span>&gt;
+
+&lt;<span class="key">body</span>&gt;
+&lt;<span class="key">h1</span>&gt;Horse Rentals&lt;/<span class="key">h1</span>&gt;
+&lt;<span class="key">p</span>&gt;We rent horsies, big horsies, medium sized
+horsies, and little horsies (big dogs really). Of
+course, this costs a great deal of money, and in
+order for us to allow you to take the horsies
+anywhere, you must sign a lot of paper work, about
+the same amount as if you were buying a house or
+being admitted to a hospital (which might happen
+if you fall off one of our horsies).&lt;/<span class="key">p</span>&gt;
+
+&lt;<span class="key">p</span>&gt;We rent horsy saddles and other leather and
+metal stuff. Just ask for what you want, and we
+probably have it. These are used mostly to control
+the horsies, which they don't like. If you don't
+take great care when putting these on the horsies,
+you might be admitted to the hospital as mentioned
+in the above paragraph.&lt;/<span class="key">p</span>&gt;
+
+&lt;<span class="key">p</span>&gt;We also rent horsy trailers. These trailers
+require a truck the size of Texas that drinks diesel
+in order to actually pull them. Of course, if you
+don't have a truck that fits this description, we'll
+rent you one. See the first paragraph again for our
+rental terms (big money).&lt;/<span class="key">p</span>&gt;
+&lt;/<span class="key">body</span>&gt;
+&lt;/<span class="key">html</span>&gt;</pre>
+        <button type="button" title="Launch" onclick="act.launch('ch3exampleProg')"><b>&#x21d7;</b></button>
+
+        <div class="pagenum" id="page022">22</div>
+        <div class="figRight" id="figRentals" style="width:33em">
+            <img src="images/horseRentals.png" alt="An HTML document drawn in Google Chrome"
+                title="An HTML document drawn in Google Chrome">
+            <div class="center"><b>Figure 3-2:</b> An HTML document drawn in Google
+                Chrome.</div>
+        </div>
+
+        <p>It is helpful to examine the tags in example&nbsp;1 in more depth.
+            How many different tags does example&nbsp;1 use?<br>
+            Seven. They are <code>&lt;html&gt;</code>, <code>&lt;head&gt;</code>,
+            <code>&lt;meta&gt;</code>, <code>&lt;title&gt;</code>,
+            <code>&lt;body&gt;</code>, <code>&lt;h1&gt;</code>, and
+            <code>&lt;p&gt;</code>.</p>
+
+        <p>Which of those seven tags are void tags and have no closing tag?<br>
+            <code>&lt;meta&gt;</code>.</p>
+
+        <p>Which of those seven tags have attributes?<br>
+            <code>&lt;html&gt;</code> and <code>&lt;meta&gt;</code>.</p>
+
+        <h3 id="ch3form">Example HTML Document with a Form</h3>
+        <p>Below is a well formed HTML&nbsp;5 document that includes all the
+            tags and text necessary for a web browser to draw a document with two
+            text fields, a text area, and two buttons. Even though this document is
+            titled, &ldquo;Send a Text Message&rdquo; and it contains text fields
+            and buttons, this document doesn&rsquo;t actually do anything. It
+            doesn&rsquo;t do anything because it contains no
+            <code>&lt;script&gt;</code> tags. A programmer adds functionality to an
+            HTML document by writing JavaScript code between opening and closing
+            <code>&lt;script&gt;</code> tags. Beginning in the next chapter, you
+            will learn to write JavaScript code.</p>
+
+        <p>The document from example&nbsp;2 is shown drawn by the Google Chrome
+            web browser in <a href="#figForm">figure&nbsp;3-3</a>.</p>
+
+        <div class="pagenum" id="page023">23</div>
+        <h4>Example 2</h4>
+        <pre class="hilite" id="ch3formProg"><span class="doc">&lt;!DOCTYPE HTML&gt;</span>
+&lt;<span class="key">html</span> <span class="attr">lang="en-us"</span>&gt;
+&lt;<span class="key">head</span>&gt;
+<span class="comm">&lt;!-- The following meta tag tells the browser
+that this document uses the 8-bit Unicode
+Transformation Format encoding. --&gt;</span>
+&lt;<span class="key">meta</span> <span class="attr">charset="utf-8"</span>&gt;
+&lt;<span class="key">title</span>&gt;Send a Text Message&lt;/<span class="key">title</span>&gt;
+&lt;/<span class="key">head</span>&gt;
+
+&lt;<span class="key">body</span>&gt;
+&lt;<span class="key">h1</span>&gt;Send a Text Message&lt;/<span class="key">h1</span>&gt;
+&lt;<span class="key">p</span>&gt;
+From (your 10-digit wireless phone number):
+&lt;<span class="key">input</span> <span class="attr">type="text"</span> <span class="attr">id="txtFrom"</span> <span class="attr">size="10"</span>&gt;
+&lt;/<span class="key">p</span>&gt;
+
+&lt;<span class="key">p</span>&gt;
+To (10-digit wireless phone number):
+&lt;<span class="key">input</span> <span class="attr">type="text"</span> <span class="attr">id="txtTo"</span> <span class="attr">size="10"</span>&gt;
+&lt;/<span class="key">p</span>&gt;
+
+&lt;<span class="key">p</span>&gt;
+Message:&lt;<span class="key">br</span>&gt;
+&lt;<span class="key">textarea</span> <span class="attr">id="txaMessage"</span> rows="8" cols="40"&gt;
+&lt;/<span class="key">textarea</span>&gt;
+&lt;/<span class="key">p</span>&gt;
+
+&lt;<span class="key">p</span>&gt;
+&lt;<span class="key">button</span> <span class="attr">type="button"</span> <span class="attr">onclick="sendText()"</span>&gt;Send&lt;/<span class="key">button</span>&gt;
+&lt;<span class="key">button</span> <span class="attr">type="button"</span> <span class="attr">onclick="clearForm()"</span>&gt;Clear&lt;/<span class="key">button</span>&gt;
+&lt;/<span class="key">p</span>&gt;
+&lt;/<span class="key">body</span>&gt;
+&lt;/<span class="key">html</span>&gt;</pre>
+        <button type="button" title="Launch" onclick="act.launch('ch3formProg')"><b>&#x21d7;</b></button>
+
+        <div class="figRight" id="figForm" style="width:27em">
+            <img src="images/form.png" alt="An HTML document that contains text fields and buttons drawn by
+	Google Chrome" title="An HTML document that contains text fields and buttons drawn
+	by Google Chrome">
+            <div><b>Figure 3-3:</b> An HTML document that contains text fields and
+                buttons drawn by Google Chrome.</div>
+        </div>
+
+        <div class="pagenum" id="page024">24</div>
+        <p>It is helpful to examine the tags in example&nbsp;2 in more depth.
+            How many different tags does example&nbsp;2 use?<br>
+            Eleven. They are <code>&lt;html&gt;</code>, <code>&lt;head&gt;</code>,
+            <code>&lt;meta&gt;</code>, <code>&lt;title&gt;</code>,
+            <code>&lt;body&gt;</code>, <code>&lt;h1&gt;</code>,
+            <code>&lt;p&gt;</code>, <code>&lt;input&gt;</code>,
+            <code>&lt;br&gt;</code>, <code>&lt;textarea&gt;</code>, and
+            <code>&lt;button&gt;</code>.</p>
+
+        <p>Which of those 11 tags are void tags and have no closing tag?<br>
+            <code>&lt;meta&gt;</code>, <code>&lt;input&gt;</code>, and
+            <code>&lt;br&gt;</code>.</p>
+
+        <p>Which of those 11 tags have attributes?<br>
+            <code>&lt;html&gt;</code>, <code>&lt;meta&gt;</code>,
+            <code>&lt;input&gt;</code>, <code>&lt;textarea&gt;</code>, and
+            <code>&lt;button&gt;</code>.</p>
+
+        <p>Notice that the two <code>&lt;input&gt;</code> tags and the
+            <code>&lt;textarea&gt;</code> tag have an attribute named
+            <code>id</code>. An <code>id</code> attribute uniquely identifies an
+            element within an HTML document. In other words, the value for an
+            <code>id</code> attribute must be unique within a document. Notice that
+            the values for all three of the <code>id</code> attributes are different:
+            <code>id="txtFrom"</code>, <code>id="txtTo"</code>,
+            <code>id="txaMesssage"</code>.</p>
+
+        <p>Notice that the two <code>&lt;button&gt;</code> tags have an
+            attribute named <code>onclick</code>. The <code>onclick</code> attribute
+            tells the browser what to do when a user clicks on a button. In the next
+            chapter, you will use the <code>onclick</code> attribute to connect a
+            button to JavaScript code. Then when a user clicks the button, the
+            browser will execute that JavaScript code.</p>
+
+        <p>Does example&nbsp;2 include a comment?<br>
+            Yes, in the head there is a comment that describes the
+            <code>&lt;meta&gt;</code> tag.</p>
+
+        <h3 id="ch3mistakes">Common Mistakes</h3>
+        <h4>Forgetting to terminate a tag</h4>
+        <div class="mistake">
+            <div>
+                <h5>Incorrect</h5>
+                <pre>&lt;div Idaho, with its volcanic
+soils and cool nights, is ideal
+for growing potatoes.&lt;/div&gt;</pre>
+            </div>
+            <div>
+                <h5>Correct</h5>
+                <pre>&lt;div&gt;Idaho, with its volcanic
+soils and cool nights, is ideal
+for growing potatoes.&lt;/div&gt;</pre>
+            </div>
+        </div>
+
+        <h4>Forgetting the quote marks for an attribute</h4>
+        <div class="mistake">
+            <div>
+                <h5>Incorrect</h5>
+                <pre>&lt;div id=output&gt;&lt;/div&gt;
+&lt;div id="output&gt;&lt;/div&gt;
+&lt;div id=output'&gt;&lt;/div&gt;</pre>
+            </div>
+            <div>
+                <h5>Correct</h5>
+                <pre>&lt;div id="output"&gt;&lt;/div&gt;
+&lt;div id='output'&gt;&lt;/div&gt;</pre>
+            </div>
+        </div>
+
+        <h4>Using incorrect quote characters for an attribute</h4>
+        <div class="mistake">
+            <div>
+                <h5>Incorrect</h5>
+                <pre>&lt;div id=&ldquo;output&rdquo;&gt;&lt;/div&gt;
+&lt;div id=&lsquo;output&rsquo;&gt;&lt;/div&gt;
+&lt;div id=`output&acute;&gt;&lt;/div&gt;</pre>
+            </div>
+            <div>
+                <h5>Correct</h5>
+                <pre>&lt;div id="output"&gt;&lt;/div&gt;
+&lt;div id='output'&gt;&lt;/div&gt;</pre>
+            </div>
+        </div>
+
+        <h4>Forgetting a closing tag</h4>
+        <div class="mistake">
+            <div>
+                <h5>Incorrect</h5>
+                <pre>&lt;b&gt;really</pre>
+            </div>
+            <div>
+                <h5>Correct</h5>
+                <pre>&lt;b&gt;really&lt;/b&gt;</pre>
+            </div>
+        </div>
+
+        <h4>Improperly nesting tags</h4>
+        <div class="mistake">
+            <div>
+                <h5>Incorrect</h5>
+                <pre>&lt;div&gt;The average lifespan for a
+female grizzly bear is estimated
+at &lt;b&gt;26 years.&lt;/div&gt;&lt;/b&gt;</pre>
+            </div>
+            <div>
+                <h5>Correct</h5>
+                <pre>&lt;div&gt;The average lifespan for a
+female grizzly bear is estimated
+at &lt;b&gt;26 years&lt;/b&gt;.&lt;/div&gt;</pre>
+            </div>
+        </div>
+
+        <div class="pagenum" id="page025">25</div>
+        <h4>Forgetting to save an HTML file with a suffix of <code>.html</code></h4>
+        <p>In order for a browser to detect that your file is an HTML file, you
+            must save it with a suffix of <code>.html</code></p>
+
+        <h3 id="ch3summary">Chapter Summary</h3>
+        <ul>
+            <li>Hypertext markup language (HTML) is a computer language that is
+                used to write documents.</li>
+            <li>HTML&nbsp;5 is the most recent version of HTML.</li>
+            <li>An HTML&nbsp;5 document must begin with a document type
+                declaration and must contain a head and a body.</li>
+            <li>HTML is composed of many tags. Each tag begins with a less than
+                symbol (&lt;) and ends with a greater than symbol (&gt;).</li>
+            <li>HTML tags usually come in pairs, an opening tag and a closing
+                tag.</li>
+            <li>Opening tags may contain attributes which are name/value pairs
+                separated by the equal symbol (=).</li>
+            <li>Opening tags that do not require a matching closing tag are
+                called void tags.</li>
+            <li>HTML is not case sensitive, so tags names and attribute name may
+                be written in upper or lower case or any combination of upper and
+                lower case.</li>
+            <li>HTML tags should be properly nested.</li>
+        </ul>
+
+        <h3 id="ch3revQues">Review Questions</h3>
+        <ol class="revQues">
+            <li>What version of HTML does this book teach?</li>
+            <li>Write the HTML&nbsp;5 document type declaration as it should
+                appear at the top of all HTML&nbsp;5 documents. Include the
+                surrounding less than (&lt;) and greater than (&gt;) symbols in your
+                answer.</li>
+            <li>What is the first tag in an HTML&nbsp;5 document? Include the
+                surrounding less than (&lt;) and greater than (&gt;) symbols in your
+                answer.</li>
+            <li>What are the two main sections that every HTML&nbsp;5 document
+                must have?</li>
+            <li>Inside which of the two main sections does the
+                <code>&lt;title&gt;</code> tag belong?</li>
+            <li>What is the tag to begin the largest type of heading? Include
+                the surrounding less than (&lt;) and greater than (&gt;) symbols in
+                your answer.</li>
+            <li>What is the tag to begin a paragraph? Include the surrounding
+                less than (&lt;) and greater than (&gt;) symbols in your
+                answer.</li>
+            <li>Write the HTML tag and its attributes for creating a text field.
+                Include the surrounding less than (&lt;) and greater than (&gt;)
+                symbols in your answer.</li>
+            <li>Write the opening HTML tag and its attributes for creating a
+                button. Include the surrounding less than (&lt;) and greater than
+                (&gt;) symbols in your answer.</li>
+            <li>
+                <div class="pagenum" id="page026">26</div>
+                What is the attribute that a programmer can use to uniquely
+                identify each element within an HTML document?
+            </li>
+            <li>What are the characters that begin an HTML comment?</li>
+            <li>What is the tag that ends an HTML document? Include the
+                surrounding less than (&lt;) and greater than (&gt;) symbols in your
+                answer.</li>
+        </ol>
+
+        <h3 id="ch3progs">Assignments</h3>
+        <ol class="progs">
+            <li>Create and validate a well formed HTML&nbsp;5 document that
+                tells a short version of your life story. The document must include
+                at least one heading and two paragraphs.</li>
+            <li>Create and validate a well formed HTML&nbsp;5 document that
+                advertises a business that you own or would like to start. The
+                document must include at least one heading and two paragraphs.</li>
+            <li>Create and validate a well formed HTML&nbsp;5 document that
+                contains two text fields, a button, and a div. The text fields and
+                the div must each have a unique <code>id</code> attribute.</li>
+        </ol>
+
+        <p class="fine">Copyright &copy; 2017 by Rex A. Barzee.&nbsp; All rights
+            reserved.&nbsp; Except as permitted under the Copyright Act of 1976, no
+            part of this publication may be reproduced, stored in a retrieval
+            system, or transmitted, in any form or by any means, electronic,
+            mechanical, photocopying, recording, or otherwise, without the prior
+            written permission of the author.</p>
+
+        <p class="fine">The author and publisher of this book have used their
+            best efforts in preparing this book, and the information contained in
+            this book is believed to be reliable.&nbsp; These efforts include the
+            development, research, and testing of the theories and computer programs
+            in this book to determine their correctness.&nbsp; However, because of
+            the possibility of human or mechanical error, the author and publisher
+            make no warranty of any kind, expressed or implied, with regard to
+            these programs or the documentation or information contained in this
+            book.&nbsp; The author and publisher shall not be liable in any event
+            for incidental or consequential damages in connection with or arising
+            out of the furnishing, performance, or use of these programs.</p>
+    </div>
+</body>
+
+</html>

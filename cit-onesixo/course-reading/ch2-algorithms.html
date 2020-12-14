@@ -1,0 +1,473 @@
+<!DOCTYPE HTML>
+<html lang="en-us">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="author" content="Rex A. Barzee">
+    <title>Chapter 2. Algorithms and Programs</title>
+    <link rel="stylesheet" type="text/css" href="css/ebook.css">
+    <script src="scripts/interact.js"></script>
+</head>
+
+<body id="ch2algorithms">
+    <div>
+        <div class="pagenum" id="page09">9</div>
+        <h2>Chapter 2. Algorithms and Programs</h2>
+
+        <h3 id="ch2outcomes">Chapter Outcomes</h3>
+        <p>By the end of this chapter, you will:</p>
+        <ul>
+            <li>Read a description of a problem and write a defining table to
+                help you better understand the problem.</li>
+            <li>Develop an algorithm for a common task.</li>
+            <li>Learn the three basic control structures: sequence, selection,
+                and repetition, and learn what they cause a computer to do.</li>
+            <li>Understand the basic operations that a computer can perform.</li>
+        </ul>
+
+        <h3 id="ch2define">Defining Table</h3>
+        <p>An <dfn>algorithm</dfn> is simply a list of steps to perform some
+            task. A large computer program contains many algorithms. Before creating
+            an algorithm to solve a problem, you must be sure that you understand
+            the problem. If you don&rsquo;t, you will probably create an algorithm
+            that solves the wrong problem. A <dfn>defining table</dfn> is a useful
+            tool to help you better understand a problem before you develop an
+            algorithm to solve it. A defining table has three sections: input,
+            processing, and output. To create a defining table, simply draw a table
+            with the three sections. Then as you read and re-read the problem, put
+            the parts of the problem into their correct section in the table.</p>
+
+        <h4>Template</h4>
+
+        <table class="defining">
+            <thead>
+                <tr>
+                    <th colspan="3">Defining Table</th>
+                </tr>
+                <tr>
+                    <th>Input</th>
+                    <th>Processing</th>
+                    <th>Output</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>&nbsp;<br>&nbsp;</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h4>Example 1</h4>
+        <p>You have been asked to write a program that will read from the
+            keyboard the radius of a circle and will output to the monitor the
+            diameter, circumference, and area of the circle.</p>
+
+        <table class="defining">
+            <thead>
+                <tr>
+                    <th colspan="3">Defining Table</th>
+                </tr>
+                <tr>
+                    <th>Input</th>
+                    <th>Processing</th>
+                    <th>Output</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>radius</td>
+                    <td>Compute the diameter: d = 2r<br>
+                        Compute the circumference: c = 2&pi;r<br>
+                        Compute the area: a = &pi;r<sup>2</sup></td>
+                    <td>diameter, circumference, area</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="pagenum" id="page010">10</div>
+        <h4>Example 2</h4>
+        <p>You work for a large construction company. Your boss has asked you to
+            write a computer program that will read a list of window openings for a
+            building and compute, and output the total cost of all the windows. The
+            window openings are entered in inches with the width first and the
+            height second. The cost of a window is computed by multiplying the area
+            of the window in square feet by $35.</p>
+
+        <table class="defining">
+            <thead>
+                <tr>
+                    <th colspan="3">Defining Table</th>
+                </tr>
+                <tr>
+                    <th>Input</th>
+                    <th>Processing</th>
+                    <th>Output</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>A list of window openings<br>For each window
+                        <ul>
+                            <li>width in inches</li>
+                            <li>height in inches</li>
+                        </ul>
+                    </td>
+                    <td>For each window
+                        <ul>
+                            <li>compute area in sq. ft.</li>
+                            <li>multiply area by $35</li>
+                            <li>add cost of this window to the total cost</li>
+                        </ul>
+                    </td>
+                    <td>total cost of all windows</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3 id="ch2algos">Algorithms</h3>
+        <p>An <dfn>algorithm</dfn> is simply a list of steps to
+            perform some task. A recipe is an example of an algorithm because
+            the recipe lists the steps necessary for preparing some food. Here
+            is a recipe from
+            <a target="_blank" href="http://allrecipes.com/recipe/best-chocolate-chip-cookies/">
+                allrecipes.com</a> for making chocolate chip cookies. Notice that the
+            directions are what make a recipe similar to an algorithm.</p>
+        <h4>Ingredients</h4>
+        <ul>
+            <li>1 cup butter, softened</li>
+            <li>1 cup white sugar</li>
+            <li>1 cup packed brown sugar</li>
+            <li>2 eggs</li>
+            <li>2 teaspoons vanilla extract</li>
+            <li>3 cups all-purpose flour</li>
+            <li>1 teaspoon baking soda</li>
+            <li>2 teaspoons hot water</li>
+            <li>1/2 teaspoon salt</li>
+            <li>2 cups semisweet chocolate chips</li>
+            <li>1 cup chopped walnuts</li>
+        </ul>
+        <h4>Directions</h4>
+        <ol>
+            <li>Preheat oven to 350 degrees F (175 degrees C).</li>
+            <li>Cream together the butter, white sugar, and brown sugar until
+                smooth.</li>
+            <li>Beat in the eggs one at a time.</li>
+            <li>Stir in the vanilla.</li>
+            <li>Dissolve baking soda in hot water. Add to batter along with
+                salt.</li>
+            <li>Stir in flour, chocolate chips, and nuts.</li>
+            <li>Drop by large spoonfuls onto ungreased pans.</li>
+            <li>Bake for about 10 minutes in the preheated oven, or until edges
+                are nicely browned.</li>
+        </ol>
+
+        <div class="pagenum" id="page011">11</div>
+        <h4>Example 3</h4>
+        <p>Here is a small algorithm for computing the average test score from a
+            list of test scores. Notice that it is nothing more than the
+            step-by-step process for performing the calculation. A large computer
+            program contains many algorithms.</p>
+        <ol>
+            <li>Set <var>sum</var> to 0</li>
+            <li>Get the number of students</li>
+            <li>For each student
+                <ol>
+                    <li>Get the student&rsquo;s test score</li>
+                    <li>Add the student&rsquo;s score to the <var>sum</var></li>
+                </ol>
+            </li>
+            <li>Divide the <var>sum</var> by the number of students</li>
+        </ol>
+
+        <h4>Example 4</h4>
+        <p>Write an algorithm to brush your teeth.
+            <br>
+            <img class="pencil" src="images/pencil.gif" alt="A small icon of a pencil that reminds the reader to complete an
+exercise on paper" title="A small icon of a pencil that reminds the
+reader to complete an exercise on paper">
+            <br>
+            <br>
+            <br></p>
+
+        <p>Within the algorithm that you wrote, is the order of the steps
+            important? Are there any steps that the order does not matter?</p>
+
+        <h3 id="ch2progs">Computer Programs</h3>
+        <p>A computer program is composed of data and instructions. The computer
+            stores the data temporarily in its main memory. It also stores data more
+            permanently in files on a hard drive, flash memory, or digital versatile
+            disk (DVD). The instructions in a computer program are like the steps in
+            an algorithm. In a programming language like JavaScript, the
+            instructions are called statements. A single
+            <dfn id="ch2statement">statement</dfn> is equivalent to a single step in
+            an algorithm or a single sentence in a paragraph. The statements tell
+            the computer what to do with the data.</p>
+
+        <h3 id="ch2ctrls">Control Structures</h3>
+        <p>A computer normally executes the statements in a computer program
+            from top to bottom, or in other words the computer executes the topmost
+            statement first, the statement below the topmost second, and so on until
+            the bottommost statement. This order is natural to people from countries
+            where they read and write text from top to bottom. However, there are
+            times when a programmer does not want the computer to execute the
+            statements in a program strictly top to bottom. A <dfn>control
+                structure</dfn> controls the <em>order in which the computer executes
+                statements</em>. This order is sometimes called the <dfn>flow of
+                execution</dfn>. There are five different categories of control
+            structures as shown in this list:</p>
+        <dl>
+            <dt><dfn>sequence</dfn></dt>
+            <dd>causes the computer to execute statements in the order they are
+                written in a program, from top to bottom. This is the default
+                control structure.</dd>
+            <dt><dfn>selection</dfn></dt>
+            <dd>causes the computer to select one group of statements to execute
+                and another group or groups to skip. This is how a computer
+                appears to make decisions.</dd>
+            <dt><dfn>repetition</dfn></dt>
+            <dd>causes the computer to repeat a group of statements.</dd>
+            <dt><dfn>function call</dfn> and <dfn>return</dfn></dt>
+            <dd>causes the computer to execute the statements in another
+                function and return a result from the other function to the call
+                point.</dd>
+            <dt><dfn>try</dfn>, <dfn>catch</dfn>, and <dfn>throw</dfn></dt>
+            <dd>are used to indicate an error occurred and to handle errors.</dd>
+        </dl>
+
+        <p>You will study, learn, and use the first four of these control
+            structures in later chapters of this book. Sequence is the default
+            control structure and is covered in chapters 4 &mdash; 12. Selection is
+            taught in chapters <a target="_blank" href="selection.htm">6</a>
+            and <a target="_blank" href="logic.htm">7</a>.
+            Repetition is taught in <a target="_blank" href="repetition.htm">chapter&nbsp;8</a>
+            and again in <a target="_blank" href="arrays.htm">chapter&nbsp;10</a>, and
+            function call is taught in <a target="_blank" href="functions.htm">chapter&nbsp;9</a>.</p>
+
+        <div class="pagenum" id="page012">12</div>
+        <h3 id="ch2ops">Computer Operations</h3>
+        <p>A computer has seven basic operations that it can perform, all of
+            which we can use when writing algorithms in a computer program. A
+            computer can do the following:</p>
+
+        <ol>
+            <li>Receive data (input)<br>
+                Input devices: keyboard, mouse, microphone, touch screen,
+                temperature sensor, hard drive, flash drive, etc.<br>
+                <br></li>
+            <li>Write out data (output)<br>
+                Output devices: monitor, printer, speakers, lights, hard drive,
+                flash drive, etc.<br>
+                <br></li>
+            <li>Assign a value to a variable or memory location<br>
+                <br></li>
+            <li>Perform arithmetic<br>
+                Operators: &minus;&nbsp;(negation), *&nbsp;(multiplication),
+                /&nbsp;(division), %&nbsp;(modulus), +&nbsp;(addition),
+                &minus;&nbsp;(subtraction)<br>
+                <br></li>
+            <li>Compare two values<br>
+                Relational operators: &lt;&nbsp;(less than), &lt;=&nbsp;(less
+                than or equal), &gt;&nbsp;(greater than), &gt;=&nbsp;(greater
+                than or equal), ==&nbsp;(equal), !=&nbsp;(not equal)<br>
+                <br></li>
+            <li>Repeat a group of actions<br>
+                <br></li>
+            <li>Call a function and return from that function</li>
+        </ol>
+
+        <p>You will study and use each of these basic computer operations in
+            later chapters of this text.</p>
+
+        <div class="pagenum" id="page013">13</div>
+        <h3 id="ch2summary">Chapter Summary</h3>
+        <ul>
+            <li>An algorithm is simply a list of steps to accomplish a task.</li>
+            <li>Sometimes the order in which the steps of an algorithm are
+                performed is very important.</li>
+            <li>A defining table is a simple tool to help a programmer
+                understand a problem before developing an algorithm to solve the
+                problem. A defining table has three sections: input,
+                processing, and output.</li>
+            <li>A computer program contains both data and instructions. In
+                JavaScript, the instructions are called statements.</li>
+            <li>The three basic control structures that a programmer uses to
+                control the order in which a computer executes statements are
+                sequence, selection, and repetition.</li>
+            <li>A computer is capable of performing only a few basic operations:
+                <ul>
+                    <li>receive input</li>
+                    <li>display output</li>
+                    <li>store data</li>
+                    <li>perform arithmetic</li>
+                    <li>compare values</li>
+                    <li>repeat operations</li>
+                    <li>call a function</li>
+                </ul>
+                All high level tasks that a computer can do, such as edit
+                photographs, play music, and search data are simply combinations of
+                the basic operations.</li>
+        </ul>
+
+        <h3 id="ch2revQues">Review Questions</h3>
+        <ol class="revQues">
+            <li>
+                <p>Your company needs a program to compute the amount to charge
+                    customers for mowing their lawns for an entire season. An employee
+                    will type in the total area of the customer&rsquo;s lawn in square
+                    feet. Your company charges 1 cent per square foot to mow a lawn one
+                    time and will mow each lawn once a week for 15 weeks. Match each of
+                    the following parts of this problem to its correct location in a
+                    defining table.</p>
+                <div>
+                    <ul class="column">
+                        <li>multiply by 15</li>
+                        <li>season cost</li>
+                        <li>area of lawn</li>
+                        <li>multiply by 0.01</li>
+                    </ul>
+                    <ol class="column">
+                        <li>Input</li>
+                        <li>Processing</li>
+                        <li>Output</li>
+                    </ol>
+                </div>
+            </li>
+
+            <li>
+                <p>Your company needs a program to compute the amount to charge
+                    customers for mowing their lawns for an entire season. An employee
+                    will type in the total area of the customer&rsquo;s lawn in square
+                    feet. Your company charges 1 cent per square foot to mow a lawn one
+                    time and will mow each lawn once a week for 15 weeks. Number each of
+                    these steps to solve the problem in the correct order from first (1)
+                    to last (3).</p>
+                <ul>
+                    <li>Multiply the area of the lawn by 0.01 and then by 15 to get
+                        the season cost.</li>
+                    <li>Display the season cost for the user to see.</li>
+                    <li>Get the total area of the lawn from the user.</li>
+                </ul>
+            </li>
+
+            <li>
+                <div class="pagenum" id="page014">14</div>
+                <p>You have been asked to write a computer program that will output
+                    an employee&rsquo;s after tax pay. Your program will read from the
+                    keyboard the number of regular hours and overtime hours that the
+                    employee worked and the employee&rsquo;s regular hourly wage. The
+                    employee is paid a bonus of 1.5 times regular pay for each overtime
+                    hour worked. Tax is 15% of the employee&rsquo;s gross pay. Match
+                    each of the following parts of this problem to its correct location
+                    in a defining table.</p>
+                <div>
+                    <ul class="column">
+                        <li>multiply overtime hours by regular hourly wage by 1.5 to get
+                            overtime pay<br>
+                            (overPay = overHours * regWage * 1.5)</li>
+                        <li>subtract tax from gross pay to get net pay<br>
+                            (netPay = grossPay - tax)</li>
+                        <li>overtime hours</li>
+                        <li>multiply regular hours by regular hourly wage to get regular
+                            pay<br>
+                            (regPay = regHours * regWage)</li>
+                        <li>multiply gross pay by 0.15 to get tax<br>
+                            (tax = grossPay * 0.15)</li>
+                        <li>regular hourly wage</li>
+                        <li>regular hours</li>
+                        <li>add regular pay and overtime pay to get gross pay<br>
+                            (grossPay = regPay + overPay)</li>
+                        <li>net pay</li>
+                    </ul>
+                    <ol class="column">
+                        <li>Input</li>
+                        <li>Processing</li>
+                        <li>Output</li>
+                    </ol>
+                </div>
+            </li>
+
+            <li>
+                <p>You have been asked to write a computer program that will output
+                    an employee&rsquo;s after tax pay. Your program will read from the
+                    keyboard the number of regular hours and overtime hours that the
+                    employee worked and the employee&rsquo;s regular hourly wage. The
+                    employee is paid a bonus of 1.5 times regular pay for each overtime
+                    hour worked. Tax is 15% of the employee&rsquo;s gross pay. Number
+                    each of these steps to solve the problem in the correct order from
+                    first (1) to last (7).</p>
+                <ul>
+                    <li>Display net pay for the user to see.</li>
+                    <li>Add regular pay and overtime pay to get gross pay.<br>
+                        (grossPay = regPay + overPay)</li>
+                    <li>Multiply gross pay by 0.15 to get tax.<br>
+                        (tax = grossPay * 0.15)</li>
+                    <li>Multiply overtime hours by regular hourly wage by 1.5 to get
+                        overtime pay.<br>
+                        (overPay = overHours * regWage * 1.5)</li>
+                    <li>Subtract tax from gross pay to get net pay.<br>
+                        (netPay = grossPay - tax)</li>
+                    <li>Multiply regular hours by regular hourly wage to get regular
+                        pay.<br>
+                        (regPay = regHours * regWage)</li>
+                    <li>Get regular hours, overtime hours, and regular hourly wage
+                        from the user.</li>
+                </ul>
+            </li>
+
+            <li>
+                <div class="pagenum" id="page015">15</div>
+                Which of the following are control structures? (Mark all that apply.)
+                <ol>
+                    <li>input</li>
+                    <li>try, catch, and throw</li>
+                    <li>computation</li>
+                    <li>selection</li>
+                    <li>sequence</li>
+                    <li>output</li>
+                    <li>repetition</li>
+                    <li>storage</li>
+                </ol>
+            </li>
+
+            <li>Match each control structure to its correct definition.
+                <div>
+                    <ol class="column">
+                        <li>Sequence</li>
+                        <li>Selection</li>
+                        <li>Repetition</li>
+                    </ol>
+                    <ul class="column">
+                        <li>Causes the computer to select one group of statements to
+                            execute and another group or groups to skip.</li>
+                        <li>Causes the computer to repeat a group of statements.</li>
+                        <li>Causes the computer to execute statements in the order they
+                            are written in a program, from top to bottom.</li>
+                    </ul>
+                </div>
+            </li>
+        </ol>
+
+        <p class="fine">Copyright &copy; 2017 by Rex A. Barzee.&nbsp; All rights
+            reserved.&nbsp; Except as permitted under the Copyright Act of 1976, no
+            part of this publication may be reproduced, stored in a retrieval
+            system, or transmitted, in any form or by any means, electronic,
+            mechanical, photocopying, recording, or otherwise, without the prior
+            written permission of the author.</p>
+
+        <p class="fine">The author and publisher of this book have used their
+            best efforts in preparing this book, and the information contained in
+            this book is believed to be reliable.&nbsp; These efforts include the
+            development, research, and testing of the theories and computer programs
+            in this book to determine their correctness.&nbsp; However, because of
+            the possibility of human or mechanical error, the author and publisher
+            make no warranty of any kind, expressed or implied, with regard to
+            these programs or the documentation or information contained in this
+            book.&nbsp; The author and publisher shall not be liable in any event
+            for incidental or consequential damages in connection with or arising
+            out of the furnishing, performance, or use of these programs.</p>
+    </div>
+</body>
+
+</html>

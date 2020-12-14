@@ -1,0 +1,464 @@
+<!DOCTYPE HTML>
+<html lang="en-us">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="author" content="Rex A. Barzee">
+	<title>Chapter 1. Computer Hardware</title>
+	<link rel="stylesheet" type="text/css" href="css/ebook.css">
+	<style>
+		table.clock {
+			border-collapse: collapse
+		}
+
+		table.clock td.rise {
+			border-bottom: 1px solid;
+			border-right: 1px solid
+		}
+
+		table.clock td.fall {
+			border-top: 1px solid;
+			border-right: 1px solid
+		}
+	</style>
+</head>
+
+<body id="ch1hardware">
+	<div>
+		<div class="pagenum" id="page001">1</div>
+		<h2>Chapter 1. Computer Hardware</h2>
+
+		<h3 id="ch1outcomes">Chapter Outcome</h3>
+		<p>By the end of this chapter, you will have a basic understanding of
+			computer hardware so that you can begin to program computers.</p>
+
+		<h3 id="ch1semi">Semiconductors</h3>
+		<p>Many of the parts of a computer, including the CPU and main memory,
+			are composed of millions or billions of microscopic semiconductors that
+			are etched in silicon. The word semiconductor means these microscopic
+			parts partially conduct or sometimes conduct electricity. There are many
+			different types of semiconductors, and each type fulfills a specific
+			purpose. Below is a list of common semiconductors and their purpose.</p>
+
+		<ol class="term">
+			<li>
+				<div class="figRight" id="figSemis">
+					<img src="images/semiconductors.jpg" alt="Photographs of common semiconductors"
+						title="Photographs of common semiconductors">
+					<div><b>Figure 1-1:</b> Photographs of common semiconductors:&nbsp;
+						a)&nbsp;capacitor, b)&nbsp;diode, c)&nbsp;light emitting diode,
+						d)&nbsp;resistor, and e)&nbsp;transistor.</div>
+				</div>
+				Capacitor &ndash; a semiconductor that temporarily stores
+				electricity.
+			</li>
+			<li>Diode &ndash; a semiconductor that allows electricity to flow in
+				only one direction.</li>
+			<li>LED &ndash; acronym for light emitting diode; a diode that emits
+				light when electricity is flowing through it.</li>
+			<li>Resistor &ndash; a semiconductor that resists the flow of
+				electricity. A resistor is often used to protect other parts of a
+				computer from surges in electricity.</li>
+			<li>Transistor &ndash; a semiconductor with two inputs and one
+				output called the drain. A small current on the center wire of the
+				transistor controls a larger current that flows on the two outer
+				wires. A transistor can be used as an amplifier or an automated
+				switch with the small electric current input controlling the larger
+				input and output current.</li>
+			<li>Integrated circuit &ndash; a circuit composed of many
+				semiconductors (possibly billions) etched on a small piece of
+				silicon; sometimes called a computer chip.</li>
+		</ol>
+
+		<div class="pagenum" id="page002">2</div>
+		<h3 id="ch1parts">Parts of a Computer</h3>
+		<p>A modern computer is an electronic machine that is composed of two
+			major parts: hardware and software. Computer hardware is the physical
+			parts of a computer, such as the keyboard, mouse, CPU, hard drive,
+			memory, monitor, and printer. An easy mnemonic to help you remember that
+			hardware is the physical parts of a computer is that the physical parts
+			are hard. If someone threw a piece of computer hardware at you, and it
+			hit you, it would hurt. Of course, each part of a computer has its own
+			specific purpose. Here is a list of common computer hardware parts.</p>
+
+		<ol class="term" start="7">
+			<li>Power supply &ndash; an electric circuit that converts the
+				electricity coming from an outlet in the wall, usually 115 volts,
+				60-Hertz alternating current (AC), into electricity that a computer
+				can use, something like 3.3 volts direct current (DC).</li>
+			<li>Keyboard &ndash; an input device that allows a user to enter
+				data into a computer by pressing keys.</li>
+			<li>Motherboard &ndash; the main circuit board to which the other
+				parts of a computer are attached. Figure&nbsp;1-2 shows a
+				motherboard without a CPU, main memory, or other devices attached to
+				it.
+				<div class="figure" id="figMother">
+					<img src="images/motherboard.jpg" alt="A computer motherboard" title="A computer motherboard">
+					<div class="center"><b>Figure 1-2:</b> A computer motherboard.</div>
+				</div>
+			</li>
+			<li>
+				<div class="pagenum" id="page003">3</div>
+				Bus &ndash; the wires and integrated circuits that transfer data
+				across the motherboard from one component to another.
+			</li>
+			<li>BIOS &ndash; acronym for basic input and output system; usually
+				flash memory installed on the motherboard that contains instructions
+				the CPU executes when a computer is started.</li>
+			<li>
+				<div class="figRight" id="figCPU">
+					<img src="images/corei7.jpg" alt="The top and bottom of an Intel Core i7 CPU."
+						title="The top and bottom of an Intel Core i7 CPU.">
+					<div><b>Figure 1-3:</b> The top and bottom of an Intel Core i7 CPU.
+						Picture is courtesy of Intel.</div>
+				</div>
+				CPU &ndash; acronym for central processing unit; a relatively
+				large and expensive integrated circuit where most calculations are
+				done within a computer.
+			</li>
+			<li>Cache &ndash; a small amount of fast memory that temporarily
+				stores data and instructions and is often located on the CPU. The
+				cache contains a partial copy of the contents of main memory so that
+				when the CPU needs data for a calculation, the CPU can get the data
+				from the cache and does not have to wait for the data to come over a
+				bus from main memory. Cache memory is
+				<dfn id="ch1volatile">volatile</dfn> which means that when a
+				computer is turned off or the electricity is removed, the contents
+				of cache are lost.</li>
+			<li>Main memory &ndash; integrated circuits that temporarily store
+				data and instructions for the CPU; sometimes called random access
+				memory (RAM). Main memory is volatile which means that when a
+				computer is turned off, the contents of main memory are lost.
+				<div class="figure" id="figRAM">
+					<img src="images/ddrRAM.jpg" alt="Four gigabytes of DDR random access memory">
+					<div><b>Figure 1-4:</b> Four gigabytes of DDR random access memory.
+						Photo is courtesy of newegg.com.</div>
+				</div>
+			</li>
+			<li>
+				<div class="pagenum" id="page004">4</div>
+				<div class="figRight" id="figHardDrive">
+					<img src="images/hardDrive.jpg" alt="A computer hard drive with its cover removed">
+					<div><b>Figure 1-5:</b> A computer hard drive with its cover removed
+						exposing the platter and the head that moves above the platter.
+						Photo is courtesy of Evan-Amos at en.wikipedia.org</div>
+				</div>
+				Hard drive &ndash; stores data semi-permanently usually on a
+				spinning platter where microscopic spots have been magnetized to
+				store data. A hard drive is
+				<dfn id="ch1nonvolatile">non-volatile</dfn> which means that when a
+				computer is turned off, the contents of a hard drive are preserved.
+				Figure&nbsp;1-5 shows a hard drive with its cover removed to expose
+				the platter and the head that moves above the platter and magnetizes
+				microscopic spots on the platter.
+			</li>
+			<li>CD or DVD drive &ndash; reads and writes data semi-permanently
+				to a disc using a laser. Compact discs (CD&rsquo;s) and digital
+				versatile disks (DVD&rsquo;s) are non-volatile.</li>
+			<li>Jump, thumb, or flash drive &ndash; semi-permanent memory that
+				can be read, written, and erased electrically. Jump drive, thumb
+				drive, and flash drive are different names for the same type of
+				memory device which stores data in flash memory. A solid state hard
+				drive does not store data on a platter like a regular hard drive but
+				instead stores data in flash memory. Flash memory is non-volatile.</li>
+			<li>Monitor &ndash; an output device that displays messages, images,
+				etc. for a user to see.</li>
+		</ol>
+
+		<h3 id="ch1sizes">Data Sizes</h3>
+		<p>Each of the following terms is a measure of the amount of data that a
+			computer can store or process.</p>
+
+		<ol class="term" start="19">
+			<li>bit &ndash; an abbreviation for binary digit. A binary digit is a
+				column in a binary number where either 0 or 1 can appear.</li>
+			<li>nibble &ndash; four bits joined together to form a binary number.
+				The name nibble is an inside computing joke because a nibble is half
+				of a byte.</li>
+			<li>byte &ndash; eight bits joined together to form a binary number.</li>
+			<li>kilobyte &ndash; a true kilobyte is 1024 (2<sup>10</sup>) bytes and
+				not just 1000 bytes.</li>
+			<li>
+				<div class="pagenum" id="page005">5</div>
+				megabyte &ndash; a true megabyte is 1,048,576 (2<sup>20</sup>) bytes
+				and not just 1,000,000 bytes.
+			</li>
+			<li>gigabyte &ndash; 2<sup>30</sup> bytes</li>
+			<li>terabyte &ndash; 2<sup>40</sup> bytes</li>
+			<li>petabyte &ndash; 2<sup>50</sup> bytes</li>
+			<li>exabyte &ndash; 2<sup>60</sup> bytes</li>
+		</ol>
+
+		<h3 id="ch1speeds">Clock Speeds</h3>
+		<div class="figRight" id="figClock">
+			<table class="clock">
+				<tr>
+					<td>voltage</td>
+					<td class="rise">&nbsp; &nbsp;</td>
+					<td class="fall">&nbsp; &nbsp;</td>
+					<td class="rise">&nbsp; &nbsp;</td>
+					<td class="fall">&nbsp; &nbsp;</td>
+					<td class="rise">&nbsp; &nbsp;</td>
+					<td class="fall">&nbsp; &nbsp;</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td colspan="2">time</td>
+					<td></td>
+					<td></td>
+				</tr>
+			</table>
+			<div><b>Figure 1-6:</b> A graph of a pulsing electric signal showing three
+				pulses or cycles.</div>
+		</div>
+		<p>The clock within a CPU is a small electrical circuit that repeatedly
+			produces an electric signal that pulses, meaning its voltage rises and
+			falls similar to <a href="#figClock">Figure&nbsp;1-6</a>. This electric
+			signal pulses many times a second, and a single core on a CPU is
+			designed to complete one instruction at the end of each pulse. Clock
+			speed is measured in hertz. A single hertz is one cycle per second. A
+			cycle is from any point in the pulse to where the pulse repeats. In
+			other words, a single cycle starts immediately after the electric
+			voltage falls, includes the voltage rising, and ends when the voltage
+			falls again. Here are the terms used to measure clock speeds:</p>
+
+		<ol class="term" start="28">
+			<li>hertz &ndash; a unit of frequency equal to one cycle per second</li>
+			<li>kilohertz &ndash; one thousand cycles per second</li>
+			<li>megahertz &ndash; one million cycles per second</li>
+			<li>gigahertz &ndash; one billion cycles per second</li>
+		</ol>
+
+		<p>Many modern computers have clock speeds of 2.5 gigahertz or higher
+			which means a single core on a CPU is designed to complete 2.5 billion
+			instructions per second. Many CPU's have multiple cores. Each core
+			performs calculations independently of the other cores. A quad core CPU
+			with a clock speed of 2.5 gigahertz is designed to complete 10 billion
+			<span class="expr">(4 * 2.5 gigahertz)</span>
+			instructions per second. This is very fast.</p>
+
+		<h3 id="ch1classes">Classes of Computers</h3>
+		<p>Computers can be classified according to their size and primary
+			purpose. Here are some common computer classes.</p>
+
+		<ol class="term" start="32">
+			<li>micro or personal computer &ndash; a computer designed to be
+				used by only one person at a time, such as a smart phone, tablet
+				computer, laptop computer, or desktop computer.</li>
+			<li>workstation &ndash; a powerful computer designed to be used by
+				one person at a time and used to perform engineering, scientific,
+				and medical tasks such as designing airplane parts.</li>
+			<li>mainframe &ndash; a very powerful computer designed to be used
+				by many people at the same time to perform business or scientific
+				tasks.</li>
+		</ol>
+
+		<div class="pagenum" id="page006">6</div>
+		<h3 id="ch1software">Categories of Software</h3>
+		<p>Computer hardware is really just a bunch of metal that electricity
+			can flow through in well-defined paths. Computer hardware will not do
+			anything without some instructions. The instructions are written by a
+			computer programmer and are called software. Computer software is simply
+			a list of instructions that the computer hardware executes. Computer
+			software can be classified according to its purpose.</p>
+
+		<ol class="term" start="35">
+			<li>Application &ndash; computer software that someone uses to accomplish
+				a specific task, such as write a letter, balance an account, watch a
+				movie, or play a game. Examples of applications include Microsoft
+				Word and Excel, Google Chrome, and iTunes.</li>
+			<li>Operating system &ndash; computer software that manages the hardware
+				and isolates the applications from the hardware so that the
+				applications do not have to interact directly with the hardware.
+				Examples of computer operating systems include Microsoft Windows,
+				Mac OS X, VMS, Linux, HP-UX, and Solaris.</li>
+		</ol>
+
+		<h3 id="ch1char">Character Data</h3>
+		<p>Everything in a computer&rsquo;s memory is stored as a number or set
+			of numbers. Everything. Pictures, songs, text, instructions, everything.
+			Each character or text symbol is stored in the computer&rsquo;s memory
+			as a number. Since the time that electronic computers were invented,
+			programmers have developed several different coding systems that assign
+			numbers to characters and symbols. Today there are two coding systems
+			widely used by programmers: ASCII and Unicode.</p>
+
+		<ol class="term" start="37">
+			<li id="ch1ascii">ASCII &ndash; an acronym for American Standard
+				Code for Information Interchange; a coding system (essentially a
+				table) with 128 rows that assigns a number to each English letter
+				and common punctuation symbol. See
+				<a target="_blank" href="http://www.asciitable.com/">asciitable.com</a></li>
+			<li id="ch1unicode">Unicode &ndash; a very large coding system that
+				includes ASCII and assigns a number to symbols from many languages,
+				such as English, Portuguese, Greek, Hebrew, Arabic, and Tagalog. See
+				<a target="_blank" href="http://unicode.org/">unicode.org</a></li>
+		</ol>
+
+		<div class="pagenum" id="page007">7</div>
+		<h3 id="ch1exec">Execution Example</h3>
+		<p>To help you understand how the parts of a computer work together,
+			consider what happens when a user double clicks on a Microsoft Word
+			document file (a file with a filename suffix of .docx).</p>
+		<ol>
+			<li>The operating system commands the hard drive to copy the
+				Microsoft Word Application (MS Word) into main memory.</li>
+			<li>The hard drive copies MS Word over a bus into main memory.</li>
+			<li>After MS Word is in main memory, the operating system executes
+				MS Word and sends a command to MS Word telling it to open the
+				document that the user double clicked.</li>
+			<li>MS Word requests the operating system to read the document from
+				the hard drive and to place it in main memory.</li>
+			<li>The operating system commands the hard drive to copy the
+				document file into main memory.</li>
+			<li>The hard drive copies the document file over a bus into main
+				memory.</li>
+			<li>For each character that is in the document
+				<ol>
+					<li>MS Word reads the character&rsquo;s Unicode number from main
+						memory and requests the operating system to draw that character
+						in a window.</li>
+					<li>The operating system finds the Unicode number and its
+						corresponding symbol in a table and draws the symbol.</li>
+				</ol>
+			</li>
+		</ol>
+
+		<h3 id="ch1revQues">Review Questions</h3>
+		<ol class="revQues">
+			<li>Which of the following does a computer use primarily to store
+				data? (Mark all that apply.)
+				<ol>
+					<li>power supply</li>
+					<li>keyboard</li>
+					<li>motherboard</li>
+					<li>bus</li>
+					<li>central processing unit (CPU)</li>
+					<li>cache</li>
+					<li>main memory</li>
+					<li>hard drive</li>
+					<li>digital versatile disc (DVD)</li>
+					<li>thumb drive or jump drive</li>
+					<li>monitor</li>
+				</ol>
+			</li>
+			<li>Match each of the following types of computer memory with the
+				physical quantity that each manipulates to store data.
+				<div>
+					<ol class="column latin">
+						<li>cache</li>
+						<li>main memory</li>
+						<li>flash memory</li>
+						<li>hard drive</li>
+						<li>DVD drive</li>
+					</ol>
+					<ol class="column roman">
+						<li>light</li>
+						<li>magnetization</li>
+						<li>electric charge</li>
+					</ol>
+				</div>
+			</li>
+			<li>
+				<div class="pagenum" id="page008">8</div>
+				Computer memory that is volatile must have electricity in order
+				to store data. When electricity is turned off, volatile memory loses
+				its data. Non-volatile memory stores data after electricity is
+				turned off. Which of the following computer memory devices are
+				volatile? (Mark all that apply.)
+				<ol>
+					<li>cache</li>
+					<li>main memory</li>
+					<li>flash memory</li>
+					<li>hard drive</li>
+					<li>DVD</li>
+				</ol>
+			</li>
+			<li>Match each term to its corresponding size in bytes.
+				<div>
+					<ol class="column latin">
+						<li>kilobyte</li>
+						<li>megabyte</li>
+						<li>gigabyte</li>
+						<li>terabyte</li>
+						<li>petabyte</li>
+						<li>exabyte</li>
+					</ol>
+					<ol class="column roman">
+						<li>1,125,899,906,842,624 bytes</li>
+						<li>1024 bytes</li>
+						<li>1,099,511,627,776 bytes</li>
+						<li>1,073,741,824 bytes</li>
+						<li>1,048,576 bytes</li>
+						<li>1,152,921,504,606,846,976 bytes</li>
+					</ol>
+				</div>
+			</li>
+			<li>Assume the average movie uses 3 gigabytes of space on a hard
+				drive. Which of these is the smallest size that can store 200
+				average size movies?
+				<ol>
+					<li>500 megabytes</li>
+					<li>500 gigabytes</li>
+					<li>1 terabyte</li>
+					<li>1 petabyte</li>
+				</ol>
+			</li>
+			<li>Consider a quad core CPU with a clock speed of 2.8 gigahertz. In
+				theory, how many instructions per second is it able to complete?
+				<ol>
+					<li>2.8 million</li>
+					<li>2.8 billion</li>
+					<li>11.2 billion</li>
+					<li>20 billion</li>
+				</ol>
+			</li>
+			<li>Which character coding system includes English letters? (Mark
+				all that apply.)
+				<ol>
+					<li>ASCII</li>
+					<li>Unicode</li>
+				</ol>
+			</li>
+			<li>If you wanted to type a letter in Hebrew, which character coding
+				system would your computer need to use to store your letter?
+				<ol>
+					<li>ASCII</li>
+					<li>Unicode</li>
+				</ol>
+			</li>
+		</ol>
+
+		<p class="fine">Copyright &copy; 2017 by Rex A. Barzee.&nbsp; All rights
+			reserved.&nbsp; Except as permitted under the Copyright Act of 1976, no
+			part of this publication may be reproduced, stored in a retrieval
+			system, or transmitted, in any form or by any means, electronic,
+			mechanical, photocopying, recording, or otherwise, without the prior
+			written permission of the author.</p>
+
+		<p class="fine">The author and publisher of this book have used their
+			best efforts in preparing this book, and the information contained in
+			this book is believed to be reliable.&nbsp; These efforts include the
+			development, research, and testing of the theories and computer programs
+			in this book to determine their correctness.&nbsp; However, because of
+			the possibility of human or mechanical error, the author and publisher
+			make no warranty of any kind, expressed or implied, with regard to
+			these programs or the documentation or information contained in this
+			book.&nbsp; The author and publisher shall not be liable in any event
+			for incidental or consequential damages in connection with or arising
+			out of the furnishing, performance, or use of these programs.</p>
+	</div>
+</body>
+
+</html>
