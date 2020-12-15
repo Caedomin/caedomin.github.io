@@ -1,220 +1,161 @@
-:root {
-    --primary-color: #396e94;
-    --secondary-color: #4C4B63;
-    --accent1-color: #c3c2f7;
-    --accent2-color: #142634;
-    --footer2-color: #949396;
-    --footer3-color: #4a4a4b;
-    --purple-light: #c3c2f7;
-    --main-text-color: black; 
-    --heading-font: "IM Fell French Canon SC", "Times New Roman", serif;
-    --paragraph-font: Arial, Helvetica, sans-serif;
-/*Colors I'm considering using: C7EEF5, 95FFFF, 558DCA, F07C41, 022249, White text
-  FBEEC1, BC986A, DAAD86, 659DBD, 8D8741, white text*/    
-}
+@import url("https://fonts.googleapis.com/css?family=IM+Fell+French+Canon+SC|Lato");
 
-/* @media screen and (max-width: 550px) {
-    .grid {
-        display: block;
-    }
-    
-    header img {
-        width: 50px;
-    }
-    
-    .banner {
-        height: auto;
-        width: 700px;
-        grid-column: 1 / -1;
-        grid-row: 1;
-    }
-    
-    .action, .action button {
-        visibility: hidden;
-    }
-} */
+:root {
+    --primary-color: #E7ECEF;
+    --secondary-color: #D8A47F;
+    --background-color: #272932;
+    --accent1-color: #E7DECD;
+    --accent2-color: #0F7173;
+    --accent3-color: #F05D5E;
+    --primary: #37474f;
+    --p-light: #62727b;
+    --p-dark: #020202;
+    --secondary: #f57f17;
+    --s-light: #ffb04c;
+    --s-dark: #bc5100;
+    --accent: #26A69A;
+    --a-light: #64D8CB;
+    --a-dark: #00766C;
+    --light: #E1E2E1;
+    --l-light: #F5F5F6;
+    --l-dark: #B6B6B6;
+    --heading-font: Verdana, Geneva, sans-serif;
+    --paragraph-font: Lato, Helvetica, sans-serif;
+}
 
 body {
-    background-color: #333;
-    font-family: var(--paragraph-font);
-}
-
-header, footer, main {
-    max-width: 960px;
     margin: 0 auto;
-    align-items: center;
-    font-size: 16px;
+    background-color: var(--primary);
 }
 
-
-/*
-h1,h2,h3,h4,h5,h6 {
+h1, h2, h3, h4, h5, h6 {
     font-family: var(--heading-font);
-    color:var(--secondary-color) ;
-    font-size: 28px;
+    color: var(--s-light);
 }
 
-h1 {
-    color: var(--purple-light);
-    padding: 0px 20px;
-    font-size: 30px;
+p {
+    font-family: var(--paragraph-font);
+    color: var(--primary-color);
+    padding: 1em 0;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 22.5px;
 }
+
+nav {
+    background-color: var(--p-light);
+    font-family: var(--heading-font);
+    line-height: 3em;
+    text-align: center;
+    font-size: 1.2em;
+}
+
+nav>ul {
+    list-style-type: none;
+    display: flex;
+}
+
+nav a {
+    padding: 1em;
+    min-width: 70px;
+}
+
+nav a:link,
+nav a:visited {
+    color: var(--a-light);
+    font-weight: 700;
+}
+
+nav a:hover {
+    color: var(--primary);
+    background-color: var(--a-light);
+} 
 
 .navLinks {
     list-style-type: none;
     display: flex;
     text-align: center;
+    justify-content: end;
     font-family: var(--paragraph-font);
-    font-size: 1rem;
+    font-size: 1.2rem;
     font-weight: 700;
 }
 
-.navLinks li {
-    flex: 1 1 auto;
+a:link {
+    color: var(--a-light);
+}
+a:visited {
+    color: var(--a-dark);
+}
+a:hover {
+    color: var(--accent);
+}
+a:active {
+    color: var(--s-light);
 }
 
-.navLinks a {
-    padding: 1em;
-    min-width: 70px;
+.header-content-container {
+    justify-self: center;
 }
 
-.navLinks a:link, nav a:visited {
-    color: var(--accent1-color);
+.page-subtitle {
+    color: var(--light);
+    font-size: 24px;
 }
 
-.navLinks a:hover {
-    color: var(--accent2-color);
-    background-color: var(--accent1-color);
+.button {
+    padding: 0.3em 1em;
+    letter-spacing: 1px;
+    font-size: 18px;
+    font-family: var(--paragraph-font);
+    margin: 50px 7px;
 }
 
-.thumbnail {
-	width: 50px;
-    height: auto;
-    padding-left: 30px;
+.transparent-button {
+    color: var(--l-light);
+    border-width: 2px;
+    border-color: var(--l-light);
 }
 
-header {
-    padding: 10px 0px;
-    display: flex;
-    text-align: center;
-    color: var(--accent2-color);
-    background-color: var(--accent2-color);
+.transparent-button a:hover {
+    background-color: var(--p-light);
 }
 
-main {
-    background-color: white;
-}
-
-.hero {
-    max-width: 960px;
-    height: auto;
-}
-
-.grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-gap: 40px 60px;
-    height: auto;
-    width: 860px;
-    align-items: center;
-    padding: 50px;
-}
-
-.textBlock1 {
-    grid-column: 1/2;
-}
-
-.bodyImage1 img {
-	box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.452);
-    height: 350px;
-    grid-column: 2/3;
-}
-
-.bodyImage2 img {
-	box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.23);
-    height: 350px;
-    grid-column: 1/2;
-}
-
-.textBlock2 {
-    grid-column: 2/3;
-}
-
-.textBlock3 {
-    grid-column: 1/3;
-}
-
-footer {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-gap: 5px;
-    background-color: var(--footer2-color);
+.full-button {
     color: white;
+    background-color: var(--accent);
 }
 
-.top-footer-row {
-    background-color: var(--accent2-color);
-    height: 50px;
-    grid-column: 1 / 3;
+.full-button a:hover {
+    background-color: var(--a-light);
 }
 
-.contact-title {
-    font-size: 22px;
-    color: var(--secondary-color);
-    grid-column: 1 / 2;
-    justify-self: center;
-    padding: 40px 0px 0px 0px;
+.home-body-content-container {
+    display: grid;
+    position: relative;
+    max-width: 960px;
+    grid-column: 1fr 1fr;
+    column-gap: 60px;
 }
 
-.open-times-title {
-    font-size: 22px;
-    color: var(--secondary-color);
-    grid-column: 2 / 3;
-    justify-self: center;
-    padding: 40px 0px 0px 0px;
-}
-
-td {
-    height: 40px;
-    vertical-align: center;
-    padding: 5px;
-}
-
-.contact-details {
-    height: 180px;
-    grid-column: 1 / 2;
-    justify-self: center;
-    padding: 20px;
-}
-
-.open-times-details {
-    height: 180px;
-    grid-column: 2 / 3;
-    justify-self: center;
-    padding: 20px;
-}
-
-.social {
-	box-shadow: none;
-
-}
-
-a {
-    color: #54a5df;
-}
-
-.copyright {
-    grid-column: 1 / 3;
-    text-align: center;
+.title-in-grid {
     width: 100%;
-    background-color: var(--footer3-color);
 }
 
-////////////////////////////////////////////////////////////////
+/* ///////////////////////////////////////////////// */
 
-.headings {
-	display: flex;
-	flex-direction: column;
+.input {
+    width: 100%;
+    padding: 14px 16px;
+    background-color: var(--p-dark);
+    color: white;
+    font-size: inherit;
 }
 
-*/
+.newsletter-button {
+    width: 100%;
+    padding: 0.3em 1em;
+    color: var(--primary);
+    background-color: var(--accent);
+    text-transform: uppercase;
+}
